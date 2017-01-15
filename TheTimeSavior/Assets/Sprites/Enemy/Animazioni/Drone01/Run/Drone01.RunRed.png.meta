@@ -1,0 +1,320 @@
+fileFormatVersion: 2
+guid: 36dec26a2764c4640a1dc04252a25bb1
+timeCreated: 1482027023
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Drone01.RunRed_0
+    21300002: Drone01.RunRed_1
+    21300004: Drone01.RunRed_2
+    21300006: Drone01.RunRed_3
+    21300008: Drone01.RunRed_4
+    21300010: Drone01.RunRed_5
+    21300012: Drone01.RunRed_6
+    21300014: Drone01.RunRed_7
+    21300016: Drone01.RunRed_8
+    21300018: Drone01.RunRed_9
+    21300020: Drone01.RunRed_10
+    21300022: Drone01.RunRed_11
+    21300024: Drone01.RunRed_12
+    21300026: Drone01.RunRed_13
+    21300028: Drone01.RunRed_14
+    21300030: Drone01.RunRed_15
+    21300032: Drone01.RunRed_16
+    21300034: Drone01.RunRed_17
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 45
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Drone01.RunRed_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 161
+        width: 74
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 161
+        width: 73
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 161
+        width: 73
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_3
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 160
+        width: 71
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_4
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 160
+        width: 70
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_5
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 160
+        width: 68
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_6
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 81
+        width: 68
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_7
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 81
+        width: 68
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_8
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 81
+        width: 66
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_9
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 81
+        width: 67
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_10
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 81
+        width: 67
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_11
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 81
+        width: 68
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_12
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 4
+        width: 67
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_13
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 4
+        width: 68
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_14
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 4
+        width: 70
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_15
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 4
+        width: 71
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_16
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 5
+        width: 73
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.RunRed_17
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 5
+        width: 73
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

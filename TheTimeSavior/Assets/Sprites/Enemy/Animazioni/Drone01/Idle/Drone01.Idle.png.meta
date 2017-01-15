@@ -1,0 +1,1244 @@
+fileFormatVersion: 2
+guid: d508eaef4b963ef408cb2c6eedfb5ebc
+timeCreated: 1482026958
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Drone01.Idle_0
+    21300002: Drone01.Idle_1
+    21300004: Drone01.Idle_2
+    21300006: Drone01.Idle_3
+    21300008: Drone01.Idle_4
+    21300010: Drone01.Idle_5
+    21300012: Drone01.Idle_6
+    21300014: Drone01.Idle_7
+    21300016: Drone01.Idle_8
+    21300018: Drone01.Idle_9
+    21300020: Drone01.Idle_10
+    21300022: Drone01.Idle_11
+    21300024: Drone01.Idle_12
+    21300026: Drone01.Idle_13
+    21300028: Drone01.Idle_14
+    21300030: Drone01.Idle_15
+    21300032: Drone01.Idle_16
+    21300034: Drone01.Idle_17
+    21300036: Drone01.Idle_18
+    21300038: Drone01.Idle_19
+    21300040: Drone01.Idle_20
+    21300042: Drone01.Idle_21
+    21300044: Drone01.Idle_22
+    21300046: Drone01.Idle_23
+    21300048: Drone01.Idle_24
+    21300050: Drone01.Idle_25
+    21300052: Drone01.Idle_26
+    21300054: Drone01.Idle_27
+    21300056: Drone01.Idle_28
+    21300058: Drone01.Idle_29
+    21300060: Drone01.Idle_30
+    21300062: Drone01.Idle_31
+    21300064: Drone01.Idle_32
+    21300066: Drone01.Idle_33
+    21300068: Drone01.Idle_34
+    21300070: Drone01.Idle_35
+    21300072: Drone01.Idle_36
+    21300074: Drone01.Idle_37
+    21300076: Drone01.Idle_38
+    21300078: Drone01.Idle_39
+    21300080: Drone01.Idle_40
+    21300082: Drone01.Idle_41
+    21300084: Drone01.Idle_42
+    21300086: Drone01.Idle_43
+    21300088: Drone01.Idle_44
+    21300090: Drone01.Idle_45
+    21300092: Drone01.Idle_46
+    21300094: Drone01.Idle_47
+    21300096: Drone01.Idle_48
+    21300098: Drone01.Idle_49
+    21300100: Drone01.Idle_50
+    21300102: Drone01.Idle_51
+    21300104: Drone01.Idle_52
+    21300106: Drone01.Idle_53
+    21300108: Drone01.Idle_54
+    21300110: Drone01.Idle_55
+    21300112: Drone01.Idle_56
+    21300114: Drone01.Idle_57
+    21300116: Drone01.Idle_58
+    21300118: Drone01.Idle_59
+    21300120: Drone01.Idle_60
+    21300122: Drone01.Idle_61
+    21300124: Drone01.Idle_62
+    21300126: Drone01.Idle_63
+    21300128: Drone01.Idle_64
+    21300130: Drone01.Idle_65
+    21300132: Drone01.Idle_66
+    21300134: Drone01.Idle_67
+    21300136: Drone01.Idle_68
+    21300138: Drone01.Idle_69
+    21300140: Drone01.Idle_70
+    21300142: Drone01.Idle_71
+    21300144: Drone01.Idle_72
+    21300146: Drone01.Idle_73
+    21300148: Drone01.Idle_74
+    21300150: Drone01.Idle_75
+    21300152: Drone01.Idle_76
+    21300154: Drone01.Idle_77
+    21300156: Drone01.Idle_78
+    21300158: Drone01.Idle_79
+    21300160: Drone01.Idle_80
+    21300162: Drone01.Idle_81
+    21300164: Drone01.Idle_82
+    21300166: Drone01.Idle_83
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 45
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Drone01.Idle_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 400
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 400
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_2
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 400
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 400
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_4
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 400
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_5
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 400
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_6
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 401
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_7
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 401
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_8
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 401
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_9
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 401
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_10
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 401
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 401
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 335
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_13
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 335
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_14
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 335
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_15
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 336
+        width: 86
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_16
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 336
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_17
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 336
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_18
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 336
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_19
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 336
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_20
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 336
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_21
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 336
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_22
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 336
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_23
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 336
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_24
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 269
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_25
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 269
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_26
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 269
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_27
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 268
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_28
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 268
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_29
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 268
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_30
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 267
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_31
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 267
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_32
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 267
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_33
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 266
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_34
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 266
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_35
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 266
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_36
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 200
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_37
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 199
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_38
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 199
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_39
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 199
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_40
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 198
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_41
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 198
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_42
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 204
+        width: 86
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_43
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 204
+        width: 86
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_44
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 204
+        width: 86
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_45
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 205
+        width: 87
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_46
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 206
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_47
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 206
+        width: 87
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_48
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 141
+        width: 86
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_49
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 141
+        width: 86
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_50
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 142
+        width: 86
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_51
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 142
+        width: 87
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_52
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 143
+        width: 87
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_53
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 144
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_54
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 138
+        width: 87
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_55
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 138
+        width: 86
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_56
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 139
+        width: 86
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_57
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 139
+        width: 86
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_58
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 140
+        width: 87
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_59
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 140
+        width: 87
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_60
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 75
+        width: 87
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_61
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 75
+        width: 87
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_62
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 76
+        width: 86
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_63
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 76
+        width: 86
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_64
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 76
+        width: 86
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_65
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 76
+        width: 86
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_66
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 76
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_67
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 75
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_68
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 75
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_69
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 75
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_70
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 75
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_71
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 74
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_72
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 8
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_73
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 8
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_74
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 7
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_75
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 7
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_76
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 7
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_77
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 6
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_78
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 6
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_79
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 6
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_80
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 5
+        width: 87
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_81
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 5
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_82
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 5
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Idle_83
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 5
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

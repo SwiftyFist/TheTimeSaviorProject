@@ -1,0 +1,320 @@
+fileFormatVersion: 2
+guid: 0f8373e0ee5930949b7e84186748b1ea
+timeCreated: 1482099990
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MiB.Run.NOGUN_0
+    21300002: MiB.Run.NOGUN_2
+    21300004: MiB.Run.NOGUN_3
+    21300006: MiB.Run.NOGUN_4
+    21300008: MiB.Run.NOGUN_5
+    21300010: MiB.Run.NOGUN_6
+    21300012: MiB.Run.NOGUN_11
+    21300014: MiB.Run.NOGUN_12
+    21300016: MiB.Run.NOGUN_13
+    21300018: MiB.Run.NOGUN_14
+    21300020: MiB.Run.NOGUN_15
+    21300022: MiB.Run.NOGUN_17
+    21300024: MiB.Run.NOGUN_19
+    21300026: MiB.Run.NOGUN_20
+    21300028: MiB.Run.NOGUN_21
+    21300030: MiB.Run.NOGUN_22
+    21300032: MiB.Run.NOGUN_24
+    21300034: MiB.Run.NOGUN_25
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 150
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 958
+        width: 289
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_2
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 933
+        width: 281
+        height: 339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_3
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 918
+        width: 283
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_4
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 909
+        width: 275
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_5
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 900
+        width: 258
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_6
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 889
+        width: 239
+        height: 375
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_11
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 441
+        width: 257
+        height: 381
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_12
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 490
+        width: 313
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_13
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 505
+        width: 320
+        height: 323
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_14
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 506
+        width: 321
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_15
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 479
+        width: 302
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_17
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 456
+        width: 279
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_19
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 6
+        width: 265
+        height: 382
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_20
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 8
+        width: 249
+        height: 379
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_21
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 0
+        width: 257
+        height: 386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_22
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 0
+        width: 263
+        height: 386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_24
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 54
+        width: 275
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.Run.NOGUN_25
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 70
+        width: 286
+        height: 323
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
