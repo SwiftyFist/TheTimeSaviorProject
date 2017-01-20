@@ -85,9 +85,9 @@ public class DroneAI : MonoBehaviour
         //}        
 
         //se la X del player e la y del player sono abbastanza vicini alla X e Y del drone o è c`è stato
-        if (CalcDistanceFromPlayer() < 1f || bChangingDirection)
-            ChangeDirection();//Muovi solo verso destra o sinistra con una certa velocità decresente fino a 0
-        else//altrimenti
+        //if (CalcDistanceFromPlayer() < 1f || bChangingDirection)
+           // ChangeDirection();//Muovi solo verso destra o sinistra con una certa velocità decresente fino a 0
+        //else//altrimenti
             myTransform.position = Vector3.MoveTowards(myTransform.position, playerTransform.position, Mathf.Abs(myCurrentVelocity) * Time.deltaTime);//MoveTowards
 
         ///////////////////////////

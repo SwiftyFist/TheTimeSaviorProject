@@ -13,7 +13,6 @@ public class parallax_scrolling_script : MonoBehaviour {
 	void Awake()
 	{
 		cam = Camera.main.transform;
-        GameObject.Find("GameMaster").GetComponent<LoadScene>().enabled = true;
     }
 
 	void Start () 

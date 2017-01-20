@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Viene abilitato in DestroyerPlayerStandard
 public class LoadScene : MonoBehaviour
 {
     //Velocità di movimento
