@@ -27,8 +27,6 @@ public class DestroyerPlayerStandard : MonoBehaviour
         myRigidBody2D = GetComponent<Rigidbody2D>();
         myRigidBody2D.velocity = Vector2.right * antivirVelocity;
         StartCoroutine(VelocityModificatorByTime()); //Aumenta la velocità overtime
-
-        GameObject.Find("GameMaster").GetComponent<LoadScene>().enabled = true;
     }
 
     void Update()
