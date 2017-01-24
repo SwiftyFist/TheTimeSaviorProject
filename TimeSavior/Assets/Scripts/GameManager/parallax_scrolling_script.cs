@@ -13,7 +13,11 @@ public class parallax_scrolling_script : MonoBehaviour {
 	void Awake()
 	{
 		cam = Camera.main.transform;
+<<<<<<< HEAD:TimeSavior/Assets/Scripts/GameManager/parallax_scrolling_script.cs
 	}
+=======
+    }
+>>>>>>> 373cb4bd12b2970b5fa023734bd87df8ce6a51ec:TheTimeSavior/Assets/Scripts/GameManager/parallax_scrolling_script.cs
 
 	void Start () 
 	{
