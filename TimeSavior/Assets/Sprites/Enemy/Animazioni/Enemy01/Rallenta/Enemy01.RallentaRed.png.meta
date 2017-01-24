@@ -1,0 +1,479 @@
+fileFormatVersion: 2
+guid: ad116236717ffcf4da1886e84bb25a15
+timeCreated: 1483464221
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Enemy01.RallentaRed_0
+    21300002: Enemy01.RallentaRed_1
+    21300004: Enemy01.RallentaRed_2
+    21300006: Enemy01.RallentaRed_3
+    21300008: Enemy01.RallentaRed_4
+    21300010: Enemy01.RallentaRed_5
+    21300012: Enemy01.RallentaRed_6
+    21300014: Enemy01.RallentaRed_7
+    21300016: Enemy01.RallentaRed_8
+    21300018: Enemy01.RallentaRed_9
+    21300020: Enemy01.RallentaRed_10
+    21300022: Enemy01.RallentaRed_11
+    21300024: Enemy01.RallentaRed_12
+    21300026: Enemy01.RallentaRed_13
+    21300028: Enemy01.RallentaRed_14
+    21300030: Enemy01.RallentaRed_15
+    21300032: Enemy01.RallentaRed_16
+    21300034: Enemy01.RallentaRed_17
+    21300036: Enemy01.RallentaRed_18
+    21300038: Enemy01.RallentaRed_19
+    21300040: Enemy01.RallentaRed_20
+    21300042: Enemy01.RallentaRed_21
+    21300044: Enemy01.RallentaRed_22
+    21300046: Enemy01.RallentaRed_23
+    21300048: Enemy01.RallentaRed_24
+    21300050: Enemy01.RallentaRed_25
+    21300052: Enemy01.RallentaRed_26
+    21300054: Enemy01.RallentaRed_27
+    21300056: Enemy01.RallentaRed_28
+    21300058: Enemy01.RallentaRed_29
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 45
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 294
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_1
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 294
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_2
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 294
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_3
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 294
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 294
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_5
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 294
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_6
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 222
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_7
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 222
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_8
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 222
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_9
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 222
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_10
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 222
+        width: 58
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_11
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 222
+        width: 58
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_12
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 150
+        width: 58
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_13
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 150
+        width: 58
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_14
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 149
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_15
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 149
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_16
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 149
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_17
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 149
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_18
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 77
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_19
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 77
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_20
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 77
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_21
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 77
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_22
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 76
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_23
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 76
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 4
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_25
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 4
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_26
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 4
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_27
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 4
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_28
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 4
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.RallentaRed_29
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 4
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

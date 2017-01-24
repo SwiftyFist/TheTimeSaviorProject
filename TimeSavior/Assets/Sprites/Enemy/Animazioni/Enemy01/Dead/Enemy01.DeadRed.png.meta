@@ -1,0 +1,647 @@
+fileFormatVersion: 2
+guid: 89055b9380a52e840aad3af6a790d71b
+timeCreated: 1484608905
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Enemy01.DeadRed_0
+    21300002: Enemy01.DeadRed_1
+    21300004: Enemy01.DeadRed_2
+    21300006: Enemy01.DeadRed_3
+    21300008: Enemy01.DeadRed_4
+    21300010: Enemy01.DeadRed_5
+    21300012: Enemy01.DeadRed_6
+    21300014: Enemy01.DeadRed_7
+    21300016: Enemy01.DeadRed_8
+    21300018: Enemy01.DeadRed_9
+    21300020: Enemy01.DeadRed_10
+    21300022: Enemy01.DeadRed_11
+    21300024: Enemy01.DeadRed_12
+    21300026: Enemy01.DeadRed_13
+    21300028: Enemy01.DeadRed_14
+    21300030: Enemy01.DeadRed_15
+    21300032: Enemy01.DeadRed_16
+    21300034: Enemy01.DeadRed_17
+    21300036: Enemy01.DeadRed_18
+    21300038: Enemy01.DeadRed_19
+    21300040: Enemy01.DeadRed_20
+    21300042: Enemy01.DeadRed_21
+    21300044: Enemy01.DeadRed_22
+    21300046: Enemy01.DeadRed_23
+    21300048: Enemy01.DeadRed_24
+    21300050: Enemy01.DeadRed_25
+    21300052: Enemy01.DeadRed_26
+    21300054: Enemy01.DeadRed_27
+    21300056: Enemy01.DeadRed_28
+    21300058: Enemy01.DeadRed_29
+    21300060: Enemy01.DeadRed_30
+    21300062: Enemy01.DeadRed_31
+    21300064: Enemy01.DeadRed_32
+    21300066: Enemy01.DeadRed_33
+    21300068: Enemy01.DeadRed_34
+    21300070: Enemy01.DeadRed_35
+    21300072: Enemy01.DeadRed_36
+    21300074: Enemy01.DeadRed_37
+    21300076: Enemy01.DeadRed_38
+    21300078: Enemy01.DeadRed_39
+    21300080: Enemy01.DeadRed_40
+    21300082: Enemy01.DeadRed_41
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 45
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1126
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_1
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 1127
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_2
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 1129
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_3
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 1130
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_4
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1132
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_5
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 1133
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_6
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 1134
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_7
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 932
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_8
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 931
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_9
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 928
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_10
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 926
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_11
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 923
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_12
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 920
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_13
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 919
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_14
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 718
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_15
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 718
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_16
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 720
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_17
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 720
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_18
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 720
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_19
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 719
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_20
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 719
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_21
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 519
+        width: 101
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_22
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 521
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_23
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 521
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_24
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 521
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_25
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 518
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_26
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 518
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_27
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 518
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_28
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 320
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_29
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 320
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_30
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 320
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_31
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 318
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_32
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 318
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_33
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 318
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_34
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 324
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_35
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 123
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_36
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 123
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_37
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 122
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_38
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 122
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_39
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 122
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_40
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 121
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.DeadRed_41
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 121
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

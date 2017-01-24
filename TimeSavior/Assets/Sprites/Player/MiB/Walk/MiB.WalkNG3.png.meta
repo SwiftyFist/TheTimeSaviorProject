@@ -1,0 +1,479 @@
+fileFormatVersion: 2
+guid: a4f2b4b8c7fc3574d8380c11072e9661
+timeCreated: 1484583365
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MiB.WalkNG3_0
+    21300002: MiB.WalkNG3_1
+    21300004: MiB.WalkNG3_2
+    21300006: MiB.WalkNG3_3
+    21300008: MiB.WalkNG3_4
+    21300010: MiB.WalkNG3_5
+    21300012: MiB.WalkNG3_6
+    21300014: MiB.WalkNG3_7
+    21300016: MiB.WalkNG3_8
+    21300018: MiB.WalkNG3_9
+    21300020: MiB.WalkNG3_10
+    21300022: MiB.WalkNG3_11
+    21300024: MiB.WalkNG3_12
+    21300026: MiB.WalkNG3_13
+    21300028: MiB.WalkNG3_14
+    21300030: MiB.WalkNG3_15
+    21300032: MiB.WalkNG3_16
+    21300034: MiB.WalkNG3_17
+    21300036: MiB.WalkNG3_18
+    21300038: MiB.WalkNG3_19
+    21300040: MiB.WalkNG3_20
+    21300042: MiB.WalkNG3_21
+    21300044: MiB.WalkNG3_22
+    21300046: MiB.WalkNG3_23
+    21300048: MiB.WalkNG3_24
+    21300050: MiB.WalkNG3_25
+    21300052: MiB.WalkNG3_26
+    21300054: MiB.WalkNG3_27
+    21300056: MiB.WalkNG3_28
+    21300058: MiB.WalkNG3_29
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 30
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MiB.WalkNG3_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 670
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_1
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 670
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_2
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 670
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_3
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 670
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_4
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 670
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_5
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 670
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_6
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 519
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_7
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 518
+        width: 36
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_8
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 519
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_9
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 519
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_10
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 519
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_11
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 519
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_12
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 368
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_13
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 368
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_14
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 368
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_15
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 368
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_16
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 368
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_17
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 368
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_18
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 217
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_19
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 217
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_20
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 217
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_21
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 217
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_22
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 217
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_23
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 217
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_24
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 66
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_25
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 66
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_26
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 66
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_27
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 66
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_28
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 66
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MiB.WalkNG3_29
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 66
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

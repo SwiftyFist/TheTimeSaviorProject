@@ -1,0 +1,563 @@
+fileFormatVersion: 2
+guid: e0e79323541db3740abf889ff5411403
+timeCreated: 1484527214
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Anim.Antivirus_0
+    21300002: Anim.Antivirus_1
+    21300004: Anim.Antivirus_2
+    21300006: Anim.Antivirus_3
+    21300008: Anim.Antivirus_4
+    21300010: Anim.Antivirus_5
+    21300012: Anim.Antivirus_6
+    21300014: Anim.Antivirus_7
+    21300016: Anim.Antivirus_8
+    21300018: Anim.Antivirus_9
+    21300020: Anim.Antivirus_10
+    21300022: Anim.Antivirus_11
+    21300024: Anim.Antivirus_12
+    21300026: Anim.Antivirus_13
+    21300028: Anim.Antivirus_14
+    21300030: Anim.Antivirus_15
+    21300032: Anim.Antivirus_16
+    21300034: Anim.Antivirus_17
+    21300036: Anim.Antivirus_18
+    21300038: Anim.Antivirus_19
+    21300040: Anim.Antivirus_20
+    21300042: Anim.Antivirus_21
+    21300044: Anim.Antivirus_22
+    21300046: Anim.Antivirus_23
+    21300048: Anim.Antivirus_24
+    21300050: Anim.Antivirus_25
+    21300052: Anim.Antivirus_26
+    21300054: Anim.Antivirus_27
+    21300056: Anim.Antivirus_28
+    21300058: Anim.Antivirus_29
+    21300060: Anim.Antivirus_30
+    21300062: Anim.Antivirus_31
+    21300064: Anim.Antivirus_32
+    21300066: Anim.Antivirus_33
+    21300068: Anim.Antivirus_34
+    21300070: Anim.Antivirus_35
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 5
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Anim.Antivirus_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 851
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_1
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 851
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_2
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 851
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_3
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 851
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_4
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 851
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_5
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 851
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 700
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_7
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 700
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_8
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 700
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_9
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 700
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_10
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 700
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_11
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 700
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_12
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 549
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_13
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 549
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_14
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 549
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_15
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 549
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_16
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 549
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_17
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 549
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_18
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 398
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_19
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 398
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_20
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 398
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_21
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 398
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_22
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 398
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_23
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 398
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_24
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 247
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_25
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 247
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_26
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 247
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_27
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 247
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_28
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 247
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_29
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 247
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_30
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 96
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_31
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 96
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_32
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 96
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_33
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 96
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_34
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 96
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Anim.Antivirus_35
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 96
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

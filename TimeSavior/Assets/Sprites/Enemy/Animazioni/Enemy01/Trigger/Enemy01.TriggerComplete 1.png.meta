@@ -1,0 +1,479 @@
+fileFormatVersion: 2
+guid: f718129e545ecf84ea9c740a54d15d01
+timeCreated: 1484604187
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Enemy01.TriggerComplete 1_0
+    21300002: Enemy01.TriggerComplete 1_1
+    21300004: Enemy01.TriggerComplete 1_2
+    21300006: Enemy01.TriggerComplete 1_3
+    21300008: Enemy01.TriggerComplete 1_4
+    21300010: Enemy01.TriggerComplete 1_5
+    21300012: Enemy01.TriggerComplete 1_6
+    21300014: Enemy01.TriggerComplete 1_7
+    21300016: Enemy01.TriggerComplete 1_8
+    21300018: Enemy01.TriggerComplete 1_9
+    21300020: Enemy01.TriggerComplete 1_10
+    21300022: Enemy01.TriggerComplete 1_11
+    21300024: Enemy01.TriggerComplete 1_12
+    21300026: Enemy01.TriggerComplete 1_13
+    21300028: Enemy01.TriggerComplete 1_14
+    21300030: Enemy01.TriggerComplete 1_15
+    21300032: Enemy01.TriggerComplete 1_16
+    21300034: Enemy01.TriggerComplete 1_17
+    21300036: Enemy01.TriggerComplete 1_18
+    21300038: Enemy01.TriggerComplete 1_19
+    21300040: Enemy01.TriggerComplete 1_20
+    21300042: Enemy01.TriggerComplete 1_21
+    21300044: Enemy01.TriggerComplete 1_22
+    21300046: Enemy01.TriggerComplete 1_23
+    21300048: Enemy01.TriggerComplete 1_24
+    21300050: Enemy01.TriggerComplete 1_25
+    21300052: Enemy01.TriggerComplete 1_26
+    21300054: Enemy01.TriggerComplete 1_27
+    21300056: Enemy01.TriggerComplete 1_28
+    21300058: Enemy01.TriggerComplete 1_29
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 45
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 682
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_1
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 684
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_2
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 686
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_3
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 689
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_4
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 688
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_5
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 688
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_6
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 537
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_7
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 537
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_8
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 537
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_9
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 536
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_10
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 536
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_11
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 536
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_12
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 385
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_13
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 385
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_14
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 384
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_15
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 384
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_16
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 384
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_17
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 383
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_18
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 231
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_19
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 229
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_20
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 229
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_21
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 229
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_22
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 229
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_23
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 229
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_24
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 78
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_25
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 78
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_26
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 78
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_27
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 78
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_28
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 78
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy01.TriggerComplete 1_29
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 78
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
