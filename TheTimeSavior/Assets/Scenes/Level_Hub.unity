@@ -431,10 +431,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 648237178}
   m_RootOrder: 8
-<<<<<<< HEAD:TimeSavior/Assets/Scenes/Level_Hub.unity
-=======
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 373cb4bd12b2970b5fa023734bd87df8ce6a51ec:TheTimeSavior/Assets/Scenes/Level_Hub.unity
 --- !u!1 &520139670
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,10 +492,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-<<<<<<< HEAD:TimeSavior/Assets/Scenes/Level_Hub.unity
-=======
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 373cb4bd12b2970b5fa023734bd87df8ce6a51ec:TheTimeSavior/Assets/Scenes/Level_Hub.unity
 --- !u!1 &546375368
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,10 +531,6 @@ Transform:
   - {fileID: 334764287}
   m_Father: {fileID: 0}
   m_RootOrder: 14
-<<<<<<< HEAD:TimeSavior/Assets/Scenes/Level_Hub.unity
-=======
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 373cb4bd12b2970b5fa023734bd87df8ce6a51ec:TheTimeSavior/Assets/Scenes/Level_Hub.unity
 --- !u!4 &551473402 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000012815943564, guid: 1c40eae554b7a6e45b3823caf8b9d372,
@@ -728,10 +716,6 @@ Transform:
   - {fileID: 2084702634}
   m_Father: {fileID: 0}
   m_RootOrder: 8
-<<<<<<< HEAD:TimeSavior/Assets/Scenes/Level_Hub.unity
-=======
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 373cb4bd12b2970b5fa023734bd87df8ce6a51ec:TheTimeSavior/Assets/Scenes/Level_Hub.unity
 --- !u!4 &659249577 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011168124288, guid: 1c40eae554b7a6e45b3823caf8b9d372,
@@ -809,27 +793,6 @@ Transform:
   - {fileID: 1051721597}
   m_Father: {fileID: 0}
   m_RootOrder: 12
-<<<<<<< HEAD:TimeSavior/Assets/Scenes/Level_Hub.unity
-=======
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &736257376 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000013216977064, guid: 10e8ce394eeb8ac449cb98c23d5c723d,
-    type: 2}
-  m_PrefabInternal: {fileID: 748858737}
---- !u!114 &736257377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 736257376}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b7c7d48937e4c54196dfe41e6c7fc89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 8
->>>>>>> 373cb4bd12b2970b5fa023734bd87df8ce6a51ec:TheTimeSavior/Assets/Scenes/Level_Hub.unity
 --- !u!1001 &748858737
 Prefab:
   m_ObjectHideFlags: 0
@@ -1170,10 +1133,6 @@ Transform:
   - {fileID: 1052966449}
   m_Father: {fileID: 0}
   m_RootOrder: 13
-<<<<<<< HEAD:TimeSavior/Assets/Scenes/Level_Hub.unity
-=======
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 373cb4bd12b2970b5fa023734bd87df8ce6a51ec:TheTimeSavior/Assets/Scenes/Level_Hub.unity
 --- !u!114 &1014030757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1952,10 +1911,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-<<<<<<< HEAD:TimeSavior/Assets/Scenes/Level_Hub.unity
-=======
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 373cb4bd12b2970b5fa023734bd87df8ce6a51ec:TheTimeSavior/Assets/Scenes/Level_Hub.unity
 --- !u!1 &1573901031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,10 +2291,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
-<<<<<<< HEAD:TimeSavior/Assets/Scenes/Level_Hub.unity
-=======
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 373cb4bd12b2970b5fa023734bd87df8ce6a51ec:TheTimeSavior/Assets/Scenes/Level_Hub.unity
 --- !u!61 &2018161154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2671,10 +2622,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
-<<<<<<< HEAD:TimeSavior/Assets/Scenes/Level_Hub.unity
-=======
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 373cb4bd12b2970b5fa023734bd87df8ce6a51ec:TheTimeSavior/Assets/Scenes/Level_Hub.unity
 --- !u!61 &2131700719
 BoxCollider2D:
   m_ObjectHideFlags: 0
