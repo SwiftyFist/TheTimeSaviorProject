@@ -11,7 +11,7 @@ public class LoadScene : MonoBehaviour
     Transform playerTransform, destroyerTransform, myTransform;
 
     //Variabile per le fasi
-    int currentPhase = 2;
+    int currentPhase = 1;
     
     void Start ()
     {
@@ -19,6 +19,8 @@ public class LoadScene : MonoBehaviour
         destroyerTransform = GameObject.Find("Destroyer").GetComponent<Transform>();
         myTransform = GameObject.Find("Camera").GetComponent<Transform>();
         GameObject.Find("Player").GetComponent<player_script>().enabled = false;//Blocco lo script del player
+        GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+        GameObject.Find("Player").GetComponent<Animator>().SetFloat("Horizontal_Speed", 0);
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerDistance>().enabled = false;//Blocco lo script del destroyer
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().enabled = false;
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().enabled = false;

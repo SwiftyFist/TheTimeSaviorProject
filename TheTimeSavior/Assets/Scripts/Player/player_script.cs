@@ -134,4 +134,6 @@ public class player_script : MonoBehaviour
         if (jumpingScaleRate < maxJumpTime && isHoldingJump && !isGrounded)
            lastJumping = StartCoroutine(Jumping());
     }
+
+
 }
