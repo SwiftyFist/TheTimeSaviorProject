@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
@@ -12,12 +13,20 @@ public class LoadScene : MonoBehaviour
 
     //Variabile per le fasi
     int currentPhase = 1;
-    
-    void Start ()
+    bool isTimeToSkipPassed = false;
+    bool canSkip;
+
+    void Awake()
     {
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         destroyerTransform = GameObject.Find("Destroyer").GetComponent<Transform>();
         myTransform = GameObject.Find("Camera").GetComponent<Transform>();
+        canSkip = GameObject.Find("GameMaster").GetComponent<save_GM_script>().loadScene;
+
+    }
+    
+    void Start ()
+    {
         GameObject.Find("Player").GetComponent<player_script>().enabled = false;//Blocco lo script del player
         GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         GameObject.Find("Player").GetComponent<Animator>().SetFloat("Horizontal_Speed", 0);
@@ -26,11 +35,13 @@ public class LoadScene : MonoBehaviour
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().enabled = false;
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerInactivity>().enabled = false;
         GameObject.Find("Camera").GetComponent<Camera_Script>().enabled = false;//Blocco lo script del movimento della camera
+        StartCoroutine(WaitTimeToSkip());
     }
 
     void Update ()
     {
-        Debug.Log("Camera position " + myTransform.position);
+        if (Input.anyKeyDown && isTimeToSkipPassed && canSkip)//se preme un qualsiasi tasto e non è la prima volta che c`è l effetto 
+            currentPhase = 4;//salta l effetto
         if (currentPhase == 1)//se è in fase uno
         {
             if (myTransform.position.x + 1 < playerTransform.position.x)//se la x della cam è minore della x del player
@@ -61,16 +72,13 @@ public class LoadScene : MonoBehaviour
             {
                 //Setta la posizione della camera uguale a quella del player e termina la fase uno
                 currentPhase++;
-                //Abilita gli script
-                GameObject.Find("Player").GetComponent<player_script>().enabled = true;
-                GameObject.Find("Destroyer").GetComponent<DestroyerPlayerDistance>().enabled = true;
-                GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().enabled = true;
-                GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().enabled = true;
-                GameObject.Find("Destroyer").GetComponent<DestroyerPlayerInactivity>().enabled = true;
-                GameObject.Find("Camera").GetComponent<Camera_Script>().enabled = true;
-                //Disattiva questo script
-                GetComponent<LoadScene>().enabled = false;
             }
+        }
+        else
+        {
+            //Abilita gli script
+            backToGame();
+
         }
 
     }
@@ -82,6 +90,23 @@ public class LoadScene : MonoBehaviour
         myTransform.position = new Vector3(xMovement, myTransform.position.y, myTransform.position.z);
     }
 
-    
+    void backToGame()
+    {
+        GameObject.Find("Player").GetComponent<player_script>().enabled = true;
+        GameObject.Find("Destroyer").GetComponent<DestroyerPlayerDistance>().enabled = true;
+        GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().enabled = true;
+        GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().enabled = true;
+        GameObject.Find("Destroyer").GetComponent<DestroyerPlayerInactivity>().enabled = true;
+        GameObject.Find("Camera").GetComponent<Camera_Script>().enabled = true;
+        //Disattiva questo script
+        GetComponent<LoadScene>().enabled = false;
+        GameObject.Find("GameMaster").GetComponent<save_GM_script>().loadScene = true;
+    }
+
+    IEnumerator WaitTimeToSkip()
+    {
+        yield return new WaitForSeconds(0.10f);
+        isTimeToSkipPassed = true;
+    }
 
 }
