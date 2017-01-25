@@ -12,7 +12,7 @@ public class DestroyerPlayerInactivity : MonoBehaviour
     Coroutine lastInactivityDetection = null;
     Coroutine lastVelocityModificatorByInactivity = null;
 
-    void Awake()
+    void Start()
     {
         lastInactivityDetection = StartCoroutine(InactivityDetection());
     }
