@@ -27,6 +27,7 @@ public class LoadScene : MonoBehaviour
     
     void Start ()
     {
+        GameObject.Find("Gun").GetComponent<gun_script>().enabled = false;
         GameObject.Find("Player").GetComponent<player_script>().enabled = false;//Blocco lo script del player
         GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         GameObject.Find("Player").GetComponent<Animator>().SetFloat("Horizontal_Speed", 0);
@@ -92,6 +93,7 @@ public class LoadScene : MonoBehaviour
 
     void backToGame()
     {
+        GameObject.Find("Gun").GetComponent<gun_script>().enabled = true;
         GameObject.Find("Player").GetComponent<player_script>().enabled = true;
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerDistance>().enabled = true;
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().enabled = true;
