@@ -9,7 +9,7 @@ public class EnemyDeath : MonoBehaviour
     {
         GetComponent<EnemySoundManager>().PlayOnDeath();
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().VelocityModificatorByGame(2);
-        //TODO aggiungere variabile per animazione;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         StartCoroutine(DeathDelay());
     }
 

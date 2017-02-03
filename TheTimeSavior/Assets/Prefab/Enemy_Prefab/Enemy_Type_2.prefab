@@ -28,7 +28,8 @@ GameObject:
   - component: {fileID: 114000012372369486}
   - component: {fileID: 61000011778505572}
   - component: {fileID: 114541058032159622}
-  m_Layer: 0
+  - component: {fileID: 114359705817044254}
+  m_Layer: 11
   m_Name: Enemy_Type_2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -178,6 +179,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   Enemy_Ground: {fileID: 0}
+--- !u!114 &114359705817044254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010582885768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d660706045c33429e15415b03daf64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushBackDistance: 0.5
 --- !u!114 &114541058032159622
 MonoBehaviour:
   m_ObjectHideFlags: 1

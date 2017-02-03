@@ -131,6 +131,7 @@ public class gun_script : MonoBehaviour
         if (isHolding && isCold)
         {
             Shoot();
+            GetComponent<KnockBackArm>().KnockBack();
             StartCoroutine(Shooting());
         }
     }

@@ -17,7 +17,8 @@ GameObject:
   - component: {fileID: 61000013087894408}
   - component: {fileID: 114000012844646742}
   - component: {fileID: 114938641121818116}
-  m_Layer: 0
+  - component: {fileID: 114590806758958000}
+  m_Layer: 11
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -32,7 +33,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 489896}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy_Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +49,7 @@ GameObject:
   m_Component:
   - component: {fileID: 460394}
   - component: {fileID: 6139900}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: enemyview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,6 +283,18 @@ MonoBehaviour:
   HitByBulletVolume: 0.5
   myDeathSound: {fileID: 8300000, guid: af250d8890a5692498a65a7d6bf68621, type: 3}
   DeathVolume: 0.5
+--- !u!114 &114590806758958000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d660706045c33429e15415b03daf64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushBackDistance: 0.5
 --- !u!114 &114938641121818116
 MonoBehaviour:
   m_ObjectHideFlags: 1
