@@ -58,7 +58,6 @@ public class gun_script : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("Velocità di rotazione" + GetRotationSpeed() + "Fire Rate" + fireRate);
         GunRotation.SetFloat("SpeedVelocity", GetRotationSpeed());
     }
 
@@ -84,6 +83,8 @@ public class gun_script : MonoBehaviour
     void Shoot()
     {
 		 Effect();
+
+        GameObject.Find("Arm").GetComponent<KnockBackArm>().KnockBack();
     }
 
     void Effect()
@@ -142,7 +143,6 @@ public class gun_script : MonoBehaviour
         {
             Shoot();
             //TODO Chiamata al knock back
-            //GetComponent<KnockBackArm>().KnockBack();
             StartCoroutine(Shooting());
         }
     }
