@@ -24,12 +24,17 @@ public class gun_script : MonoBehaviour
     bool isHolding;
     private float fireRateBackUp;
     public float shootStartDelay = 0.2f;
-    public float fireRate = 0.5f;
+    public float maxFireRate = 0.4f;
+    private float fireRate = 0.5f;
     private float timeToOverHeat = 0;
     public float maxShootSpeed = 0.2f; //Velocità massima di sparo
     public float shootSpeedIncrement = 0.02f; //Velocità con cui aumenta il rateo
     public float maxTimeToOverHeat = 3f; //Tempo di rateo massimo
     public float overHeatTime = 1f; //Tempo di raffreddamento
+
+    //Animazione sparo
+    Animator GunRotation;
+    public float minRotationVelocity = 0f, maxRotationVelocity = 10f;
 
 
 
@@ -40,7 +45,8 @@ public class gun_script : MonoBehaviour
 
     void Awake ()
     {
-		
+        GunRotation = GameObject.Find("spr_gun").GetComponent<Animator>();
+        fireRate = maxFireRate;
         fireRateBackUp = fireRate;
         FirePoint = transform.FindChild("FirePoint");
 	
@@ -50,9 +56,13 @@ public class gun_script : MonoBehaviour
         }
 	}
 
+    private void FixedUpdate()
+    {
+        Debug.Log("Velocità di rotazione" + GetRotationSpeed() + "Fire Rate" + fireRate);
+        GunRotation.SetFloat("SpeedVelocity", GetRotationSpeed());
+    }
 
-
-	void Update ()
+    void Update ()
     {
 
         if (Input.GetButtonDown("Fire1"))
@@ -131,7 +141,8 @@ public class gun_script : MonoBehaviour
         if (isHolding && isCold)
         {
             Shoot();
-            GetComponent<KnockBackArm>().KnockBack();
+            //TODO Chiamata al knock back
+            //GetComponent<KnockBackArm>().KnockBack();
             StartCoroutine(Shooting());
         }
     }
@@ -209,7 +220,18 @@ public class gun_script : MonoBehaviour
 		return (m * fireRate) + (q);
 	}
 
+    //Converte il fire rate in velocità di rotazione per l animazione dello sparo
+    float GetRotationSpeed()
+    {
+        if (fireRate == maxFireRate)
+            return 0;
 
+        float m, q;
+        m = ((minRotationVelocity - maxRotationVelocity) / (maxFireRate - maxShootSpeed));
+        q = (minRotationVelocity - (m * maxFireRate));
+        float rotationSpeed = ((m * fireRate) + q);
+        return rotationSpeed;
+    }
 
 
     #endregion
