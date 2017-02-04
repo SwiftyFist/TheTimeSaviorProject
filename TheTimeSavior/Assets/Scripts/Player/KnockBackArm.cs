@@ -5,26 +5,59 @@ using UnityEngine;
 public class KnockBackArm : MonoBehaviour
 {
     Transform myTransform;
-    Transform limitTransform;
-    Transform initialTransform;
+    Rigidbody2D myRigidBody2D;
 
     public float KnockBackVelocity = 2;
 
+    private Vector3 initialPosition;
+    private Vector3 maxPosition;
+
+    public void Awake()
+    {
+        myTransform = GetComponent<Transform>();
+        myRigidBody2D = GetComponent<Rigidbody2D>();
+        initialPosition = myTransform.position;
+
+    }
+
+    private void FixedUpdate()
+    {
+        //TODO settare max position
+    }
+
     void Update()
     {
-        //Tora alla posizione;
+        BackInPosition();
     }
 
     public void KnockBack()
     {
-        if (Mathf.Abs(myTransform.position.x) > Mathf.Abs(limitTransform.position.x) || Mathf.Abs(myTransform.position.y) > Mathf.Abs(limitTransform.position.y))//se il transform dell arma non è minore di un certo punto 
-            Vector3.MoveTowards(myTransform.position, limitTransform.position, KnockBackVelocity * Time.deltaTime);//Aggiungi una forza negativa/positiva all arm in quella direzione
+        Vector3 dir = Quaternion.AngleAxis(myTransform.rotation.y, Vector3.forward) * Vector3.right;
+        if (canKnockBack())
+            myRigidBody2D.AddForce(dir * KnockBackVelocity);
 
+            
     }
 
     void BackInPosition()
     {
-        //se la transform dell arma é diversa dalla transform iniziale
-            //muovi verso la transform iniziale
+        if (myTransform.position != initialPosition)//se la transform dell arma é diversa dalla transform iniziale
+            myTransform.position = Vector3.MoveTowards(myTransform.position, initialPosition, KnockBackVelocity * Time.deltaTime);//muovi verso la transform iniziale
+    }
+
+    bool IsInPosition()
+    {
+        if (myTransform.position == initialPosition)
+            return true;
+        else
+            return false;
+    }
+
+    bool canKnockBack()
+    {
+        if (myTransform.position.x < maxPosition.x && myTransform.position.y < maxPosition.y)
+            return true;
+        else
+            return false;
     }
 }
