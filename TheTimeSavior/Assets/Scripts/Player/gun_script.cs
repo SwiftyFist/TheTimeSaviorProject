@@ -3,7 +3,6 @@ using System.Collections;
 
 public class gun_script : MonoBehaviour
 {
-    //TODO Creata la variabile per la velocità di rotazione nell animator da gestire l implementazione
     #region Variabili
     //Bullet
     public Transform BulletPrefab;
@@ -84,7 +83,7 @@ public class gun_script : MonoBehaviour
     {
 		 Effect();
 
-        GameObject.Find("Arm").GetComponent<KnockBackArm>().KnockBack();
+        GameObject.Find("spr_gun").GetComponent<KnockBackArm>().KnockBack();
     }
 
     void Effect()

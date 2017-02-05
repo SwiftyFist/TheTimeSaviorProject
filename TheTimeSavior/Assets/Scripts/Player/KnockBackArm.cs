@@ -10,20 +10,15 @@ public class KnockBackArm : MonoBehaviour
     public float backVelocity = 1;
     public float knockBackVelocity = 4;
 
-    private Transform playerTransform;
+    private Transform initialPointTransform;
     private Vector3 maxPosition;
 
     public void Awake()
     {
         myTransform = GetComponent<Transform>();
         backPointTransform = GameObject.Find("BackPoint").GetComponent<Transform>();
-        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+        initialPointTransform = GameObject.Find("InitialPoint").GetComponent<Transform>();
 
-    }
-
-    private void FixedUpdate()
-    {
-        //TODO settare max position
     }
 
     void Update()
@@ -46,7 +41,7 @@ public class KnockBackArm : MonoBehaviour
 
     bool IsInPosition()
     {
-        if (myTransform.position == playerTransform.position)
+        if (myTransform.position == initialPointTransform.position)
             return true;
         else
             return false;
@@ -63,10 +58,6 @@ public class KnockBackArm : MonoBehaviour
 
     Vector3 GetInitialPosition()
     {
-        Vector3 initialPosition;
-        initialPosition.x = playerTransform.position.x - 0.033f;
-        initialPosition.y = playerTransform.position.y + 0.748f;
-        initialPosition.z = playerTransform.position.z;
-        return initialPosition;
+        return initialPointTransform.position;
     }
 }
