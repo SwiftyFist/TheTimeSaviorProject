@@ -16,6 +16,7 @@ public class EnemyDeath : MonoBehaviour
 
     public void DestroyEnemy(int pointsOnDeath)
     {
+        GetComponent<enemy_health_manager_script>().stillAlive = false;
        // score_manager_script._score.EnemyDeathCount();
        // score_manager_script._score.AddPoints(pointsOnDeath);
         GetComponent<EnemySoundManager>().PlayOnDeath();

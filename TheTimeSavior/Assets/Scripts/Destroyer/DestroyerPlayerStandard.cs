@@ -32,7 +32,7 @@ public class DestroyerPlayerStandard : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Velocità " + myRigidBody2D.velocity.x);
+        //Debug.Log("Velocità " + myRigidBody2D.velocity.x);
         myRigidBody2D.velocity = Vector2.right * AntivirVelocity();
     }
 
