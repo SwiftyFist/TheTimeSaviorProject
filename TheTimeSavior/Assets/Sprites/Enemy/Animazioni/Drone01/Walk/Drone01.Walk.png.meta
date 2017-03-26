@@ -1,0 +1,479 @@
+fileFormatVersion: 2
+guid: cbaf23135966d7040a5fcf0b070f43ab
+timeCreated: 1482027312
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Drone01.Walk_0
+    21300002: Drone01.Walk_1
+    21300004: Drone01.Walk_3
+    21300006: Drone01.Walk_5
+    21300008: Drone01.Walk_7
+    21300010: Drone01.Walk_9
+    21300012: Drone01.Walk_11
+    21300014: Drone01.Walk_12
+    21300016: Drone01.Walk_13
+    21300018: Drone01.Walk_14
+    21300020: Drone01.Walk_15
+    21300022: Drone01.Walk_16
+    21300024: Drone01.Walk_17
+    21300026: Drone01.Walk_18
+    21300028: Drone01.Walk_20
+    21300030: Drone01.Walk_21
+    21300032: Drone01.Walk_22
+    21300034: Drone01.Walk_23
+    21300036: Drone01.Walk_24
+    21300038: Drone01.Walk_25
+    21300040: Drone01.Walk_26
+    21300042: Drone01.Walk_27
+    21300044: Drone01.Walk_28
+    21300046: Drone01.Walk_30
+    21300048: Drone01.Walk_32
+    21300050: Drone01.Walk_34
+    21300052: Drone01.Walk_36
+    21300054: Drone01.Walk_38
+    21300056: Drone01.Walk_40
+    21300058: Drone01.Walk_42
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 45
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Drone01.Walk_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 247
+        width: 85
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 247
+        width: 85
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 247
+        width: 85
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_5
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 242
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_7
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 242
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_9
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 242
+        width: 80
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_11
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 182
+        width: 85
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_12
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 182
+        width: 85
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_13
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 182
+        width: 85
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_14
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 182
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_15
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 182
+        width: 84
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_16
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 182
+        width: 84
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_17
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 122
+        width: 84
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_18
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 122
+        width: 84
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_20
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 122
+        width: 84
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_21
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 122
+        width: 84
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_22
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 122
+        width: 84
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_23
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 122
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 62
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_25
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 62
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_26
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 62
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_27
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 62
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_28
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 62
+        width: 80
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_30
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 62
+        width: 80
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_32
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_34
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 2
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_36
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 2
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_38
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 2
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_40
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 2
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Drone01.Walk_42
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 2
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -7,7 +7,7 @@ public class multiplier_number : MonoBehaviour {
 
     Text number;
 	
-	void Start () {
+	void Awake () {
 
         number = GetComponent<Text>();
     }

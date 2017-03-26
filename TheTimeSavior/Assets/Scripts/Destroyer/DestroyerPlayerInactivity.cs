@@ -17,6 +17,10 @@ public class DestroyerPlayerInactivity : MonoBehaviour
         lastInactivityDetection = StartCoroutine(InactivityDetection());
     }
 
+    void Update()
+    {
+    }
+
     public void bulletCollided ()
     {
         isInactive = false;

@@ -53,6 +53,7 @@ public class score_manager_script : MonoBehaviour {
     public static void Reset()
 	{
 		score = 0;
+        multiplier = 1;
 	}
 
 	public static void SendToHub()
