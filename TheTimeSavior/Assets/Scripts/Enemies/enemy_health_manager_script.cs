@@ -5,7 +5,7 @@ public class enemy_health_manager_script : MonoBehaviour
 {
 	public int enemyHealth;
 
-	public AnimationClip deathEnemy1;
+	
 
 	public int pointsOnDeath;
 
@@ -14,7 +14,7 @@ public class enemy_health_manager_script : MonoBehaviour
 	
 		if (enemyHealth <= 0)
         {
-            GetComponent<EnemyDeath>().DestroyEnemy(pointsOnDeath);
+           GetComponent<EnemyDeath>().DestroyEnemy(pointsOnDeath);
 		}
 	}
     

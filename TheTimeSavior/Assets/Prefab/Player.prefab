@@ -44,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.73, y: -7.01, z: 0}
+  m_LocalPosition: {x: -11.272, y: -7.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 485224}
@@ -195,7 +195,8 @@ MonoBehaviour:
   playerPosition: {x: 0, y: 0, z: 0}
   lookRight: 1
   isGrounded: 0
-  JumpForce: 1400
+  JumpForce: 20
+  maxJumpTime: 0.5
   maxSpeed: 10
   player_ground: {fileID: 485224}
   Layer_Ground:
@@ -232,7 +233,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2079455293
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7955b8b7e47e7444f9903b08ee5e06e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b2c9fbf38a9ea594c817db0a95c9fce9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -394,7 +395,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013287182714}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.10000011, y: -0.84900016, z: 0}
+  m_LocalPosition: {x: -0.10000011, y: -0.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000011382265098}
@@ -421,7 +422,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1826164041852696}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10000003, y: 1.2489998, z: 0}
+  m_LocalPosition: {x: 0.10000003, y: 1.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4421512570060090}
@@ -533,7 +534,7 @@ Animator:
   m_GameObject: {fileID: 1975765571871046}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c819f94720113c4b9391e6038b39048, type: 2}
+  m_Controller: {fileID: 9100000, guid: efd1667f7104bcc419fc54416f779282, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -552,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6f8a65eeb11044e85fca4f1297b84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSound: {fileID: 8300000, guid: 6016cc29dfa0d6644844dcef03d54764, type: 3}
+  jumpSound: {fileID: 8300000, guid: e3953723c8f617e4baa4dd6e3d114970, type: 3}
   jumpSoundVolume: 1
   enemyHitSound: {fileID: 8300000, guid: 73196bd295f89d943be00613100f5177, type: 3}
   enemyHitSoundVolume: 1
@@ -607,11 +608,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1975765571871046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 223f732180395e2458e7cde27ddae62d, type: 3}
+  m_Script: {fileID: 11500000, guid: 68de252a027e2d749879b33ee4636ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backVelocity: 1
-  knockBackVelocity: 4
+  backVelocity: 8
+  knockBackVelocity: 30
 --- !u!212 &212000012660324922
 SpriteRenderer:
   m_ObjectHideFlags: 1

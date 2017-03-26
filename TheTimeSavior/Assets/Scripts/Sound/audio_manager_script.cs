@@ -30,6 +30,14 @@ public class Sound {
 	
 	}
 
+    public void Stop()
+    {
+        source.volume = volume;
+        //source.pitch = pitch;
+        source.Stop();
+
+    }
+
 
 }
 
@@ -72,5 +80,15 @@ public class audio_manager_script : MonoBehaviour {
 			}
 		}
 	}
-
+    public void StopSound(string _name)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == _name)
+            {
+                sounds[i].Stop();
+                return;
+            }
+        }
+    }
 }

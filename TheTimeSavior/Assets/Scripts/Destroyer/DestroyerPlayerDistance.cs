@@ -6,9 +6,10 @@ public class DestroyerPlayerDistance : MonoBehaviour
     public static float velocityModificatorByDistance;
     public float angularCoefficent =0.1f;
 
-    void Update ()
+    void FixedUpdate ()
     {
         VelocityModificatorByDistanceCalc();
+      //  Debug.Log("Distanza " + DistancePlayerDestroyer());
     }
 
     void VelocityModificatorByDistanceCalc ()

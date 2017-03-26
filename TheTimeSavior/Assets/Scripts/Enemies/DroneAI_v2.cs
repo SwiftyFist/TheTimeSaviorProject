@@ -169,7 +169,7 @@ public class DroneAI_v2 : MonoBehaviour
     public float accelerationOnRun = 2f; //variabile usata per ricavare il tempo
     float myCurrentVelocity = 0f;
     EStatus myStatus;
-    public float pushBackOnHit = 6;
+   
 
     //Variabili dell'oggetto
     Rigidbody2D myRigidBody2D;
@@ -244,6 +244,8 @@ public class DroneAI_v2 : MonoBehaviour
         {
             //Se collide con il player modifica la velocità del Destroyer
             GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().VelocityModificatorByGame(0);
+            //Riporta il moltiplicatore a 1
+            score_manager_script._score.EnemyDeathCountReset();
         }
     }
 
@@ -262,8 +264,8 @@ public class DroneAI_v2 : MonoBehaviour
     {
         myStatus = EStatus.Triggered;
         //TODO imposta le variabili dell animator
-        //myAnimator.SetBool("Triggered", true);
-        //myAnimator.SetBool("Rotate", true);
+        myAnimator.SetBool("Triggered", true);
+        myAnimator.SetBool("Run", true);
     }
 
     //Agisce seguendo l`InactiveScheme
@@ -301,22 +303,22 @@ public class DroneAI_v2 : MonoBehaviour
         {
             myStatus = EStatus.Inactive;
             //TODO imposta le variabili dell animator
-            //myAnimator.SetBool("Triggered", false);
-            //myAnimator.SetBool("Rotate", false);
+            myAnimator.SetBool("Triggered", false);
+            myAnimator.SetBool("Run", false);
         }
         else if (distance < rangeToActivate && distance >= rangeToRun)//se il nemico è a distanza minore di rangeToActive e minore di rangeToRun
         {
             myStatus = EStatus.Walking;
             //TODO imposta le variabili dell animator
-            //myAnimator.SetBool("Triggered", false);
-            //myAnimator.SetBool("Rotate", false);
+            myAnimator.SetBool("Triggered", false);
+            myAnimator.SetBool("Run", false);
         }
         else if (distance < rangeToRun)//se il nemico è a distanza minore di rangeToRun 
         {
             myStatus = EStatus.Triggered;
             //TODO imposta le variabili dell animator
-            //myAnimator.SetBool("Triggered", true);
-            //myAnimator.SetBool("Rotate", true);
+           myAnimator.SetBool("Triggered", true);
+           myAnimator.SetBool("Run", true);
         }
     }
 
@@ -334,6 +336,7 @@ public class DroneAI_v2 : MonoBehaviour
             myCurrentVelocity -= accelerationOnRun;//accelera verso sinistra
         else if (myCurrentVelocity < maxRunningVelocity)//Se il player è a destra
             myCurrentVelocity += accelerationOnRun;//accelera verso destra
+        myAnimator.SetFloat("Velocity", Mathf.Abs(myCurrentVelocity));
         lastRunningVelIncreaser = StartCoroutine(RunningVelIncreaser());
         StopCoroutine(runningVelIncreaser);
     }

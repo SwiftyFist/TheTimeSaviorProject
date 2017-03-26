@@ -16,10 +16,14 @@ public class player_script : MonoBehaviour
     public bool lookRight = true; //Dove guarda
     public bool isGrounded = false; //Se è a terra  
 
-    public float JumpForce = 1400f; //Forza del salto
+    public float JumpForce; //Forza del salto
     private float jumpingScaleRate = 0.2f;
-    private bool isHoldingJump = false;
-    private float maxJumpTime = 0.8f;
+    private bool isHoldingJump;
+    public float maxJumpTime;
+    
+
+
+
     public float maxSpeed = 10f; //Velocità massima di movimento
     public Transform player_ground; //Transform della sottoclasse del player
     public LayerMask Layer_Ground; //Layer mask di tutto ciò che è terreno
@@ -48,6 +52,8 @@ public class player_script : MonoBehaviour
         myTransform = GetComponent<Transform>();
 		playerPosition = myTransform.position;
         playerSoundManager = GetComponent<PlayerSoundManager>();
+
+        
     }
 
     void Update()
@@ -55,6 +61,7 @@ public class player_script : MonoBehaviour
         myRigidBody2d.velocity = new Vector2(horizontalAxes * maxSpeed, myRigidBody2d.velocity.y);
         myAnimator.SetFloat("Horizontal_Speed", Mathf.Abs(myRigidBody2d.velocity.x));
 
+     
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
@@ -67,6 +74,9 @@ public class player_script : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(player_ground.position, 0.2f, Layer_Ground);
         myAnimator.SetBool("Ground", isGrounded);
         myAnimator.SetFloat("Vertical_Speed", myRigidBody2d.velocity.y);
+
+       
+          
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -103,8 +113,9 @@ public class player_script : MonoBehaviour
 
     void Jump()
     {
-        myRigidBody2d.velocity = new Vector2(myRigidBody2d.velocity.x, 0);     
-        myRigidBody2d.AddForce(Vector2.up * JumpForce);
+        myRigidBody2d.velocity = new Vector2(myRigidBody2d.velocity.x, 0);
+        // myRigidBody2d.AddForce(Vector2.up * JumpForce);
+        myRigidBody2d.velocity = new Vector2(myRigidBody2d.velocity.x, JumpForce);
         playerSoundManager.PlayJumpSound();
         isGrounded = false;
         isHoldingJump = true;
@@ -125,11 +136,12 @@ public class player_script : MonoBehaviour
     {
         if (jumpingScaleRate < maxJumpTime && isHoldingJump && !isGrounded)
         {
-			myRigidBody2d.AddForce(Vector2.up * 200, ForceMode2D.Force);
+            //myRigidBody2d.AddForce(Vector2.up * 400, ForceMode2D.Force);
+            myRigidBody2d.velocity = new Vector2(myRigidBody2d.velocity.x, JumpForce);
             jumpingScaleRate = jumpingScaleRate + 0.1f;
         }
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.04f);
 
         if (jumpingScaleRate < maxJumpTime && isHoldingJump && !isGrounded)
            lastJumping = StartCoroutine(Jumping());

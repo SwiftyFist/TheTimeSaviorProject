@@ -34,11 +34,15 @@ public class EnemyAI : MonoBehaviour
     Transform playerTransform;
 
     //Variabili per l animazione
-    public Animator myAnimator;
+    Animator myAnimator;
 
     //Variabili per l'enumeratore del'incremento di velocità
     Coroutine lastRunningVelIncreaser, runningVelIncreaser;
     bool called = false;
+
+    private bool notAtEdge;
+    public Transform edgeCheck;
+
 
     void Awake()
     {
@@ -51,6 +55,9 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
+        notAtEdge = Physics2D.OverlapCircle(edgeCheck.position, 0.2f, groundLayer);
+        
+
         isGrounded = Physics2D.OverlapCircle(Enemy_Ground.position, 0.1f, groundLayer); //Controlla se è a terra
         if (myStatus != EStatus.Running)
             SetStatus();//Aggiorna myStatus
@@ -92,6 +99,8 @@ public class EnemyAI : MonoBehaviour
         {
             //Se collide con il player modifica la velocità del Destroyer
             GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().VelocityModificatorByGame(0);
+            //Riporta il moltiplicatore a 1
+            score_manager_script._score.EnemyDeathCountReset();
         }
     }
 
@@ -182,8 +191,13 @@ public class EnemyAI : MonoBehaviour
         called = true;
         runningVelIncreaser = lastRunningVelIncreaser;
         yield return new WaitForSeconds(0.2f);
-        if (bIsFacingLeft && myCurrentVelocity > (maxRunningVelocity * -1))//Se il player è a sinistra
+        if (bIsFacingLeft && myCurrentVelocity > (maxRunningVelocity * -1))
+        {
             myCurrentVelocity -= accelerationOnRun;//accelera verso sinistra
+         
+        }
+        //Se il player è a sinistra
+            
         else if (myCurrentVelocity < maxRunningVelocity)//Se il player è a destra
             myCurrentVelocity += accelerationOnRun;//accelera verso destra
 		myAnimator.SetFloat("Velocity",Mathf.Abs(myCurrentVelocity));

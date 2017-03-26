@@ -15,6 +15,7 @@ public class DestroyerPlayerStandard : MonoBehaviour
 
     public float velocityModificatorByTime = 0.09f; //Modificatore di velocità over time
     public float maxVelocity = 7; //Velocità massima overtime
+    public float minVelocity = -50; // Velocità minima
 
     #endregion
 
@@ -54,6 +55,7 @@ public class DestroyerPlayerStandard : MonoBehaviour
 
     void LevelReset() //Reimposta il livello e la velocità del virus
     {
+        audio_manager_script._audioM.StopSound("test");
         SceneManager.LoadScene("Level_Hub");
         GameObject.Find("Gun").GetComponent<gun_script>().StopShooting();
         DestroyerPlayerInactivity.velocityModificatorByInactivity = 0;
@@ -82,8 +84,9 @@ public class DestroyerPlayerStandard : MonoBehaviour
 
     float AntivirVelocity ()
     {
-        return antivirVelocity + DestroyerPlayerDistance.velocityModificatorByDistance + 
+        var velocity = antivirVelocity + DestroyerPlayerDistance.velocityModificatorByDistance + 
             DestroyerPlayerGame.velocityModificatorByGame + DestroyerPlayerInactivity.velocityModificatorByInactivity;
+        return velocity < minVelocity ? minVelocity : velocity;
     }
 
     #endregion
