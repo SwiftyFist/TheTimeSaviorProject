@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
-
+using Singleton;
 
 public class save_GM_script : MonoBehaviour
-{
+{ 
     public bool loadScene = false;
 
     void Awake()
     {
-        GameObject.DontDestroyOnLoad(gameObject);
+        this.DontDestroyOnLoad();
     }
 }
