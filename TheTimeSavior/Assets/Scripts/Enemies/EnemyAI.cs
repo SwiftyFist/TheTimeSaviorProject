@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 public class EnemyAI : MonoBehaviour
-{ 
+{
     enum EStatus //Tiene conto dello stato in cui si trova il nemico 
     {
         Inactive,
@@ -21,7 +21,7 @@ public class EnemyAI : MonoBehaviour
     float myCurrentVelocity = 0f;
     EStatus myStatus;
     public float pushBackOnHit = 6;
-    
+
     //Variabili dell'oggetto
     Rigidbody2D myRigidBody2D;
     Transform myTransform;
@@ -42,7 +42,14 @@ public class EnemyAI : MonoBehaviour
 
     private bool notAtEdge;
     public Transform edgeCheck;
+    [SerializeField]
+    private bool stayOnCurrentPlatform; //Choose via inspector if the current enemy can stay over the current platform(the field [serializefield] mean that it can be modified by inspector, also if the var is private or protected
+    [SerializeField]
+    private float[] minMaxX = new float[2]; //Max and min x for clamp the enemy's transform. min = 0, max = 1(array position)
 
+    //private Transform platformUnderMe; //The tranform of the platform under the current enemy
+
+    //private bool moveClamped = false; //bool that make the enemy move clamped on a platform
 
     void Awake()
     {
@@ -56,14 +63,16 @@ public class EnemyAI : MonoBehaviour
     void FixedUpdate()
     {
         notAtEdge = Physics2D.OverlapCircle(edgeCheck.position, 0.2f, groundLayer);
-        
+
 
         isGrounded = Physics2D.OverlapCircle(Enemy_Ground.position, 0.1f, groundLayer); //Controlla se è a terra
         if (myStatus != EStatus.Running)
             SetStatus();//Aggiorna myStatus
+
+
     }
 
-    void Update ()
+    void Update()
     {
         SetTheRightFacing();
         //Controlla lo stato       
@@ -111,7 +120,7 @@ public class EnemyAI : MonoBehaviour
     //Gira il nemico mettendolo verso il player
     public void SetTheRightFacing()
     {
-        if (bIsFacingLeft && playerTransform.position.x > myTransform.position.x 
+        if (bIsFacingLeft && playerTransform.position.x > myTransform.position.x
             || !bIsFacingLeft && playerTransform.position.x < myTransform.position.x)
         {
             myTransform.localScale = new Vector3(myTransform.localScale.x * -1, myTransform.localScale.y, myTransform.localScale.z);
@@ -119,7 +128,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    public void SetTriggerOn ()
+    public void SetTriggerOn()
     {
         myStatus = EStatus.Running;
         //imposta le variabili dell animator
@@ -128,30 +137,38 @@ public class EnemyAI : MonoBehaviour
     }
 
     //Agisce seguendo l`InactiveScheme
-    void InactiveScheme ()
+    void InactiveScheme()
     {
         //imposta la velocità a 0
         myRigidBody2D.velocity = new Vector2(0, myRigidBody2D.velocity.y);
     }
 
     //Agisce seguendo il walkingScheme
-    void WalkingScheme ()
+    void WalkingScheme()
     {
         //imposta la velocità in base a dove guarda il nemico
         if (bIsFacingLeft)
             myCurrentVelocity = walkVelocity * -1;
         else
             myCurrentVelocity = walkVelocity;
+
+        //control if the enemy have to move clamped
+        if (stayOnCurrentPlatform)
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, minMaxX[0] + 28.55f, minMaxX[1] + 28.55f), transform.position.y);
     }
 
     //Agisce seguendo il runningScheme
-    void RunningScheme ()
+    void RunningScheme()
     {
         //Avvia il controllo dato dall accelerazione nello stato triggered
         if (!called)
         {
             lastRunningVelIncreaser = StartCoroutine(RunningVelIncreaser());
         }
+
+        //control if the enemy have to move clamped
+        if (stayOnCurrentPlatform)
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, minMaxX[0] + 28.55f, minMaxX[1] + 28.55f), transform.position.y);
     }
 
     //Imposta lo status del player
@@ -181,12 +198,12 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    float CalcDistanceFromPlayer ()
+    float CalcDistanceFromPlayer()
     {
         return Mathf.Abs(myTransform.position.x - playerTransform.position.x);
-    } 
+    }
 
-    IEnumerator RunningVelIncreaser ()
+    IEnumerator RunningVelIncreaser()
     {
         called = true;
         runningVelIncreaser = lastRunningVelIncreaser;
@@ -194,14 +211,37 @@ public class EnemyAI : MonoBehaviour
         if (bIsFacingLeft && myCurrentVelocity > (maxRunningVelocity * -1))
         {
             myCurrentVelocity -= accelerationOnRun;//accelera verso sinistra
-         
+
         }
         //Se il player è a sinistra
-            
+
         else if (myCurrentVelocity < maxRunningVelocity)//Se il player è a destra
             myCurrentVelocity += accelerationOnRun;//accelera verso destra
-		myAnimator.SetFloat("Velocity",Mathf.Abs(myCurrentVelocity));
+        myAnimator.SetFloat("Velocity", Mathf.Abs(myCurrentVelocity));
         lastRunningVelIncreaser = StartCoroutine(RunningVelIncreaser());
         StopCoroutine(runningVelIncreaser);
     }
+
+    /// <summary>
+    /// Function to clamp the position of the current enemy if the variable stayOnCurrentPlatform is true
+    /// </summary>
+    /*private void ClampPositionBetweenPlatformEdge()
+    {
+        //"shoot" a ray under the enemy, if the tag of the hitted obj, set to clamp the position
+        if (!moveClamped && Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 0.1f), Vector2.down, 1))//.transform.CompareTag("LevelObject"))
+        {
+            //Take the box collider of the platform under the enemy
+            BoxCollider2D platformColl = Physics2D.Raycast(transform.position, Vector2.down, 1).transform.GetComponent<BoxCollider2D>();
+            minMaxX[0] = platformColl.transform.position.x - platformColl.bounds.extents.x;
+            minMaxX[1] = platformColl.transform.position.x + platformColl.bounds.extents.x;
+            moveClamped = true;
+            Debug.Log("Son clampato");
+        }
+        /*else
+        {
+            moveClamped = false;
+            stayOnCurrentPlatform = false;
+        }
+        
+    }*/
 }
