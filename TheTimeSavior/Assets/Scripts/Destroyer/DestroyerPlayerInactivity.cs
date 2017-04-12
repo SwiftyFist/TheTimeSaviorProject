@@ -48,5 +48,5 @@ public class DestroyerPlayerInactivity : MonoBehaviour
             velocityModificatorByInactivity = 0;
         }
     }
-
+    
 }
