@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class score_manager_script : MonoBehaviour {
+public class score_manager_script : MonoBehaviour
+{
     public static score_manager_script _score;
     public static int multiplier;
     public int enemyCount;
