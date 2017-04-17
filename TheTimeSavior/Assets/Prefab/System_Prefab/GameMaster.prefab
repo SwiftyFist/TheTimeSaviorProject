@@ -254,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: test
-    clip: {fileID: 8300000, guid: acb8fc55f1d0af34da7bdaf839631e9a, type: 3}
+    clip: {fileID: 8300000, guid: 7cb61cf377596ab4f8265fddabda6e0e, type: 3}
     volume: 0.314
 --- !u!114 &114000013823050876
 MonoBehaviour:

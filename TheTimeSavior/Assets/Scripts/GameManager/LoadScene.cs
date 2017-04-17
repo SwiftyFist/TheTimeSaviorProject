@@ -96,7 +96,7 @@ public class LoadScene : MonoBehaviour
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerDistance>().enabled = true;
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().enabled = true;
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().enabled = true;
-        GameObject.Find("Destroyer").GetComponent<DestroyerPlayerInactivity>().enabled = true;
+       // GameObject.Find("Destroyer").GetComponent<DestroyerPlayerInactivity>().enabled = true;
         GameObject.Find("Camera").GetComponent<Camera_Script>().enabled = true;
         //Disattiva questo script
         GetComponent<LoadScene>().enabled = false;
