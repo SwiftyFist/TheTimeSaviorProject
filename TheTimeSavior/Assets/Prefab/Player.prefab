@@ -44,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.272, y: -7.8, z: 0}
+  m_LocalPosition: {x: -6.9, y: -7.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 485224}
@@ -395,7 +395,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013287182714}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.10000011, y: -0.86, z: 0}
+  m_LocalPosition: {x: -0.10000011, y: -0.834, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000011382265098}
@@ -437,7 +437,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4b99bc0393f27194d8754ba7d150383d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4a390f91219eddc4aaa928cfffb229db, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6f8a65eeb11044e85fca4f1297b84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSound: {fileID: 8300000, guid: e3953723c8f617e4baa4dd6e3d114970, type: 3}
+  jumpSound: {fileID: 8300000, guid: e03404069c9e54b4ab684676bda220f1, type: 3}
   jumpSoundVolume: 1
   enemyHitSound: {fileID: 8300000, guid: 73196bd295f89d943be00613100f5177, type: 3}
   enemyHitSoundVolume: 1

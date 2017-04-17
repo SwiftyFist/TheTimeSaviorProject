@@ -90,7 +90,7 @@ public class move_bullet_script : MonoBehaviour {
 
 			}
 
-            GameObject.Find("Destroyer").GetComponent<DestroyerPlayerInactivity>().bulletCollided();
+           // GameObject.Find("Destroyer").GetComponent<DestroyerPlayerInactivity>().bulletCollided();
 		}
 
 		if (colInfo.tag == "LevelObject"){
