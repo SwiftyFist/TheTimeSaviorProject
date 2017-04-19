@@ -7,7 +7,7 @@ public class DestroyerPlayerStandard : MonoBehaviour
 
     #region Variabili
 
-    private Rigidbody2D myRigidBody2D; //RigidBody2D del destroyer
+    public Rigidbody2D myRigidBody2D; //RigidBody2D del destroyer
     private Transform myTransform; //Transform del destroyer
 
     public static float antivirVelocity = 5f; //Velocità antivirus attuale
