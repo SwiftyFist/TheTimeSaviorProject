@@ -11,6 +11,8 @@ public class arm_rotation_script : MonoBehaviour {
     private Vector3 difference;
 	//Dal'inspector gli viene inserito l'oggetto vuoto dal qualche parte il proiettile
 	public Transform FirePoint;
+
+    public bool UsingMouse = true;
    
 
 	//La variabile bool direction viene impostata a true perchè il player una volta avviato il gioco è diretto a destra (true=destra,false=sinistra)
@@ -19,10 +21,20 @@ public class arm_rotation_script : MonoBehaviour {
 		direction = true;
         _transform = GetComponent<Transform>();
     }
-   
-	void Update()
+
+    private void FixedUpdate()
     {
-		
+        if (UsingMouse)
+            if (Input.GetKeyDown(KeyCode.Joystick1Button7))
+                UsingMouse = false;
+            else
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+                UsingMouse = true;
+        
+    }
+
+    void Update()
+    {
 		//Controller Rotation (Right Stick )  FUNZIONANTE
 		//Asse x e y
         float x = Input.GetAxis("RightStickX");
@@ -34,12 +46,11 @@ public class arm_rotation_script : MonoBehaviour {
         if (Mathf.Abs(x) < R_analog_threshold) { x = 0.0f; }
 
         if (Mathf.Abs(y) < R_analog_threshold) { y = 0.0f; }
+
         // CALCULATE ANGLE AND ROTATE
-        if (x != 0.0f || y != 0.0f)
-        {
-			
+        if (!UsingMouse)
+        {			
             aim_angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
-			//Debug.Log ("rotation = "+aim_angle);
 			if (direction == true) 
 			{
 				rotationOffset = 90;
@@ -69,55 +80,46 @@ public class arm_rotation_script : MonoBehaviour {
 				}
 			}
         }
-
-
-
-
-
-
-
-
-
 		//Mouse Rotation FUNZIONANTE
-		else{
+		else
+        {
+            //Sottrae dalla posizione del mouse la posizione  del player e poi la normalizza
+            difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _transform.position;
+            difference.Normalize();
 
-        //Sottrae dalla posizione del mouse la posizione  del player e poi la normalizza
-        difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _transform.position;
-        difference.Normalize();
+		    //Calcola l'angolo
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; 
+		    //Debug.Log ("rotation = "+rotZ);
+		    if (direction == true) 
+		    {
+			    rotationOffset = 90;
+		    }
+		    if (direction == false) 
+		    {
+			    rotationOffset = -90;
+		    }
+			    //Ruota il braccio
+		    _transform.rotation = Quaternion.Euler(0f, 0f, rotZ + rotationOffset);
 
-		//Calcola l'angolo
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; 
-		//Debug.Log ("rotation = "+rotZ);
-		if (direction == true) 
-		{
-			rotationOffset = 90;
-		}
-		if (direction == false) 
-		{
-			rotationOffset = -90;
-		}
-			//Ruota il braccio
-		_transform.rotation = Quaternion.Euler(0f, 0f, rotZ + rotationOffset);
-
-			//Due If che fanno ruotare il player in base a dove si trova l'arma
-			//Mirando a sinistra con il mouse il player ruota a sinistra in automatico, lo stesso a destra
-		if (rotZ > 0f && rotZ < 90f || rotZ < 0 && rotZ > -90f)
-		{
-			if (direction == false)
-			{
-				direction = true;
-				Flip();
-			}
-		}
-		if (rotZ > 100f && rotZ < 180f || rotZ < -100f && rotZ > -180f) 
-		{
-			if (direction == true)
-			{
-				direction = false;
-				Flip ();
-			}
-		}
-    }
+			    //Due If che fanno ruotare il player in base a dove si trova l'arma
+			    //Mirando a sinistra con il mouse il player ruota a sinistra in automatico, lo stesso a destra
+		    if (rotZ > 0f && rotZ < 90f || rotZ < 0 && rotZ > -90f)
+		    {
+			    if (direction == false)
+			    {
+				    direction = true;
+				    Flip();
+			    }
+		    }
+		    if (rotZ > 100f && rotZ < 180f || rotZ < -100f && rotZ > -180f) 
+		    {
+			    if (direction == true)
+			    {
+				    direction = false;
+				    Flip ();
+			    }
+		    }
+        }
 	}
 
 	//Funzione che va a richiamare la funzione Gira() del player per far ruotare il player 
