@@ -9,7 +9,6 @@ public class DestroyerPlayerDistance : MonoBehaviour
     void Update ()
     {
         VelocityModificatorByDistanceCalc();
-        Debug.Log("Distanza " + DistancePlayerDestroyer());
     }
 
     void VelocityModificatorByDistanceCalc ()
