@@ -13,10 +13,12 @@ public class arm_rotation_script : MonoBehaviour {
 	public Transform FirePoint;
 
     public bool UsingMouse = true;
-   
+    [Range(0, 1)]
+    public float R_analog_threshold = 0.0f;
 
-	//La variabile bool direction viene impostata a true perchè il player una volta avviato il gioco è diretto a destra (true=destra,false=sinistra)
-	void Awake()
+
+    //La variabile bool direction viene impostata a true perchè il player una volta avviato il gioco è diretto a destra (true=destra,false=sinistra)
+    void Awake()
     {
 		direction = true;
         _transform = GetComponent<Transform>();
@@ -24,12 +26,13 @@ public class arm_rotation_script : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if (UsingMouse)
-            if (Input.GetKeyDown(KeyCode.Joystick1Button7))
-                UsingMouse = false;
-            else
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-                UsingMouse = true;
+        if (Input.GetKeyDown(KeyCode.Joystick1Button7))
+        {
+            UsingMouse = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+            UsingMouse = true;
         
     }
 
@@ -39,9 +42,11 @@ public class arm_rotation_script : MonoBehaviour {
 		//Asse x e y
         float x = Input.GetAxis("RightStickX");
         float y = Input.GetAxis("RightStickY");
+
+        
         float aim_angle = 0.0f;
         // CANCEL ALL INPUT BELOW THIS FLOAT
-        float R_analog_threshold = 0.0f;
+        
 
         if (Mathf.Abs(x) < R_analog_threshold) { x = 0.0f; }
 
@@ -49,36 +54,40 @@ public class arm_rotation_script : MonoBehaviour {
 
         // CALCULATE ANGLE AND ROTATE
         if (!UsingMouse)
-        {			
-            aim_angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
-			if (direction == true) 
-			{
-				rotationOffset = 90;
-			}
-			if (direction == false) 
-			{
-				rotationOffset = -90;
-			}
-			_transform.rotation = Quaternion.Euler(0f,0f,aim_angle+rotationOffset);
+        {
+            if (x != 0.0f || y != 0.0f)
+            {
+                aim_angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+                Debug.Log(aim_angle);
+                if (direction == true) 
+			    {
+				    rotationOffset = 90;
+			    }
+			    if (direction == false) 
+			    {
+				    rotationOffset = -90;
+			    }
+			    _transform.rotation = Quaternion.Euler(0f,0f,aim_angle+rotationOffset);
 
-			//Due If che fanno ruotare il player in base a dove si trova l'arma
-			//Mirando a sinistra con lo stick il player ruota a sinistra in automatico, lo stesso a destra
-			if (aim_angle > 0f && aim_angle < 90f || aim_angle < 0 && aim_angle > -90f)
-			{
-				if (direction == false)
-				{
-					direction = true;
-					Flip();
-				}
-			}
-			if (aim_angle > 100f && aim_angle < 180f || aim_angle < -100f && aim_angle > -180f) 
-			{
-				if (direction == true)
-				{
-					direction = false;
-					Flip ();
-				}
-			}
+			    //Due If che fanno ruotare il player in base a dove si trova l'arma
+			    //Mirando a sinistra con lo stick il player ruota a sinistra in automatico, lo stesso a destra
+			    if (aim_angle >= 0f && aim_angle <= 90f || aim_angle <= 0 && aim_angle >= -90f)
+			    {
+				    if (direction == false)
+				    {
+					    direction = true;
+					    Flip();
+				    }
+			    }
+			    if (aim_angle >= 100f && aim_angle <= 180f || aim_angle <= -100f && aim_angle >= -180f) 
+			    {
+				    if (direction == true)
+				    {
+					    direction = false;
+					    Flip ();
+				    }
+			    }
+            }
         }
 		//Mouse Rotation FUNZIONANTE
 		else
