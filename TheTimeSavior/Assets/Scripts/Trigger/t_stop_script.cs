@@ -15,15 +15,9 @@ public class t_stop_script : MonoBehaviour {
             Destroyer.GetComponent<DestroyerPlayerInactivity>().enabled = false;
             Destroyer.GetComponent<DestroyerPlayerStandard>().myRigidBody2D.velocity = new Vector3(0,0, 0);
             Debug.Log("IA Antivirus bloccata");
-            StartCoroutine(CloseDoor());
+            transform.GetChild(0).gameObject.SetActive(true);
 
         }
-
-    }
-    IEnumerator CloseDoor()
-    {
-        yield return new WaitForSeconds(0.3f);
-        transform.GetChild(0).gameObject.SetActive(true);
 
     }
 
