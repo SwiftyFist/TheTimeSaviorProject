@@ -265,7 +265,7 @@ Prefab:
     - target: {fileID: 114000013567676442, guid: e78f9773227f7d148952c2e8a5a87be1,
         type: 2}
       propertyPath: R_analog_threshold
-      value: 0.3
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e78f9773227f7d148952c2e8a5a87be1, type: 2}

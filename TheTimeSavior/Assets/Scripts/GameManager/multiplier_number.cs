@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine;
 
 public class multiplier_number : MonoBehaviour {
 
@@ -12,8 +10,20 @@ public class multiplier_number : MonoBehaviour {
         number = GetComponent<Text>();
     }
 	
-    void Update()
+    public int SetTextMultiplier(int enemyCount)
     {
-        number.text = "" + score_manager_script._score.MultiplierValue();
+        var multiplier = 0;
+
+        if (enemyCount < 5)
+            multiplier = 1;
+        else if (enemyCount >= 5 && enemyCount < 10)
+            multiplier = 2;
+        else if (enemyCount >= 10 && enemyCount < 15)
+            multiplier = 3;
+        else if (enemyCount >= 15)
+            multiplier = 4;
+
+        number.text = multiplier.ToString();
+        return multiplier;
     }
 }

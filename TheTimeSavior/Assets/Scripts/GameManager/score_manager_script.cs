@@ -4,18 +4,17 @@ using UnityEngine.UI;
 
 public class score_manager_script : MonoBehaviour
 {
-    public static score_manager_script _score;
-    public static int multiplier;
+    public int multiplier;
     public int enemyCount;
 	public static int score;
+    private multiplier_number MultiplierObj;
 
 	Text text;
 
 	void Start () 
 	{
-        _score = this;	
-     text = GetComponent<Text> ();
-
+        text = GetComponent<Text> ();
+        MultiplierObj = GameObject.Find("Multiplier").GetComponent<multiplier_number>();
 	}
 
 	void Update () 
@@ -24,11 +23,6 @@ public class score_manager_script : MonoBehaviour
 			score = 0;
 
 		text.text = "" + score;
-
-        if (enemyCount < 5) multiplier = 1;
-        if (enemyCount >= 5) multiplier = 2;
-        if (enemyCount >= 10) multiplier = 3;
-        if (enemyCount >= 15) multiplier = 4;
     }
 
 	public void AddPoints (int pointsToAdd)
@@ -37,25 +31,23 @@ public class score_manager_script : MonoBehaviour
         
 	}
 
-    public int MultiplierValue()
-    {
-       return multiplier;
-    }
-
     public void EnemyDeathCount()
     {
         enemyCount += 1;
+        multiplier = MultiplierObj.SetTextMultiplier(enemyCount);
     }
     public void EnemyDeathCountReset()
     {
         enemyCount = 0;
+        multiplier = MultiplierObj.SetTextMultiplier(enemyCount);
     }
 
-    public static void Reset()
+    public void Reset()
 	{
 		score = 0;
-        multiplier = 1;
-	}
+        enemyCount = 0;
+        multiplier =  MultiplierObj.SetTextMultiplier(1);
+    }
 
 	public static void SendToHub()
 	{

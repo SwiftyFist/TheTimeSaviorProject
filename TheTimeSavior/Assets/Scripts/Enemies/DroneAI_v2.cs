@@ -189,8 +189,11 @@ public class DroneAI_v2 : MonoBehaviour
     Coroutine lastRunningVelIncreaser, runningVelIncreaser;
     bool called = false;
 
+    private score_manager_script ScoreManager;
+
     void Awake()
     {
+        ScoreManager = GameObject.Find("Score_Manager").GetComponent<score_manager_script>();
         myAnimator = GetComponent<Animator>();
         myRigidBody2D = GetComponent<Rigidbody2D>();
         myTransform = GetComponent<Transform>();
@@ -245,7 +248,7 @@ public class DroneAI_v2 : MonoBehaviour
             //Se collide con il player modifica la velocità del Destroyer
             GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().VelocityModificatorByGame(0);
             //Riporta il moltiplicatore a 1
-            score_manager_script._score.EnemyDeathCountReset();
+            ScoreManager.EnemyDeathCountReset();
         }
     }
 

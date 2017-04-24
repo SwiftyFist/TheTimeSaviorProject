@@ -17,6 +17,8 @@ public class DestroyerPlayerStandard : MonoBehaviour
     public float maxVelocity = 7; //Velocità massima overtime
     public float minVelocity = -50; // Velocità minima
 
+    public score_manager_script ScoreManager;
+
     #endregion
 
     #region Funzioni per Unity
@@ -28,6 +30,7 @@ public class DestroyerPlayerStandard : MonoBehaviour
         myRigidBody2D = GetComponent<Rigidbody2D>();
         myRigidBody2D.velocity = Vector2.right * antivirVelocity;
         StartCoroutine(VelocityModificatorByTime()); //Aumenta la velocità overtime
+        ScoreManager = GameObject.Find("Score_Manager").GetComponent<score_manager_script>();
     }
 
     void Update()
@@ -62,7 +65,7 @@ public class DestroyerPlayerStandard : MonoBehaviour
         player_script.pl_script.myTransform.position = player_script.pl_script.playerPosition;
         antivirVelocity = _antivirVelocity;
         score_manager_script.SendToHub();
-        score_manager_script.Reset();
+        ScoreManager.Reset();
     }
 
     IEnumerator VelocityModificatorByTime() //Aumenta la velocità ogni 0.5 secondi

@@ -62,6 +62,7 @@ public class audio_manager_script : MonoBehaviour {
 		{
 			GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
 			sounds [i].SetSource (_go.AddComponent<AudioSource> ());
+            _go.GetComponent<AudioSource>().loop = true;
 			GameObject.DontDestroyOnLoad (_go);
 		}
 

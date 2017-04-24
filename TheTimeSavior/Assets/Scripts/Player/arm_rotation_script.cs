@@ -27,13 +27,10 @@ public class arm_rotation_script : MonoBehaviour {
     private void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Joystick1Button7))
-        {
             UsingMouse = false;
-        }
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
-            UsingMouse = true;
-        
+            UsingMouse = true;        
     }
 
     void Update()
