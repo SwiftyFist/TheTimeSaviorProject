@@ -13,7 +13,7 @@ public class enemy_health_manager_script : MonoBehaviour
 	
 		if (enemyHealth <= 0 && stillAlive)
         {
-           GetComponent<EnemyDeath>().DestroyEnemy(pointsOnDeath);
+           GetComponent<EnemyDeath>().DestroyEnemy(pointsOnDeath, true);
 		}
 	}
     
