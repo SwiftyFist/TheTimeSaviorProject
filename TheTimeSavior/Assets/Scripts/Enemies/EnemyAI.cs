@@ -114,6 +114,11 @@ public class EnemyAI : MonoBehaviour
             //Riporta il moltiplicatore a 1
            ScoreManager.EnemyDeathCountReset();
         }
+
+        if (collision.gameObject.tag == "TriggerGate")
+        {
+            GetComponent<EnemyDeath>().DestroyEnemy(0);
+        }
     }
 
 

@@ -250,6 +250,11 @@ public class DroneAI_v2 : MonoBehaviour
             //Riporta il moltiplicatore a 1
             ScoreManager.EnemyDeathCountReset();
         }
+
+        if (collision.gameObject.tag == "TriggerGate")
+        {
+            GetComponent<EnemyDeath>().DestroyEnemy(0);
+        }
     }
 
     //Gira il nemico mettendolo verso il player

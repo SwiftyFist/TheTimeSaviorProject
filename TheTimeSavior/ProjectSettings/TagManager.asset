@@ -8,6 +8,7 @@ TagManager:
   - LevelObject
   - Bullet
   - NeverDestroy
+  - TriggerGate
   layers:
   - Default
   - TransparentFX

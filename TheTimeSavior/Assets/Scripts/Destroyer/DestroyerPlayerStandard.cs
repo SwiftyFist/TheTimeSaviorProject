@@ -92,6 +92,21 @@ public class DestroyerPlayerStandard : MonoBehaviour
         return velocity < minVelocity ? minVelocity : velocity;
     }
 
+
+    //Attiva o disattiva il destroyer
+    public void SetActive (bool activating)
+    {
+        GetComponent<DestroyerPlayerDistance>().enabled = activating;
+        GetComponent<DestroyerPlayerGame>().enabled = activating;
+        GetComponent<DestroyerPlayerStandard>().enabled = activating;
+
+        if (!activating)
+        {
+            GetComponent<DestroyerPlayerInactivity>().enabled = activating;
+            GetComponent<DestroyerPlayerStandard>().myRigidBody2D.velocity = new Vector3(0, 0, 0);
+        }
+    }
+
     #endregion
 
 }
