@@ -96,9 +96,20 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: 5cbfdb40a1c7c744bac0a310b7da838d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0.13795376, y: -0.12253952}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.1333333, y: 2.6}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.6726055, y: 2.3565407}
+  m_EdgeRadius: 0
 --- !u!82 &8253802
 AudioSource:
   m_ObjectHideFlags: 1
@@ -108,7 +119,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7cb61cf377596ab4f8265fddabda6e0e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -232,11 +243,16 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2079455293
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b2c9fbf38a9ea594c817db0a95c9fce9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -553,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6f8a65eeb11044e85fca4f1297b84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSound: {fileID: 8300000, guid: e03404069c9e54b4ab684676bda220f1, type: 3}
+  jumpSound: {fileID: 8300000, guid: af9d42268d8ea394ba497980ebd50b44, type: 3}
   jumpSoundVolume: 1
   enemyHitSound: {fileID: 8300000, guid: 73196bd295f89d943be00613100f5177, type: 3}
   enemyHitSoundVolume: 1
@@ -600,6 +616,8 @@ MonoBehaviour:
   rotationOffset: 90
   direction: 0
   FirePoint: {fileID: 4000011104674110}
+  UsingMouse: 1
+  R_analog_threshold: 0.01
 --- !u!114 &114536770041113560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -643,11 +661,16 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2079455293
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 26af8e8a2b187ca4baaead7a58e5aeba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
 --- !u!212 &212000013583095102
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -678,8 +701,13 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2079455293
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5699ba943c0ccbf49b502c0029b5bf49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
