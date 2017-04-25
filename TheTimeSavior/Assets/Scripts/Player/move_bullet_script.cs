@@ -64,7 +64,7 @@ public class move_bullet_script : MonoBehaviour {
 				//Suono Collisione proiettile --> nemico 1
 				colInfo.GetComponent<EnemySoundManager>().PlayOnHitByBullet();
 				//Il nemico perde vita
-				colInfo.GetComponent<enemy_health_manager_script> ().giveDamage (damageToGive);
+				colInfo.GetComponent<enemy_health_manager_script>().giveDamage (damageToGive);
 	            //Se il nemico viene colpito si triggera in automatico
 				colInfo.GetComponent<EnemyAI>().SetTriggerOn();
 			}

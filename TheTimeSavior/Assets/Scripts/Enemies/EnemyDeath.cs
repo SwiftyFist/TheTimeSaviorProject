@@ -16,26 +16,28 @@ public class EnemyDeath : MonoBehaviour
       SpawnParticle = transform.FindChild("SpawnParticle");
     }
 
-    public void DestroyEnemy(int pointsOnDeath)
+    public void DestroyEnemy(int pointsOnDeath, bool byPlayer = false)
     {
         GetComponent<enemy_health_manager_script>().stillAlive = false;
        // score_manager_script._score.EnemyDeathCount();
        // score_manager_script._score.AddPoints(pointsOnDeath);
         GetComponent<EnemySoundManager>().PlayOnDeath();
-        GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().VelocityModificatorByGame(2);
+
+        if(byPlayer)
+        {
+            //Aggiunge 1 al contatore di nemici uccisi
+            ScoreManager.EnemyDeathCount();
+            GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().VelocityModificatorByGame(2);
+            //Aggiunge 10 allo score (da utilizzare una variabile) questo valore verrà diviso in base ai nemici e boss fight
+            //Viene poi moltiplicato allo score
+            ScoreManager.AddPoints(10);
+        }
+
         //TODO aggiungere variabile per animazione;
         GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
         myAnimator.SetBool("Dead", true);
 
-        //Aggiunge 1 al contatore di nemici uccisi
-        ScoreManager.EnemyDeathCount();
-
-        //Aggiunge 10 allo score (da utilizzare una variabile) questo valore verrà diviso in base ai nemici e boss fight
-        //Viene poi moltiplicato allo score
-        ScoreManager.AddPoints(10);
-
-        StartCoroutine(DeathDelay());
-       
+        StartCoroutine(DeathDelay());       
     }
 
     IEnumerator DeathDelay()
