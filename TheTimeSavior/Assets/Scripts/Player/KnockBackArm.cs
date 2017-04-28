@@ -11,7 +11,6 @@ public class KnockBackArm : MonoBehaviour
     public float knockBackVelocity = 4;
 
     private Transform initialPointTransform;
-    private Vector3 maxPosition;
 
     public void Awake()
     {
@@ -42,15 +41,6 @@ public class KnockBackArm : MonoBehaviour
     bool IsInPosition()
     {
         if (myTransform.position == initialPointTransform.position)
-            return true;
-        else
-            return false;
-    }
-
-    bool canKnockBack()
-    {
-        return true;
-        if (myTransform.position.x < maxPosition.x && myTransform.position.y < maxPosition.y)
             return true;
         else
             return false;

@@ -83,7 +83,7 @@ public class gun_script : MonoBehaviour
     {
 		 Effect();
 
-        GameObject.Find("spr_gun").GetComponent<KnockBackArm>().KnockBack();
+        GameObject.Find("Arm").GetComponent<KnockBackArm>().KnockBack();
     }
 
     void Effect()
