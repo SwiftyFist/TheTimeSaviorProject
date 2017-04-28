@@ -30,6 +30,9 @@ public class player_script : MonoBehaviour
 
     Coroutine lastJumping = null;
 
+    Transform ArmTransform, InitialArmPositionTransform;
+
+    Vector3 StartArmPosition, WalkArmPosition, RunArmPosition, JumpUpArmPosition, JumpDownArmPosition;
     #endregion
 
     #region Funzioni per Unity
@@ -52,8 +55,13 @@ public class player_script : MonoBehaviour
         myTransform = GetComponent<Transform>();
 		playerPosition = myTransform.position;
         playerSoundManager = GetComponent<PlayerSoundManager>();
-
-        
+        ArmTransform = transform.GetChild(2);
+        InitialArmPositionTransform = GameObject.Find("InitialPoint").GetComponent<Transform>();
+        StartArmPosition = new Vector3(-0.03f, 0.66f, 0);
+        RunArmPosition = new Vector3(StartArmPosition.x + 0.37f, StartArmPosition.y + 0.04f, StartArmPosition.z);
+        WalkArmPosition = new Vector3(StartArmPosition.x, StartArmPosition.y + 0.10f, StartArmPosition.z);
+        JumpUpArmPosition = new Vector3(StartArmPosition.x, StartArmPosition.y, StartArmPosition.z);
+        JumpDownArmPosition = new Vector3(StartArmPosition.x -0.05f, StartArmPosition.y - 0.10f, StartArmPosition.z);
     }
 
     void Update()
@@ -61,7 +69,8 @@ public class player_script : MonoBehaviour
         myRigidBody2d.velocity = new Vector2(horizontalAxes * maxSpeed, myRigidBody2d.velocity.y);
         myAnimator.SetFloat("Horizontal_Speed", Mathf.Abs(myRigidBody2d.velocity.x));
 
-     
+        SetArmPosition();
+
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
@@ -147,5 +156,41 @@ public class player_script : MonoBehaviour
            lastJumping = StartCoroutine(Jumping());
     }
 
+    public void SetArmPosition()
+    {
+        var absVelocity = Mathf.Abs(myRigidBody2d.velocity.x);
 
+        if (!isGrounded)
+        {
+            if (myRigidBody2d.velocity.y > 0)
+            {
+                ArmTransform.localPosition = JumpUpArmPosition;
+                InitialArmPositionTransform.localPosition = JumpUpArmPosition;
+            }
+            else
+            {
+                ArmTransform.localPosition = JumpDownArmPosition;
+                InitialArmPositionTransform.localPosition = JumpDownArmPosition;
+            }
+
+        }
+        else
+        {
+            if (absVelocity > 9)
+            {
+                ArmTransform.localPosition = RunArmPosition;
+                InitialArmPositionTransform.localPosition = RunArmPosition;
+            }
+            else if (absVelocity > 0.1f)
+            {
+                ArmTransform.localPosition = WalkArmPosition;
+                InitialArmPositionTransform.localPosition = WalkArmPosition;
+            }
+            else
+            {
+                ArmTransform.localPosition = StartArmPosition;
+                InitialArmPositionTransform.localPosition = StartArmPosition;
+            }
+        }
+    }
 }
