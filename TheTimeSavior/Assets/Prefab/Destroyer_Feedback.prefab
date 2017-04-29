@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4581581364799326}
   - component: {fileID: 212078561413112436}
   - component: {fileID: 95279481325231594}
+  - component: {fileID: 114329930895525178}
   m_Layer: 0
   m_Name: Destroyer_Feedback
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400538219166496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.000286, y: -1.5695248, z: 0}
+  m_LocalPosition: {x: -18.27, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,6 +59,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114329930895525178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1400538219166496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d35705da13e31b409ba07191daf0e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyerDistanceAtMaxFeedBackDistance: -25
+  DestroyerDistanceAtMinFeedBackDistance: -50
+  MaxFeedBackDistance: -10
+  MinFeedBackDistance: -14
 --- !u!212 &212078561413112436
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -87,8 +103,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 391998915
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c3485b516a8b52342b7d8e8ec346fdf1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
