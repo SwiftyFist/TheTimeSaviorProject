@@ -7644,26 +7644,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114329930895525178, guid: ac9c6ce518f2f7a4dac5ac1126fd8b90,
-        type: 2}
-      propertyPath: DestroyerDistanceAtMinFeedBackDistance
-      value: -50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114329930895525178, guid: ac9c6ce518f2f7a4dac5ac1126fd8b90,
-        type: 2}
-      propertyPath: DestroyerDistanceAtMaxFeedBackDistance
-      value: -25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114329930895525178, guid: ac9c6ce518f2f7a4dac5ac1126fd8b90,
-        type: 2}
-      propertyPath: MaxFeedBackDistance
-      value: -16.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114329930895525178, guid: ac9c6ce518f2f7a4dac5ac1126fd8b90,
-        type: 2}
-      propertyPath: MinFeedBackDistance
-      value: -18
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac9c6ce518f2f7a4dac5ac1126fd8b90, type: 2}
   m_IsPrefabParent: 0
