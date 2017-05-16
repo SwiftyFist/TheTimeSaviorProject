@@ -220,7 +220,7 @@ public class gun_script : MonoBehaviour
 	}
 
     //Converte il fire rate in velocità di rotazione per l animazione dello sparo
-    float GetRotationSpeed()
+    public float GetRotationSpeed()
     {
         if (fireRate == maxFireRate)
             return 0;
