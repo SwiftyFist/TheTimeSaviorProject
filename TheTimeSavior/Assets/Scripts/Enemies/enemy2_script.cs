@@ -10,7 +10,13 @@ public class enemy2_script : MonoBehaviour {
     Animator myAnimator;
     Transform playerTransform;
     private score_manager_script ScoreManager;
-    bool Trigger=false;
+    public enum EStatus //Tiene conto dello stato in cui si trova il nemico 
+    {
+        Inactive,
+        Walking,
+        Triggered
+    }
+    public EStatus myStatus;
 
 
     // Use this for initialization
@@ -27,7 +33,7 @@ public class enemy2_script : MonoBehaviour {
     void Update()
     {
 
-        if (Trigger == true)
+        if (myStatus == EStatus.Triggered)
         {
              myAnimator.SetBool("Triggered", true);
             if (myTransform.position.x < playerTransform.position.x)
@@ -41,7 +47,7 @@ public class enemy2_script : MonoBehaviour {
                 myRigidBody2D.velocity = new Vector2(-1 * movespeed, myRigidBody2D.velocity.y);
             }
         }
-        if (Trigger == false)
+        if (myStatus != EStatus.Triggered)
         {
              myAnimator.SetBool("Triggered", false);
             myRigidBody2D.velocity = new Vector2(0, myRigidBody2D.velocity.y);
@@ -52,7 +58,7 @@ public class enemy2_script : MonoBehaviour {
     {
         if (collision.gameObject.name == "Player")
         {
-            Trigger = true;
+            SetTriggerOn();
         }
         }
 
@@ -60,7 +66,7 @@ public class enemy2_script : MonoBehaviour {
     {
         if (collision.gameObject.name == "Player")
         {
-            Trigger = false;
+            myStatus = EStatus.Walking;
         }
     }
 
@@ -75,4 +81,8 @@ public class enemy2_script : MonoBehaviour {
         }
     }
 
+    public void SetTriggerOn()
+    {
+        myStatus = EStatus.Triggered;
     }
+}
