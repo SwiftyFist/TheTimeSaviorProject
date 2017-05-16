@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD;
+using UnityEngine.SceneManagement;
+
 
 public class AudioManagerFmod : MonoBehaviour {
 
@@ -10,6 +12,8 @@ public class AudioManagerFmod : MonoBehaviour {
     private gun_script currentGun;
     [SerializeField]
     private FMODUnity.StudioEventEmitter gunEmitter;
+    [SerializeField]
+    private GameObject scoreManagerCanvas;
 
 
     [HideInInspector]
@@ -32,6 +36,11 @@ public class AudioManagerFmod : MonoBehaviour {
     public string MusicBank;
     [EventRef]
     public string minigunBank;
+   
+
+
+    [HideInInspector]
+    public bool isMainMenu;
 
     StudioEventEmitter musicEmitter;
 
@@ -47,14 +56,45 @@ public class AudioManagerFmod : MonoBehaviour {
     FMOD.Studio.EventInstance musicInstance;
 
 
+
+    private void Awake()
+    {
+        musicEmitter = GetComponent<StudioEventEmitter>();
+        musicEmitter.Play();
+    }
+
+
+    public void ReloadScene()
+    {
+        scoreManagerCanvas.SetActive(true);
+        isMainMenu = false;
+        EnterGame();
+        StartCoroutine(Reload());
+        
+    }
+
+    private IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(0.1f);
+        
+        currentGun = FindObjectOfType<gun_script>();
+        gunEmitter = currentGun.GetComponent<StudioEventEmitter>();
+    }
+
     private void Start()
     {
+        if (SceneManager.GetActiveScene().name != "Menu_Main")
+            isMainMenu = false;
+        else
+            isMainMenu = true;
         enemyInstance = FMODUnity.RuntimeManager.CreateInstance(enemyBank);
         droneInstance = FMODUnity.RuntimeManager.CreateInstance(droneBank);
         musicInstance = RuntimeManager.CreateInstance(MusicBank);
         playerInstance = RuntimeManager.CreateInstance(playerMove);
         gunInstance = RuntimeManager.CreateInstance(minigunBank);
-        
+        if(!isMainMenu)
+            currentGun = FindObjectOfType<gun_script>();
+       
         //MinigunActivate();
     }
 
@@ -81,8 +121,19 @@ public class AudioManagerFmod : MonoBehaviour {
 
     private void Update()
     {
-        gunEmitter.SetParameter("Gatling", currentGun.GetRotationSpeed());
-        
+        if (!isMainMenu)
+        {
+            if(currentGun == null)
+            {
+                currentGun = FindObjectOfType<gun_script>();
+                gunEmitter = currentGun.GetComponent<StudioEventEmitter>();
+            }
+            gunEmitter.SetParameter("Gatling", currentGun.GetRotationSpeed());
+            if (!currentGun.IsCold)
+                gunEmitter.SetParameter("Surriscaldamento", 1);
+            else
+                gunEmitter.SetParameter("Surriscaldamento", 0);
+        }
     }
 
     public void EnemySound(Transform enemy, float value)
@@ -117,7 +168,7 @@ public class AudioManagerFmod : MonoBehaviour {
     
     public void MusicGestion(float value)
     {
-        
+        musicEmitter.SetParameter("Intro_Loop", value);
     }
 
     public void StartMusic()
@@ -136,16 +187,16 @@ public class AudioManagerFmod : MonoBehaviour {
 
     }
 
-    private IEnumerator StartInGameMusic()
+    public void StartInGameMusic()
     {
-        yield return new WaitForSeconds(2);
-        musicInstance.setParameterValue("Intro_Loop", 2);
+        //yield return new WaitForSeconds(0);
+        musicEmitter.SetParameter("Intro_Loop", 2f);
     }
 
     public void EnterGame()
     {
-        musicInstance.setParameterValue("Intro_Loop", 1);
-        StartCoroutine(StartInGameMusic());
+        musicEmitter.SetParameter("Intro_Loop", 1);
+        //StartCoroutine(StartInGameMusic());
     }
     
 }

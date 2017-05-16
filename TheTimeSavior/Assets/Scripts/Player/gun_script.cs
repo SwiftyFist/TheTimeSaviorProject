@@ -36,6 +36,12 @@ public class gun_script : MonoBehaviour
     public float minRotationVelocity = 0f, maxRotationVelocity = 10f;
 
 
+    public bool IsCold
+    {
+        get { return isCold; }
+    }
+
+
 
 
     #endregion

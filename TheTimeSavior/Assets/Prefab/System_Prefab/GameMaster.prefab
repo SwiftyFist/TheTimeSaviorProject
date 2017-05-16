@@ -56,6 +56,9 @@ GameObject:
   - component: {fileID: 4000013591222556}
   - component: {fileID: 114000013464938638}
   - component: {fileID: 114000010504335296}
+  - component: {fileID: 114128793107204494}
+  - component: {fileID: 114716427227477298}
+  - component: {fileID: 114917104480541444}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -80,7 +83,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1525073054591842
 GameObject:
   m_ObjectHideFlags: 1
@@ -240,6 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9367fa807cef59a428c564202a0953e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplier: 0
   enemyCount: 0
 --- !u!114 &114000013464938638
 MonoBehaviour:
@@ -255,7 +259,7 @@ MonoBehaviour:
   sounds:
   - name: test
     clip: {fileID: 8300000, guid: 7cb61cf377596ab4f8265fddabda6e0e, type: 3}
-    volume: 0.314
+    volume: 0.5
 --- !u!114 &114000013823050876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -338,6 +342,30 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 00
+--- !u!114 &114128793107204494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013216977064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389f2187570d6184b86f591fde423ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentGun: {fileID: 0}
+  gunEmitter: {fileID: 0}
+  scoreManagerCanvas: {fileID: 1000014048090822}
+  normalEnemyList: []
+  droneList: []
+  player: {fileID: 0}
+  enemyBank: event:/BKG
+  droneBank: event:/BKG
+  playerShoot: event:/BKG
+  playerMove: event:/Footstep
+  MusicBank: event:/Music_Future
+  minigunBank: event:/Minigun
+  isMainMenu: 0
 --- !u!114 &114157063324357610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -349,6 +377,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76656439218989543b53c05e65b8743f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114716427227477298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013216977064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
+--- !u!114 &114917104480541444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013216977064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Music_Future
+  PlayEvent: 0
+  StopEvent: 2
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!222 &222000011990868448
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -380,7 +442,7 @@ Canvas:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014048090822}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
@@ -389,6 +451,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

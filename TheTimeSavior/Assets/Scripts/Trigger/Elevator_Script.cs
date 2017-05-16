@@ -38,6 +38,7 @@ public class Elevator_Script : MonoBehaviour
         {
             SceneManager.LoadScene("Level_Present");
             GameObject.Find("Gun").GetComponent<gun_script>().StopShooting();
+            FindObjectOfType<AudioManagerFmod>().StartInGameMusic();
         }
     }
 }
