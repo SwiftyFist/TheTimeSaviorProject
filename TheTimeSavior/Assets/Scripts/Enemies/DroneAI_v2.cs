@@ -155,7 +155,7 @@ public class DroneAI_v2 : MonoBehaviour
     //    }
     //}
     #endregion
-    enum EStatus //Tiene conto dello stato in cui si trova il nemico 
+    public enum EStatus //Tiene conto dello stato in cui si trova il nemico 
     {
         Inactive,
         Walking,
@@ -168,7 +168,7 @@ public class DroneAI_v2 : MonoBehaviour
     public float maxRunningVelocity = 10f;
     public float accelerationOnRun = 2f; //variabile usata per ricavare il tempo
     float myCurrentVelocity = 0f;
-    EStatus myStatus;
+    public EStatus myStatus;
    
 
     //Variabili dell'oggetto
