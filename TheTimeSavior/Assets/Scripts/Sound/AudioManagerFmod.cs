@@ -8,6 +8,8 @@ public class AudioManagerFmod : MonoBehaviour {
 
     [SerializeField]
     private gun_script currentGun;
+    [SerializeField]
+    private FMODUnity.StudioEventEmitter gunEmitter;
 
 
     [HideInInspector]
@@ -28,6 +30,8 @@ public class AudioManagerFmod : MonoBehaviour {
     public string playerMove;
     [FMODUnity.EventRef]
     public string MusicBank;
+    [EventRef]
+    public string minigunBank;
 
     StudioEventEmitter musicEmitter;
 
@@ -39,6 +43,7 @@ public class AudioManagerFmod : MonoBehaviour {
     FMOD.Studio.EventInstance enemyInstance;
     FMOD.Studio.EventInstance droneInstance;
     FMOD.Studio.EventInstance playerInstance;
+    FMOD.Studio.EventInstance gunInstance;
     FMOD.Studio.EventInstance musicInstance;
 
 
@@ -48,11 +53,36 @@ public class AudioManagerFmod : MonoBehaviour {
         droneInstance = FMODUnity.RuntimeManager.CreateInstance(droneBank);
         musicInstance = RuntimeManager.CreateInstance(MusicBank);
         playerInstance = RuntimeManager.CreateInstance(playerMove);
+        gunInstance = RuntimeManager.CreateInstance(minigunBank);
+        
+        //MinigunActivate();
     }
 
-    private void PlayerRun()
+    public void MinigunActivate()
     {
-        playerInstance.setParameterValue("Speed", currentGun.GetRotationSpeed());
+        gunEmitter.Play();
+        
+    }
+
+    public void MinigunDeactivate()
+    {
+        StartCoroutine(WaitMinigun()); 
+       
+    }
+
+    private IEnumerator WaitMinigun()
+    {
+        while (currentGun.GetRotationSpeed() > 0.2f)
+        {
+            yield return new WaitForFixedUpdate();
+        }
+        gunEmitter.Stop();
+    }
+
+    private void Update()
+    {
+        gunEmitter.SetParameter("Gatling", currentGun.GetRotationSpeed());
+        
     }
 
     public void EnemySound(Transform enemy, float value)
