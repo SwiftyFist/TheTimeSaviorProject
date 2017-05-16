@@ -44,6 +44,10 @@ public class AudioManagerFmod : MonoBehaviour {
 
     StudioEventEmitter musicEmitter;
 
+
+    //public delegate void OnChangeSceneHub();
+   
+
     /*private void Start()
     {
         musicEmitter = GetComponent<StudioEventEmitter>();
@@ -61,6 +65,7 @@ public class AudioManagerFmod : MonoBehaviour {
     {
         musicEmitter = GetComponent<StudioEventEmitter>();
         musicEmitter.Play();
+        //SceneManager.activeSceneChanged += OnChangeSceneHub;
     }
 
 
@@ -94,6 +99,7 @@ public class AudioManagerFmod : MonoBehaviour {
         gunInstance = RuntimeManager.CreateInstance(minigunBank);
         if(!isMainMenu)
             currentGun = FindObjectOfType<gun_script>();
+        StartMusic();
        
         //MinigunActivate();
     }
@@ -128,6 +134,7 @@ public class AudioManagerFmod : MonoBehaviour {
                 currentGun = FindObjectOfType<gun_script>();
                 gunEmitter = currentGun.GetComponent<StudioEventEmitter>();
             }
+            
             gunEmitter.SetParameter("Gatling", currentGun.GetRotationSpeed());
             if (!currentGun.IsCold)
                 gunEmitter.SetParameter("Surriscaldamento", 1);
@@ -174,7 +181,7 @@ public class AudioManagerFmod : MonoBehaviour {
     public void StartMusic()
     {
         //musicInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
-        musicInstance.setParameterValue("Intro_Loop", 0.1f);
+        musicInstance.setParameterValue("Intro_Loop", 0.5f);
         StartCoroutine(StartMusicLoop());
     }
 
@@ -183,7 +190,8 @@ public class AudioManagerFmod : MonoBehaviour {
     private IEnumerator StartMusicLoop()
     {
         yield return new WaitForSeconds(30.4f);
-        musicInstance.setParameterValue("Intro_Loop", 0.5f);
+        if(SceneManager.GetActiveScene().name == "Menu_Main")
+            musicEmitter.SetParameter("Intro_Loop", 0.5f);
 
     }
 
