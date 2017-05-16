@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyDeath : MonoBehaviour
 {
     Animator myAnimator;
-    public GameObject DeathParticle;
+    public GameObject DeathParticle0;
+	public GameObject DeathParticle1;
     public Transform SpawnParticle;
     private score_manager_script ScoreManager;
 
@@ -53,9 +54,11 @@ public class EnemyDeath : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
        
         //Spawn del particellare della morte
-        GameObject clone = Instantiate(DeathParticle, SpawnParticle.position, SpawnParticle.rotation) as GameObject;
+        GameObject clone0 = Instantiate(DeathParticle0, SpawnParticle.position, SpawnParticle.rotation) as GameObject;
+		GameObject clone1 = Instantiate(DeathParticle1, SpawnParticle.position, SpawnParticle.rotation) as GameObject;
         //Distruzione del particellare dopo tot tempo
-        Destroy(clone.gameObject, 2f);
+        Destroy(clone0.gameObject, 1f);
+		Destroy(clone1.gameObject, 1f);
         Destroy(gameObject);
     }
 
