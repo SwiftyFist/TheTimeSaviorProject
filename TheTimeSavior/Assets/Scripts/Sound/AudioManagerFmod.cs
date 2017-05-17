@@ -8,13 +8,19 @@ using UnityEngine.SceneManagement;
 
 public class AudioManagerFmod : MonoBehaviour {
 
+    public static AudioManagerFmod instance;
+
+
     [SerializeField]
     private gun_script currentGun;
     [SerializeField]
     private FMODUnity.StudioEventEmitter gunEmitter;
     [SerializeField]
     private GameObject scoreManagerCanvas;
-
+    [SerializeField]
+    private StudioEventEmitter musicEmitter;
+    [SerializeField]
+    private StudioEventEmitter backgroundEmitter;
 
     [HideInInspector]
     public List<EnemyAI> normalEnemyList;
@@ -42,7 +48,9 @@ public class AudioManagerFmod : MonoBehaviour {
     [HideInInspector]
     public bool isMainMenu;
 
-    StudioEventEmitter musicEmitter;
+    private StudioEventEmitter footEmitter;
+
+    
 
 
     //public delegate void OnChangeSceneHub();
@@ -63,9 +71,10 @@ public class AudioManagerFmod : MonoBehaviour {
 
     private void Awake()
     {
-        musicEmitter = GetComponent<StudioEventEmitter>();
+        //musicEmitter = GetComponent<StudioEventEmitter>();
         musicEmitter.Play();
-        //SceneManager.activeSceneChanged += OnChangeSceneHub;
+        musicEmitter.SetParameter("Intro_Loop", 0);
+        SceneManager.activeSceneChanged += OnChangeSceneHub;
     }
 
 
@@ -83,7 +92,9 @@ public class AudioManagerFmod : MonoBehaviour {
         yield return new WaitForSeconds(0.1f);
         
         currentGun = FindObjectOfType<gun_script>();
-        gunEmitter = currentGun.GetComponent<StudioEventEmitter>();
+        gunEmitter = GameObject.Find("InitialPoint").GetComponent<StudioEventEmitter>();
+        player = FindObjectOfType<player_script>().transform;
+        footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
     }
 
     private void Start()
@@ -99,7 +110,10 @@ public class AudioManagerFmod : MonoBehaviour {
         gunInstance = RuntimeManager.CreateInstance(minigunBank);
         if(!isMainMenu)
             currentGun = FindObjectOfType<gun_script>();
+
+        
         StartMusic();
+        instance = this;
        
         //MinigunActivate();
     }
@@ -132,7 +146,9 @@ public class AudioManagerFmod : MonoBehaviour {
             if(currentGun == null)
             {
                 currentGun = FindObjectOfType<gun_script>();
-                gunEmitter = currentGun.GetComponent<StudioEventEmitter>();
+                gunEmitter = GameObject.Find("InitialPoint").GetComponent<StudioEventEmitter>();
+                player = FindObjectOfType<player_script>().transform;
+                footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
             }
             
             gunEmitter.SetParameter("Gatling", currentGun.GetRotationSpeed());
@@ -140,6 +156,8 @@ public class AudioManagerFmod : MonoBehaviour {
                 gunEmitter.SetParameter("Surriscaldamento", 1);
             else
                 gunEmitter.SetParameter("Surriscaldamento", 0);
+
+           
         }
     }
 
@@ -155,6 +173,11 @@ public class AudioManagerFmod : MonoBehaviour {
         droneInstance.set3DAttributes(RuntimeUtils.To3DAttributes(drone));
         droneInstance.setParameterValue("value", value);
 
+    }
+
+    public void StartFootstep()
+    {
+        StartCoroutine(WaitFootstep());
     }
 
     private void Stop()
@@ -181,15 +204,15 @@ public class AudioManagerFmod : MonoBehaviour {
     public void StartMusic()
     {
         //musicInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
-        musicInstance.setParameterValue("Intro_Loop", 0.5f);
-        StartCoroutine(StartMusicLoop());
+        musicInstance.setParameterValue("Intro_Loop", 0f);
+        //StartCoroutine(StartMusicLoop());
     }
 
 
 
-    private IEnumerator StartMusicLoop()
+    public void StartMusicLoop()
     {
-        yield return new WaitForSeconds(30.4f);
+        //yield return new WaitForSeconds(30.4f);
         if(SceneManager.GetActiveScene().name == "Menu_Main")
             musicEmitter.SetParameter("Intro_Loop", 0.5f);
 
@@ -203,8 +226,31 @@ public class AudioManagerFmod : MonoBehaviour {
 
     public void EnterGame()
     {
-        musicEmitter.SetParameter("Intro_Loop", 1);
+        musicEmitter.SetParameter("Intro_Loop", 1f);
         //StartCoroutine(StartInGameMusic());
     }
+
+    public void StopFootstep()
+    {
+        footEmitter.Stop();
+    }
+
+    public void OnChangeSceneHub(Scene oldScene, Scene newScene)
+    {
+        if (newScene.name == "Level_Present")
+        {
+            backgroundEmitter.Play();
+        }
+        else if (newScene.name == "Level_Hub")
+        {
+            backgroundEmitter.Stop();
+            EnterGame();
+        }
+    }
     
+    public IEnumerator WaitFootstep()
+    {
+        yield return new WaitForSeconds(00.4f);
+        footEmitter.Play();
+    }
 }

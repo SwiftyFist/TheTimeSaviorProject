@@ -15,6 +15,8 @@ public class MainMenuManager : MonoBehaviour {
     private GameObject[] menuSprites;
     [SerializeField]
     private GameObject menuCanvas;
+    [SerializeField]
+    private GameObject fakeLoading;
 
 
     private bool afterStart = false;
@@ -33,7 +35,7 @@ public class MainMenuManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Return))
         {
             StartCoroutine(LerpCoroutine(menuSprites[1].transform.localScale, menuSprites[1].transform.localScale * 2, timeForExpand, 1));
-            audioManager.MusicGestion(0.75f);
+            audioManager.StartMusicLoop();
         }
     }
 
@@ -46,9 +48,7 @@ public class MainMenuManager : MonoBehaviour {
 
     public void NewGame()
     {
-        audioManager.ReloadScene();
-        SceneManager.LoadScene("Level_Hub");
-        StartCoroutine(Wait());
+        StartCoroutine(FakeLoading());
     }
 
     private IEnumerator LerpCoroutine(Vector2 startScale, Vector2 endScale, float t, int counter)
@@ -95,6 +95,17 @@ public class MainMenuManager : MonoBehaviour {
         menuSprites[1].SetActive(true);
         afterStart = true;
         //StartCoroutine(LerpCoroutine(menuSprites[0].transform.localScale, menuSprites[0].transform.localScale / sizeMoltiplier, timeForExpand));
+    }
+
+    private IEnumerator FakeLoading()
+    {
+        menuCanvas.SetActive(false);
+        fakeLoading.SetActive(true);
+        audioManager.EnterGame();
+        yield return new WaitForSeconds(11.6f);
+        audioManager.ReloadScene();
+        SceneManager.LoadScene("Level_Hub");
+        StartCoroutine(Wait());
     }
 
 }
