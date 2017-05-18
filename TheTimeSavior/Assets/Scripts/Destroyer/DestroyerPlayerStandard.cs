@@ -35,7 +35,7 @@ public class DestroyerPlayerStandard : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Velocità " + myRigidBody2D.velocity.x);
+        //Debug.Log("Velocità " + myRigidBody2D.velocity.x);
         myRigidBody2D.velocity = Vector2.right * AntivirVelocity();
     }
 
@@ -58,7 +58,7 @@ public class DestroyerPlayerStandard : MonoBehaviour
 
     void LevelReset() //Reimposta il livello e la velocità del virus
     {
-        audio_manager_script._audioM.StopSound("test");
+        //audio_manager_script._audioM.StopSound("test");
         SceneManager.LoadScene("Level_Hub");
         GameObject.Find("Gun").GetComponent<gun_script>().StopShooting();
         DestroyerPlayerInactivity.velocityModificatorByInactivity = 0;

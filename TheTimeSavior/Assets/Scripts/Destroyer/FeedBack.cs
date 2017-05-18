@@ -21,7 +21,7 @@ public class FeedBack : MonoBehaviour {
     {
         var posizioneLocaleX = GetPosition(PlayerTransform.position.x - DestroyerTransform.position.x);
         transform.localPosition = new Vector3(posizioneLocaleX, transform.localPosition.y, transform.localPosition.z);
-        Debug.Log(posizioneLocaleX);
+        //Debug.Log(posizioneLocaleX);
     }
 
     private float GetPosition(float distance)

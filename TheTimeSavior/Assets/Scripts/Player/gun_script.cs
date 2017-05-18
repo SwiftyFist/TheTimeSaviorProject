@@ -14,7 +14,7 @@ public class gun_script : MonoBehaviour
 	public float camShakeAmt = 0.1f; // <------ Questa qua
 	public float camShakeLenght = 0.1f;
 	public float minCamShake = 0.01f, maxCamShake = 0.2f;
-
+    
 
     //Velocità di sparo
     bool enumerationStarted;
@@ -30,10 +30,16 @@ public class gun_script : MonoBehaviour
     public float shootSpeedIncrement = 0.02f; //Velocità con cui aumenta il rateo
     public float maxTimeToOverHeat = 3f; //Tempo di rateo massimo
     public float overHeatTime = 1f; //Tempo di raffreddamento
-
+    private AudioManagerFmod audioManager;
     //Animazione sparo
     Animator GunRotation;
     public float minRotationVelocity = 0f, maxRotationVelocity = 10f;
+
+
+    public bool IsCold
+    {
+        get { return isCold; }
+    }
 
 
 
@@ -55,6 +61,12 @@ public class gun_script : MonoBehaviour
         }
 	}
 
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManagerFmod>();
+    }
+
+
     private void FixedUpdate()
     {
         GunRotation.SetFloat("SpeedVelocity", GetRotationSpeed());
@@ -72,6 +84,7 @@ public class gun_script : MonoBehaviour
             enumerationStarted = true;
             StartCoroutine(StopHolding());
             StartCoroutine(StartShooting());
+            audioManager.MinigunActivate();
         }
 	}
 
@@ -121,6 +134,7 @@ public class gun_script : MonoBehaviour
     {
         if (!isHolding)
         {
+            audioManager.MinigunDeactivate();
             if (fireRate < fireRateBackUp)
                 fireRate = fireRate + shootSpeedIncrement;
         }
@@ -209,6 +223,7 @@ public class gun_script : MonoBehaviour
         enumerationStarted = false;
         isHolding = false;
         fireRate = fireRateBackUp;
+        
     }
 
 	float GetCamShakeAmt ()
@@ -220,7 +235,7 @@ public class gun_script : MonoBehaviour
 	}
 
     //Converte il fire rate in velocità di rotazione per l animazione dello sparo
-    float GetRotationSpeed()
+    public float GetRotationSpeed()
     {
         if (fireRate == maxFireRate)
             return 0;
