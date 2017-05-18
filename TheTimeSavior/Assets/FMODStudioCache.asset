@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114780682427915672}
-  - {fileID: 114054300483665314}
+  - {fileID: 114489980313510406}
+  - {fileID: 114091284175702640}
   EditorEvents:
-  - {fileID: 114980207081594062}
-  - {fileID: 114305613936558598}
-  - {fileID: 114707431469443624}
-  - {fileID: 114275723248086646}
-  MasterBankRef: {fileID: 114054300483665314}
-  StringsBankRef: {fileID: 114780682427915672}
-  stringsBankWriteTime: 636306333904353725
+  - {fileID: 114603677032910766}
+  - {fileID: 114409380486989776}
+  - {fileID: 114184961501686166}
+  - {fileID: 114648576227813322}
+  MasterBankRef: {fileID: 114091284175702640}
+  StringsBankRef: {fileID: 114489980313510406}
+  stringsBankWriteTime: 636306338655535764
   cacheVersion: 2
 --- !u!114 &114004674713017594
 MonoBehaviour:
@@ -38,6 +38,21 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+--- !u!114 &114044541396998376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Gatling
+  Min: 1
+  Max: 10
+  Default: 1
 --- !u!114 &114054300483665314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,6 +71,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 3644704
   Exists: 1
+--- !u!114 &114071642933396008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Gatling
+  Min: 1
+  Max: 10
+  Default: 1
 --- !u!114 &114089808379283364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +101,25 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+--- !u!114 &114091284175702640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: E:\Progetti Unity\TheTimeSavior\TheTimeSavior\Assets\BuildFmod\Desktop\Master
+    Bank.bank
+  lastModified: 636306338655515723
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 3644704
+  Exists: 1
 --- !u!114 &114134924186366388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +180,59 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+--- !u!114 &114184961501686166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music_Future
+  guid: 98b1d3d171c24940a47c355c7c57905a
+  Banks:
+  - {fileID: 114091284175702640}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114200776981984864}
+  - {fileID: 114919730067369926}
+  MinDistance: 0
+  MaxDistance: 0
+--- !u!114 &114200776981984864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 2
+  Default: 0
+--- !u!114 &114205541813908402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surriscaldamento
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114206631215743024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +245,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114246405579969990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surriscaldamento
   Min: 0
   Max: 1
   Default: 0
@@ -237,6 +354,42 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114409380486989776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/BKG
+  guid: 42e27ad64c71ba479a2a7d7f3f8f1ee5
+  Banks:
+  - {fileID: 114091284175702640}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+--- !u!114 &114422535298311970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114426079572753208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +421,39 @@ MonoBehaviour:
   Max: 2
   Default: 0
 --- !u!114 &114483144489281850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 2
+  Default: 0
+--- !u!114 &114489980313510406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Assets\BuildFmod\Desktop\Master Bank.strings.bank
+  lastModified: 636306338655535764
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 810
+  Exists: 1
+--- !u!114 &114498728559871750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -327,6 +513,29 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+--- !u!114 &114603677032910766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Minigun
+  guid: 158c05ca92694344a7f415fb204c3361
+  Banks:
+  - {fileID: 114091284175702640}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114205541813908402}
+  - {fileID: 114044541396998376}
+  MinDistance: 1
+  MaxDistance: 20
 --- !u!114 &114619863671474498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +566,28 @@ MonoBehaviour:
   Min: 1
   Max: 10
   Default: 1
+--- !u!114 &114648576227813322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Footstep
+  guid: fbbae671ab7ae34eb0523b6bc21af4a5
+  Banks:
+  - {fileID: 114091284175702640}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114422535298311970}
+  MinDistance: 1
+  MaxDistance: 7.2000003
 --- !u!114 &114702539378939618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +639,21 @@ MonoBehaviour:
   Name: Surriscaldamento
   Min: 0
   Max: 1
+  Default: 0
+--- !u!114 &114725632200109828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intro_Loop
+  Min: 0
+  Max: 2
   Default: 0
 --- !u!114 &114754641504091438
 MonoBehaviour:
@@ -472,6 +718,21 @@ MonoBehaviour:
   Min: 1
   Max: 10
   Default: 1
+--- !u!114 &114801155211497884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114830545892562276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,6 +807,21 @@ MonoBehaviour:
   Name: Parameter 1
   Min: 0
   Max: 1
+  Default: 0
+--- !u!114 &114919730067369926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intro_Loop
+  Min: 0
+  Max: 2
   Default: 0
 --- !u!114 &114929884268669380
 MonoBehaviour:
