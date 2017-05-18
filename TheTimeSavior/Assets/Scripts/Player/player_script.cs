@@ -33,6 +33,8 @@ public class player_script : MonoBehaviour
     Transform ArmTransform, InitialArmPositionTransform;
 
     Vector3 StartArmPosition, WalkArmPosition, RunArmPosition, JumpUpArmPosition, JumpDownArmPosition;
+
+    private bool footstepStarted = false;
     #endregion
 
     #region Funzioni per Unity
@@ -74,6 +76,22 @@ public class player_script : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
+        }
+        if(!footstepStarted && isGrounded && myRigidBody2d.velocity.magnitude > 0.2f )
+        {
+            footstepStarted = true;
+            AudioManagerFmod.instance.StartFootstep();
+
+        }
+        else if(myRigidBody2d.velocity.magnitude < 0.4f)
+        {
+            footstepStarted = false;
+            AudioManagerFmod.instance.StopFootstep();
+        }
+        else if (!isGrounded)
+        {
+            footstepStarted = false;
+            AudioManagerFmod.instance.StopFootstep();
         }
     }
 

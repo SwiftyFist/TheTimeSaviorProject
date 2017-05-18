@@ -55,7 +55,7 @@ public class audio_manager_script : MonoBehaviour {
 		_audioM = this;
 	}
 
-	void Start ()
+	/*void Start ()
 	{
 		
 		for ( int i = 0; i < sounds.Length; i++)
@@ -91,5 +91,5 @@ public class audio_manager_script : MonoBehaviour {
                 return;
             }
         }
-    }
+    }*/
 }
