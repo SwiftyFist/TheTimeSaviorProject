@@ -21,7 +21,7 @@ MonoBehaviour:
   - {fileID: 114648576227813322}
   MasterBankRef: {fileID: 114091284175702640}
   StringsBankRef: {fileID: 114489980313510406}
-  stringsBankWriteTime: 636306338655535764
+  stringsBankWriteTime: 636308792745442690
   cacheVersion: 2
 --- !u!114 &114004674713017594
 MonoBehaviour:
@@ -114,12 +114,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: E:\Progetti Unity\TheTimeSavior\TheTimeSavior\Assets\BuildFmod\Desktop\Master
     Bank.bank
-  lastModified: 636306338655515723
+  lastModified: 636308792745422534
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 3644704
+    Value: 3644224
   Exists: 1
+--- !u!114 &114119837895803436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 2
+  Default: 0
 --- !u!114 &114134924186366388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,8 +214,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114200776981984864}
-  - {fileID: 114919730067369926}
+  - {fileID: 114119837895803436}
+  - {fileID: 114378004589313400}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114200776981984864
@@ -219,6 +234,21 @@ MonoBehaviour:
   Max: 2
   Default: 0
 --- !u!114 &114205541813908402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surriscaldamento
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114205708892626944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -354,6 +384,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114378004589313400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intro_Loop
+  Min: 0
+  Max: 2
+  Default: 0
 --- !u!114 &114409380486989776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,11 +415,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 114091284175702640}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
 --- !u!114 &114422535298311970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\BuildFmod\Desktop\Master Bank.strings.bank
-  lastModified: 636306338655535764
+  lastModified: 636308792745442690
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -467,6 +512,21 @@ MonoBehaviour:
   Name: Parameter 1
   Min: 0
   Max: 2
+  Default: 0
+--- !u!114 &114498942673695242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114499175826381714
 MonoBehaviour:
@@ -529,13 +589,13 @@ MonoBehaviour:
   Banks:
   - {fileID: 114091284175702640}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114205541813908402}
-  - {fileID: 114044541396998376}
-  MinDistance: 1
-  MaxDistance: 20
+  - {fileID: 114205708892626944}
+  - {fileID: 114760418216591304}
+  MinDistance: 0
+  MaxDistance: 0
 --- !u!114 &114619863671474498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,7 +645,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114422535298311970}
+  - {fileID: 114498942673695242}
   MinDistance: 1
   MaxDistance: 7.2000003
 --- !u!114 &114702539378939618
@@ -670,6 +730,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114760418216591304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Gatling
+  Min: 1
+  Max: 10
+  Default: 1
 --- !u!114 &114763281378448196
 MonoBehaviour:
   m_ObjectHideFlags: 0
