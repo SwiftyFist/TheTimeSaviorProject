@@ -1,24 +1,26 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class DestroyerPlayerDistance : MonoBehaviour
+namespace Assets.Scripts.Destroyer
 {
-    public static float velocityModificatorByDistance;
-    public float angularCoefficent =0.1f;
-
-    void Update ()
+    public class DestroyerPlayerDistance : MonoBehaviour
     {
-        VelocityModificatorByDistanceCalc();
-    }
+        public static float VelocityModificatorByDistance;
+        public float AngularCoefficent =0.1f;
 
-    void VelocityModificatorByDistanceCalc ()
-    {
-        velocityModificatorByDistance = (DistancePlayerDestroyer() + 5) * angularCoefficent;
-    }
+        void Update ()
+        {
+            VelocityModificatorByDistanceCalc();
+        }
 
-    float DistancePlayerDestroyer ()
-    {
-        return player_script.pl_script.transform.position.x - GetComponent<Transform>().position.x;
-    }
+        void VelocityModificatorByDistanceCalc ()
+        {
+            VelocityModificatorByDistance = (DistancePlayerDestroyer() + 5) * AngularCoefficent;
+        }
 
+        float DistancePlayerDestroyer ()
+        {
+            return player_script.pl_script.transform.position.x - GetComponent<Transform>().position.x;
+        }
+
+    }
 }

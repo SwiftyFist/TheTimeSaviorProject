@@ -50,10 +50,12 @@ public class move_bullet_script : MonoBehaviour {
 				
 
 				//Effetto Scudo
-				Transform test = Instantiate(EffectPrefab, SpawnEffect.position, SpawnEffect.rotation) as Transform;
+				//Transform test = Instantiate(EffectPrefab, SpawnEffect.position, SpawnEffect.rotation) as Transform;
 
-				test.localScale = new Vector3 (1,1,1);
-				Destroy (test.gameObject,0.03f);
+				//test.localScale = new Vector3 (1,1,1);
+				//Destroy (test.gameObject,0.03f);
+
+                colInfo.transform.gameObject.GetComponent<ShieldManager>().SpawnShieldEnemy(transform);
 
 				Destroy (gameObject);
 				//Camera Shake
@@ -71,13 +73,15 @@ public class move_bullet_script : MonoBehaviour {
 			if (colInfo.name == "Enemy_Type_2") {
 
 
-				Transform test = Instantiate(EffectPrefab, SpawnEffect.position, SpawnEffect.rotation) as Transform;
+                //Transform test = Instantiate(EffectPrefab, SpawnEffect.position, SpawnEffect.rotation) as Transform;
 
-				test.localScale = new Vector3 (1,1,1);
-				Destroy (test.gameObject,0.05f);
+                //test.localScale = new Vector3 (1,1,1);
+                //Destroy (test.gameObject,0.05f);
+
+			    colInfo.transform.gameObject.GetComponent<ShieldManager>().SpawnShieldEnemy(transform);
 
 
-				Destroy (gameObject);
+                Destroy (gameObject);
 				//Camera Shake
 				GameObject.Find("Camera").GetComponent<Camera_Shake_Script>().Shake (EnemyShakeAmt, EnemyShakeLenght);
 

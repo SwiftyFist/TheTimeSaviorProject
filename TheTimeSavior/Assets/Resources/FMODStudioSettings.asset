@@ -11,11 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef8d824ea7b63742966aaa0e94ac383, type: 3}
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
-  HasSourceProject: 0
+  HasSourceProject: 1
   HasPlatforms: 1
   SourceProjectPath: E:\Progetti Unity\TheTimeSavior\FMOD COPIA\TimeSavior_Sound.fspro
-  SourceBankPath: C:\Users\Emanuele\Desktop\Makes It Beatiful Games\RepoTimeSavior\FMOD
-    COPIA\Build
+  SourceBankPath: E:\Progetti Unity\TheTimeSavior\FMOD COPIA\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -55,5 +54,5 @@ MonoBehaviour:
   - Platform: 2
     Value: 32
   Plugins: []
-  MasterBank: Master Bank
+  MasterBank: 
   Banks: []
