@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8a500dc3e3908324da75fc9cd2c10b9b
-timeCreated: 1486356573
+guid: 72b6db75716e23b449e916279f98ca64
+timeCreated: 1475641390
 licenseType: Free
 PluginImporter:
   serializedVersion: 2
@@ -11,67 +11,65 @@ PluginImporter:
   platformData:
     data:
       first:
-        Android: Android
+        Any: 
       second:
-        enabled: 0
-        settings:
-          CPU: AnyCPU
+        enabled: 1
+        settings: {}
     data:
       first:
         Editor: Editor
       second:
         enabled: 0
         settings:
-          CPU: x86
+          CPU: x86_64
           DefaultValueInitialized: true
-          OS: AnyOS
     data:
       first:
         Facebook: Win
       second:
-        enabled: 1
+        enabled: 0
         settings:
           CPU: None
     data:
       first:
         Facebook: Win64
       second:
-        enabled: 0
+        enabled: 1
         settings:
-          CPU: None
+          CPU: AnyCPU
     data:
       first:
         Standalone: Linux
       second:
         enabled: 0
         settings:
-          CPU: x86
+          CPU: None
     data:
       first:
         Standalone: Linux64
       second:
-        enabled: 0
+        enabled: 1
         settings:
           CPU: x86_64
     data:
       first:
         Standalone: LinuxUniversal
       second:
-        enabled: 0
+        enabled: 1
         settings:
-          CPU: AnyCPU
+          CPU: x86_64
     data:
       first:
         Standalone: OSXIntel
       second:
         enabled: 0
         settings:
-          CPU: AnyCPU
+          CPU: None
     data:
       first:
         Standalone: OSXIntel64
       second:
-        enabled: 0
+        enabled: 1
         settings:
           CPU: AnyCPU
     data:
@@ -80,21 +78,21 @@ PluginImporter:
       second:
         enabled: 0
         settings:
-          CPU: AnyCPU
+          CPU: x86_64
     data:
       first:
         Standalone: Win
       second:
-        enabled: 1
+        enabled: 0
         settings:
           CPU: None
     data:
       first:
         Standalone: Win64
       second:
-        enabled: 0
+        enabled: 1
         settings:
-          CPU: None
+          CPU: AnyCPU
   userData: 
   assetBundleName: 
   assetBundleVariant: 

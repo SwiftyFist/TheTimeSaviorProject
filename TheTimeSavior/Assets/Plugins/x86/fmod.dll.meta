@@ -1,7 +1,6 @@
 fileFormatVersion: 2
-guid: bac9040e62da04a43b58a3a9311ec83d
-folderAsset: yes
-timeCreated: 1486356565
+guid: 00ad79d91caa44e4f922dc3b676c529d
+timeCreated: 1475641389
 licenseType: Free
 PluginImporter:
   serializedVersion: 2
@@ -12,16 +11,9 @@ PluginImporter:
   platformData:
     data:
       first:
-        Android: Android
-      second:
-        enabled: 0
-        settings:
-          CPU: AnyCPU
-    data:
-      first:
         Any: 
       second:
-        enabled: 0
+        enabled: 1
         settings: {}
     data:
       first:
@@ -29,14 +21,13 @@ PluginImporter:
       second:
         enabled: 0
         settings:
-          CPU: AnyCPU
+          CPU: x86
           DefaultValueInitialized: true
-          OS: AnyOS
     data:
       first:
         Facebook: Win
       second:
-        enabled: 0
+        enabled: 1
         settings:
           CPU: AnyCPU
     data:
@@ -45,12 +36,12 @@ PluginImporter:
       second:
         enabled: 0
         settings:
-          CPU: AnyCPU
+          CPU: None
     data:
       first:
         Standalone: Linux
       second:
-        enabled: 0
+        enabled: 1
         settings:
           CPU: x86
     data:
@@ -59,14 +50,14 @@ PluginImporter:
       second:
         enabled: 0
         settings:
-          CPU: x86_64
+          CPU: None
     data:
       first:
         Standalone: LinuxUniversal
       second:
-        enabled: 0
+        enabled: 1
         settings:
-          CPU: None
+          CPU: x86
     data:
       first:
         Standalone: OSXIntel
@@ -78,21 +69,21 @@ PluginImporter:
       first:
         Standalone: OSXIntel64
       second:
-        enabled: 1
-        settings:
-          CPU: AnyCPU
-    data:
-      first:
-        Standalone: OSXUniversal
-      second:
-        enabled: 1
+        enabled: 0
         settings:
           CPU: None
     data:
       first:
-        Standalone: Win
+        Standalone: OSXUniversal
       second:
         enabled: 0
+        settings:
+          CPU: x86
+    data:
+      first:
+        Standalone: Win
+      second:
+        enabled: 1
         settings:
           CPU: AnyCPU
     data:
@@ -101,7 +92,7 @@ PluginImporter:
       second:
         enabled: 0
         settings:
-          CPU: AnyCPU
+          CPU: None
   userData: 
   assetBundleName: 
   assetBundleVariant: 
