@@ -41,7 +41,7 @@ public class LoadScene : MonoBehaviour
 
     void Update ()
     {
-        if (Input.anyKeyDown && isTimeToSkipPassed && canSkip)//se preme un qualsiasi tasto e non è la prima volta che c`è l effetto 
+		if (Input.GetKeyDown(KeyCode.Space) && isTimeToSkipPassed && canSkip)//se preme un qualsiasi tasto e non è la prima volta che c`è l effetto 
             currentPhase = 4;//salta l effetto
         if (currentPhase == 1)//se è in fase uno
         {

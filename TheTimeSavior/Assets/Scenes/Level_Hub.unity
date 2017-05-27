@@ -1156,6 +1156,7 @@ GameObject:
   - component: {fileID: 1014030755}
   - component: {fileID: 1014030757}
   - component: {fileID: 1014030758}
+  - component: {fileID: 1014030759}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1216,6 +1217,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 0}
+--- !u!114 &1014030759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1014030754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389f2187570d6184b86f591fde423ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentGun: {fileID: 633433594}
+  gunEmitter: {fileID: 1225292945}
+  scoreManagerCanvas: {fileID: 0}
+  musicEmitter: {fileID: 0}
+  backgroundEmitter: {fileID: 0}
+  normalEnemyList: []
+  droneList: []
+  player: {fileID: 0}
+  enemyBank: 
+  droneBank: 
+  playerShoot: 
+  playerMove: event:/Footstep
+  MusicBank: event:/Music_Future
+  minigunBank: event:/Minigun
+  isMainMenu: 0
 --- !u!1 &1052966448
 GameObject:
   m_ObjectHideFlags: 0
