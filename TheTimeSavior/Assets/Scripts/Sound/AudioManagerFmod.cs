@@ -37,11 +37,11 @@ public class AudioManagerFmod : MonoBehaviour {
     [FMODUnity.EventRef]
     public string playerShoot;
     [FMODUnity.EventRef]
-    public string playerMove;
+    public string playerMove = "event:/Footstep";
     [FMODUnity.EventRef]
-    public string MusicBank;
+    public string MusicBank = "event:/Music_Future";
     [EventRef]
-    public string minigunBank;
+    public string minigunBank = "event:/Minigun";
    
 
 
@@ -121,7 +121,6 @@ public class AudioManagerFmod : MonoBehaviour {
     public void MinigunActivate()
     {
         gunEmitter.Play();
-        
     }
 
     public void MinigunDeactivate()
@@ -141,6 +140,7 @@ public class AudioManagerFmod : MonoBehaviour {
 
     private void Update()
     {
+        UnityEngine.Debug.Log(footEmitter != null ? "Ci sono" : "Non ci sono");
         if (!isMainMenu)
         {
             if(currentGun == null)
@@ -149,13 +149,14 @@ public class AudioManagerFmod : MonoBehaviour {
                 gunEmitter = GameObject.Find("InitialPoint").GetComponent<StudioEventEmitter>();
                 player = FindObjectOfType<player_script>().transform;
                 footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
+
             }
             
-            gunEmitter.SetParameter("Gatling", currentGun.GetRotationSpeed());
+            gunEmitter.SetParameter("rotatioSpeed", currentGun.GetRotationSpeed());
             if (!currentGun.IsCold)
-                gunEmitter.SetParameter("Surriscaldamento", 1);
+                gunEmitter.SetParameter("isCold", 1);
             else
-                gunEmitter.SetParameter("Surriscaldamento", 0);
+                gunEmitter.SetParameter("isCold", 0);
 
            
         }
