@@ -37,11 +37,11 @@ public class AudioManagerFmod : MonoBehaviour {
     [FMODUnity.EventRef]
     public string playerShoot;
     [FMODUnity.EventRef]
-    public string playerMove;
+    public string playerMove = "event:/Footstep";
     [FMODUnity.EventRef]
-    public string MusicBank;
+    public string MusicBank = "event:/Music_Future";
     [EventRef]
-    public string minigunBank;
+    public string minigunBank = "event:/Minigun";
    
 
 
@@ -120,8 +120,8 @@ public class AudioManagerFmod : MonoBehaviour {
 
     public void MinigunActivate()
     {
-        gunEmitter.Play();
-        
+        if(currentGun.GetRotationSpeed() <= 0)
+            gunEmitter.Play();
     }
 
     public void MinigunDeactivate()
@@ -151,13 +151,11 @@ public class AudioManagerFmod : MonoBehaviour {
                 footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
             }
             
-            gunEmitter.SetParameter("Gatling", currentGun.GetRotationSpeed());
+            gunEmitter.SetParameter("rotationSpeed", currentGun.GetRotationSpeed());
             if (!currentGun.IsCold)
-                gunEmitter.SetParameter("Surriscaldamento", 1);
+                gunEmitter.SetParameter("isCold", 1);
             else
-                gunEmitter.SetParameter("Surriscaldamento", 0);
-
-           
+                gunEmitter.SetParameter("isCold", 0);
         }
     }
 
