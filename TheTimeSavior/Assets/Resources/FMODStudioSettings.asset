@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 0
   HasPlatforms: 1
-  SourceProjectPath: E:\Progetti Unity\TheTimeSavior\FMOD COPIA\TimeSavior_Sound.fspro
-  SourceBankPath: Assets\FMOD\BuildFmod
+  SourceProjectPath: Assets\FMOD\ProjectFMOD\TimeSavior_Sound_modify.fspro
+  SourceBankPath: Assets\FMOD\ProjectFMOD\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0

@@ -141,7 +141,6 @@ public class AudioManagerFmod : MonoBehaviour {
 
     private void Update()
     {
-        UnityEngine.Debug.Log(footEmitter != null ? "Ci sono" : "Non ci sono");
         if (!isMainMenu)
         {
             if(currentGun == null)
@@ -150,7 +149,6 @@ public class AudioManagerFmod : MonoBehaviour {
                 gunEmitter = GameObject.Find("InitialPoint").GetComponent<StudioEventEmitter>();
                 player = FindObjectOfType<player_script>().transform;
                 footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
-
             }
             
             gunEmitter.SetParameter("rotationSpeed", currentGun.GetRotationSpeed());
@@ -158,8 +156,6 @@ public class AudioManagerFmod : MonoBehaviour {
                 gunEmitter.SetParameter("isCold", 1);
             else
                 gunEmitter.SetParameter("isCold", 0);
-
-           
         }
     }
 
