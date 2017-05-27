@@ -12,17 +12,74 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114149352353305474}
-  - {fileID: 114362343582616346}
+  - {fileID: 114780654258382578}
+  - {fileID: 114062403527926556}
   EditorEvents:
-  - {fileID: 114750613891488484}
-  - {fileID: 114607047444516530}
-  - {fileID: 114343418608835688}
-  - {fileID: 114371111402933258}
-  MasterBankRef: {fileID: 114362343582616346}
-  StringsBankRef: {fileID: 114149352353305474}
-  stringsBankWriteTime: 636306338655535764
+  - {fileID: 114096507505326248}
+  - {fileID: 114269918563313642}
+  - {fileID: 114453060267403294}
+  - {fileID: 114843058433682616}
+  MasterBankRef: {fileID: 114062403527926556}
+  StringsBankRef: {fileID: 114780654258382578}
+  stringsBankWriteTime: 636307815187942854
   cacheVersion: 2
+--- !u!114 &114014492769779106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114062403527926556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\moiem\Desktop\Makes It Beautiful\TheTimeSavior\Assets\FMOD\BuildFmod\Desktop\Master
+    Bank.bank
+  lastModified: 636307815187907826
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 3644704
+  Exists: 1
+--- !u!114 &114096507505326248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Minigun
+  guid: 158c05ca92694344a7f415fb204c3361
+  Banks:
+  - {fileID: 114062403527926556}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114225348928764826}
+  - {fileID: 114686041053619414}
+  MinDistance: 1
+  MaxDistance: 20
 --- !u!114 &114149352353305474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,6 +99,57 @@ MonoBehaviour:
   - Name: Desktop
     Value: 810
   Exists: 1
+--- !u!114 &114225348928764826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surriscaldamento
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114268786943415342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intro_Loop
+  Min: 0
+  Max: 2
+  Default: 0
+--- !u!114 &114269918563313642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/BKG
+  guid: 42e27ad64c71ba479a2a7d7f3f8f1ee5
+  Banks:
+  - {fileID: 114062403527926556}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
 --- !u!114 &114278082120241084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +229,29 @@ MonoBehaviour:
   - {fileID: 114278082120241084}
   MinDistance: 1
   MaxDistance: 7.2000003
+--- !u!114 &114453060267403294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music_Future
+  guid: 98b1d3d171c24940a47c355c7c57905a
+  Banks:
+  - {fileID: 114062403527926556}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114879913563903696}
+  - {fileID: 114268786943415342}
+  MinDistance: 0
+  MaxDistance: 0
 --- !u!114 &114607047444516530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +273,21 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+--- !u!114 &114686041053619414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Gatling
+  Min: 1
+  Max: 10
+  Default: 1
 --- !u!114 &114750613891488484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +326,46 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+--- !u!114 &114780654258382578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Assets\FMOD\BuildFmod\Desktop\Master Bank.strings.bank
+  lastModified: 636307815187942854
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 810
+  Exists: 1
+--- !u!114 &114843058433682616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Footstep
+  guid: fbbae671ab7ae34eb0523b6bc21af4a5
+  Banks:
+  - {fileID: 114062403527926556}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114014492769779106}
+  MinDistance: 1
+  MaxDistance: 7.2000003
 --- !u!114 &114859812372921578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +381,21 @@ MonoBehaviour:
   Min: 1
   Max: 10
   Default: 1
+--- !u!114 &114879913563903696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 2
+  Default: 0
 --- !u!114 &114948259038672094
 MonoBehaviour:
   m_ObjectHideFlags: 0

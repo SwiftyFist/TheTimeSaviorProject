@@ -14,8 +14,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 1
   SourceProjectPath: E:\Progetti Unity\TheTimeSavior\FMOD COPIA\TimeSavior_Sound.fspro
-  SourceBankPath: C:\Users\Emanuele\Desktop\Makes It Beatiful Games\RepoTimeSavior\FMOD
-    COPIA\Build
+  SourceBankPath: Assets\FMOD\BuildFmod
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
