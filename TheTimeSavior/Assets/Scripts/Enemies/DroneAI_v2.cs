@@ -243,15 +243,19 @@ public class DroneAI_v2 : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        var collidedGameObject = collision.gameObject;
+        if (collidedGameObject.name == "Player")
         {
+            var playerScript = collidedGameObject.GetComponent<player_script>();
             //Se collide con il player modifica la velocità del Destroyer
             GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().VelocityModificatorByGame(0);
             //Riporta il moltiplicatore a 1
             ScoreManager.EnemyDeathCountReset();
+            //if (!playerScript.isInvincible)
+            //    playerScript.SetInvincible();
         }
 
-        if (collision.gameObject.tag == "TriggerGate")
+        if (collidedGameObject.tag == "TriggerGate")
         {
             GetComponent<EnemyDeath>().DestroyEnemy(0);
         }
