@@ -1571,6 +1571,8 @@ MonoBehaviour:
   playerPosition: {x: 0, y: 0, z: 0}
   lookRight: 1
   isGrounded: 0
+  InvincibleTime: 1
+  isInvincible: 0
   JumpForce: 20
   maxJumpTime: 0.5
   maxSpeed: 10

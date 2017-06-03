@@ -120,8 +120,8 @@ public class EnemyAI : MonoBehaviour
             GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().VelocityModificatorByGame(0);
             //Riporta il moltiplicatore a 1
            ScoreManager.EnemyDeathCountReset();
-            //if (!playerScript.isInvincible)
-            //    playerScript.SetInvincible();
+            if (!playerScript.isInvincible)
+                playerScript.SetInvincible();
         }
 
         if (collidedGameObject.tag == "TriggerGate")
