@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class player_script : MonoBehaviour
 {
@@ -14,7 +15,10 @@ public class player_script : MonoBehaviour
     private PlayerSoundManager playerSoundManager;
     private float horizontalAxes; //Valore dell asse verticale 
     public bool lookRight = true; //Dove guarda
-    public bool isGrounded = false; //Se è a terra  
+    public bool isGrounded = false; //Se è a terra
+    public float InvincibleTime = 1f;
+    public bool isInvincible = false;
+    public Coroutine BecomeVulnerable = null;
 
     public float JumpForce; //Forza del salto
     private float jumpingScaleRate = 0.2f;
@@ -42,7 +46,7 @@ public class player_script : MonoBehaviour
     void Awake()
     {
 
-		if (pl_script != null) 
+        if (pl_script != null) 
 		{
 			GameObject.Destroy (gameObject);
 		} 
@@ -57,7 +61,7 @@ public class player_script : MonoBehaviour
         myTransform = GetComponent<Transform>();
 		playerPosition = myTransform.position;
         playerSoundManager = GetComponent<PlayerSoundManager>();
-        ArmTransform = transform.GetChild(2);
+        ArmTransform = transform.GetChild(1);
         InitialArmPositionTransform = GameObject.Find("InitialPoint").GetComponent<Transform>();
         StartArmPosition = new Vector3(-0.03f, 0.66f, 0);
         RunArmPosition = new Vector3(StartArmPosition.x + 0.37f, StartArmPosition.y + 0.04f, StartArmPosition.z);
@@ -70,6 +74,8 @@ public class player_script : MonoBehaviour
     {
         myRigidBody2d.velocity = new Vector2(horizontalAxes * maxSpeed, myRigidBody2d.velocity.y);
         myAnimator.SetFloat("Horizontal_Speed", Mathf.Abs(myRigidBody2d.velocity.x));
+
+        Debug.Log(isInvincible);
 
         SetArmPosition();
 
@@ -92,6 +98,13 @@ public class player_script : MonoBehaviour
         {
             footstepStarted = false;
             AudioManagerFmod.instance.StopFootstep();
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (var enemy in enemies)
+                Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, true);
         }
     }
 
@@ -210,5 +223,27 @@ public class player_script : MonoBehaviour
                 InitialArmPositionTransform.localPosition = StartArmPosition;
             }
         }
+    }
+
+    public void SetInvincible()
+    {
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (BecomeVulnerable == null)
+        {
+            foreach (var enemy in enemies)
+                Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, true);
+            isInvincible = true;
+            BecomeVulnerable = StartCoroutine(BecomeVulnerableEnumerator(enemies));
+        }
+    }
+
+    public IEnumerator BecomeVulnerableEnumerator(GameObject[] enemies)
+    {
+        yield return new WaitForSeconds(InvincibleTime);
+        foreach (var enemy in enemies)
+            Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, false);
+        isInvincible = false;
+        StopCoroutine(BecomeVulnerable);
+        BecomeVulnerable = null;
     }
 }
