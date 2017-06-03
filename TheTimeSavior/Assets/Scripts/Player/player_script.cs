@@ -61,7 +61,7 @@ public class player_script : MonoBehaviour
         myTransform = GetComponent<Transform>();
 		playerPosition = myTransform.position;
         playerSoundManager = GetComponent<PlayerSoundManager>();
-        ArmTransform = transform.GetChild(2);
+        ArmTransform = transform.GetChild(1);
         InitialArmPositionTransform = GameObject.Find("InitialPoint").GetComponent<Transform>();
         StartArmPosition = new Vector3(-0.03f, 0.66f, 0);
         RunArmPosition = new Vector3(StartArmPosition.x + 0.37f, StartArmPosition.y + 0.04f, StartArmPosition.z);

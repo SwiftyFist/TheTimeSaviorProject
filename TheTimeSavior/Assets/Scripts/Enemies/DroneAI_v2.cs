@@ -191,6 +191,8 @@ public class DroneAI_v2 : MonoBehaviour
 
     private score_manager_script ScoreManager;
 
+    public float DistanceFromPlayerToDeath;
+
     void Awake()
     {
         ScoreManager = GameObject.Find("Score_Manager").GetComponent<score_manager_script>();
@@ -228,6 +230,9 @@ public class DroneAI_v2 : MonoBehaviour
         myRigidBody2D.velocity = new Vector2(myCurrentVelocity, myRigidBody2D.velocity.y);
         float y = Vector3.MoveTowards(myTransform.position, playerTransform.position, Mathf.Abs(myCurrentVelocity) * Time.deltaTime).y;//MoveTowards
         myTransform.position = new Vector2(myTransform.position.x, y);
+
+        if (CalcDistanceFromPlayer() > DistanceFromPlayerToDeath)
+            GetComponent<EnemyDeath>().DestroyEnemy(0);
     }
 
     //Cambia colore quando il player è in range
