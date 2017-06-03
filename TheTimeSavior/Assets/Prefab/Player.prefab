@@ -46,7 +46,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.922123, y: -9.0477, z: 0}
+  m_LocalPosition: {x: -6.9, y: -7.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 485224}
@@ -210,6 +210,7 @@ MonoBehaviour:
   lookRight: 1
   isGrounded: 1
   InvincibleTime: 1
+  OffSetBecomInvulnerable: 0.5
   isInvincible: 0
   JumpForce: 20
   maxJumpTime: 0.5
@@ -620,10 +621,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e0a24246f41ee4e8e24588eaea9a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 4000012846823532, guid: 5a4de3b582ead2848937d150952e00f6,
+  BulletMinigunPrefab: {fileID: 4000012846823532, guid: 5a4de3b582ead2848937d150952e00f6,
+    type: 2}
+  BulletSingleShotPrefab: {fileID: 4000012846823532, guid: 2afa5220b3d2abb4992df7b10b12fbc2,
     type: 2}
   FlashPrefab: {fileID: 4000010608637852, guid: 805630837ba5f0349b7158248311278b,
     type: 2}
+  singleShotWaitTime: 0.5
   camShakeAmt: 0.3
   camShakeLenght: 0.08
   minCamShake: 0.04
