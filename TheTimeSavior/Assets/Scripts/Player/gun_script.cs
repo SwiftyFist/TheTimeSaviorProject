@@ -10,8 +10,13 @@ public class gun_script : MonoBehaviour
 	Transform FirePoint;
     Coroutine Shooting1;
 
-	//Camera Shake
-	public float camShakeAmt = 0.1f; // <------ Questa qua
+    //SingleShot
+    public float singleShotWaitTime = 0.5f;
+    private bool singleShootAvailable = true;
+    private Coroutine singleShotCoroutine = null;
+
+    //Camera Shake
+    public float camShakeAmt = 0.1f; // <------ Questa qua
 	public float camShakeLenght = 0.1f;
 	public float minCamShake = 0.01f, maxCamShake = 0.2f;
     
@@ -31,6 +36,7 @@ public class gun_script : MonoBehaviour
     public float maxTimeToOverHeat = 3f; //Tempo di rateo massimo
     public float overHeatTime = 1f; //Tempo di raffreddamento
     private AudioManagerFmod audioManager;
+
     //Animazione sparo
     Animator GunRotation;
     public float minRotationVelocity = 0f, maxRotationVelocity = 10f;
@@ -74,50 +80,64 @@ public class gun_script : MonoBehaviour
 
     void Update ()
     {
-
-        if (Input.GetButtonDown("Fire1"))
-            isHolding = true;
-
-        if (Input.GetButtonDown("Fire1") && enumerationStarted == false && isCold)
+        if (Input.GetButtonDown("Fire2"))
         {
-            StopAllCoroutines();
-            enumerationStarted = true;
-            StartCoroutine(StopHolding());
-            StartCoroutine(StartShooting());
-            audioManager.MinigunActivate();
+            if (singleShootAvailable)
+            {
+                Shoot();
+                singleShootAvailable = false;
+                singleShotCoroutine = StartCoroutine(singleShotCoolTime());
+            }
+                
+        }
+        else if (Input.GetButtonDown("Fire1"))
+        {
+            isHolding = true;
+            if (enumerationStarted == false && isCold)
+            {
+                StopAllCoroutines();
+                enumerationStarted = true;
+                StartCoroutine(StopHolding());
+                StartCoroutine(StartShooting());
+                audioManager.MinigunActivate();
+            }
         }
 	}
 
     #endregion
 
-    #region Funzioni interne
-
     void Shoot()
     {
-		 Effect();
-
+        Effect();
         GameObject.Find("Arm").GetComponent<KnockBackArm>().KnockBack();
     }
 
     void Effect()
     {
-		// Crea il Bullet
+        // Crea il Bullet
         Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
-		// Crea il Muzzle Flash
-		Transform clone = Instantiate (FlashPrefab, FirePoint.position, FirePoint.rotation) as Transform ;
-		clone.parent = FirePoint;
-		float size = Random.Range (0.6f,0.9f);
-		clone.localScale = new Vector3 (size,size,size);
-		//Distrugge il Muzzle Flash
-		Destroy (clone.gameObject,0.04f);
-        GetComponent<AudioSource>().Play ();
+        // Crea il Muzzle Flash
+        Transform clone = Instantiate(FlashPrefab, FirePoint.position, FirePoint.rotation) as Transform;
+        clone.parent = FirePoint;
+        float size = Random.Range(0.6f, 0.9f);
+        clone.localScale = new Vector3(size, size, size);
+        //Distrugge il Muzzle Flash
+        Destroy(clone.gameObject, 0.04f);
+        GetComponent<AudioSource>().Play();
 
-		//Camera Shake
-		GameObject.Find("Camera").GetComponent<Gun_Shake_Script>().Shake (GetCamShakeAmt(), camShakeLenght);
-
-
-
+        //Camera Shake
+        GameObject.Find("Camera").GetComponent<Gun_Shake_Script>().Shake(GetCamShakeAmt(), camShakeLenght);
     }
+
+    float GetCamShakeAmt()
+    {
+        float m, q;
+        m = (minCamShake - maxCamShake) / (fireRate - maxShootSpeed);
+        q = minCamShake - (m * fireRate);
+        return (m * fireRate) + (q);
+    }
+
+    #region Minigun
 
     IEnumerator StopHolding () //Aspetta fino al rilascio del tasto di sparo poi inizia a decrementare la velocità
     {
@@ -226,14 +246,6 @@ public class gun_script : MonoBehaviour
         
     }
 
-	float GetCamShakeAmt ()
-	{
-		float m, q;
-		m = (minCamShake - maxCamShake) / (fireRate - maxShootSpeed);
-		q = minCamShake -(m * fireRate);
-		return (m * fireRate) + (q);
-	}
-
     //Converte il fire rate in velocità di rotazione per l animazione dello sparo
     public float GetRotationSpeed()
     {
@@ -246,8 +258,16 @@ public class gun_script : MonoBehaviour
         float rotationSpeed = ((m * fireRate) + q);
         return rotationSpeed;
     }
+    #endregion
 
+    #region SingleShot
 
+    IEnumerator singleShotCoolTime()
+    {
+        yield return new WaitForSeconds(singleShotWaitTime);
+        singleShootAvailable = true;
+        StopCoroutine(singleShotCoroutine);
+    }
     #endregion
 
 
