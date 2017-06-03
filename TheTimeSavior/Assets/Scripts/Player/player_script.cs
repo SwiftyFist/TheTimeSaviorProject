@@ -77,8 +77,6 @@ public class player_script : MonoBehaviour
         myRigidBody2d.velocity = new Vector2(horizontalAxes * maxSpeed, myRigidBody2d.velocity.y);
         myAnimator.SetFloat("Horizontal_Speed", Mathf.Abs(myRigidBody2d.velocity.x));
 
-        Debug.Log(isInvincible);
-
         SetArmPosition();
 
         if (Input.GetButtonDown("Jump") && isGrounded)
