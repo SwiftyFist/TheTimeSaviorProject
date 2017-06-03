@@ -120,7 +120,7 @@ public class AudioManagerFmod : MonoBehaviour {
 
     public void MinigunActivate()
     {
-        if(currentGun.GetRotationSpeed() <= 0)
+        if(currentGun.GetRotationSpeed() <= 1)
             gunEmitter.Play();
     }
 
