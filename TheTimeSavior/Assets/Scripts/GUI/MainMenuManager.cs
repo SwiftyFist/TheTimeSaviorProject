@@ -14,9 +14,7 @@ public class MainMenuManager : MonoBehaviour {
     private GameObject loadingMenu;
     [SerializeField]
     private TweenScale pcScreenTween;
-
-    private UIRoot mainRoot;
-
+    
     private float timeToWait;
     
     private float timeForExpand;
@@ -44,16 +42,6 @@ public class MainMenuManager : MonoBehaviour {
     {
         toActivate.SetActive(true);
     }
-
-    private void Awake()
-    {
-        mainRoot = FindObjectOfType<UIRoot>();
-        mainRoot.scalingStyle = UIRoot.Scaling.Constrained;
-        mainRoot.manualHeight = Screen.currentResolution.height;
-        mainRoot.manualWidth = Screen.currentResolution.width;
-        
-    }
-
 
     private void Start()
     {
