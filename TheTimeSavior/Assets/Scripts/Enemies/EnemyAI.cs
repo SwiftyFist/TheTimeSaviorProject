@@ -53,6 +53,8 @@ public class EnemyAI : MonoBehaviour
 
     private score_manager_script ScoreManager;
 
+    public float DistanceFromPlayerToDeath;
+
     void Awake()
     {
         ScoreManager = GameObject.Find("Score_Manager").GetComponent<score_manager_script>();
@@ -93,6 +95,9 @@ public class EnemyAI : MonoBehaviour
         }
 
         myRigidBody2D.velocity = new Vector2(myCurrentVelocity, myRigidBody2D.velocity.y);
+
+        if (CalcDistanceFromPlayer() > DistanceFromPlayerToDeath)
+            GetComponent<EnemyDeath>().DestroyEnemy(0);
     }
 
     //Cambia colore quando il player è in range
@@ -115,8 +120,8 @@ public class EnemyAI : MonoBehaviour
             GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().VelocityModificatorByGame(0);
             //Riporta il moltiplicatore a 1
            ScoreManager.EnemyDeathCountReset();
-            //if (!playerScript.isInvincible)
-            //    playerScript.SetInvincible();
+            if (!playerScript.isInvincible)
+                playerScript.SetInvincible();
         }
 
         if (collidedGameObject.tag == "TriggerGate")
