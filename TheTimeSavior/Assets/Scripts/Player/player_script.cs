@@ -17,8 +17,10 @@ public class player_script : MonoBehaviour
     public bool lookRight = true; //Dove guarda
     public bool isGrounded = false; //Se è a terra
     public float InvincibleTime = 1f;
+    public float OffSetBecomInvulnerable = 0.5f;
     public bool isInvincible = false;
-    public Coroutine BecomeVulnerable = null;
+    public Coroutine BackVulnerable = null;
+    public Coroutine BecomeInvulnerable = null;
 
     public float JumpForce; //Forza del salto
     private float jumpingScaleRate = 0.2f;
@@ -75,8 +77,6 @@ public class player_script : MonoBehaviour
         myRigidBody2d.velocity = new Vector2(horizontalAxes * maxSpeed, myRigidBody2d.velocity.y);
         myAnimator.SetFloat("Horizontal_Speed", Mathf.Abs(myRigidBody2d.velocity.x));
 
-        Debug.Log(isInvincible);
-
         SetArmPosition();
 
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -103,8 +103,18 @@ public class player_script : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            foreach (var enemy in enemies)
-                Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, true);
+            if (isInvincible)
+            {
+                foreach (var enemy in enemies)
+                    if (enemy != null)
+                        Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, true);
+            }
+            else
+            {
+                foreach (var enemy in enemies)
+                    if (enemy != null)
+                        Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, false);
+            }
         }
     }
 
@@ -227,23 +237,30 @@ public class player_script : MonoBehaviour
 
     public void SetInvincible()
     {
-        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (BecomeVulnerable == null)
-        {
-            foreach (var enemy in enemies)
-                Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, true);
-            isInvincible = true;
-            BecomeVulnerable = StartCoroutine(BecomeVulnerableEnumerator(enemies));
-        }
+        if (BecomeInvulnerable == null)
+            BecomeInvulnerable = StartCoroutine(BecomeInvulnerableEnumerator(GameObject.FindGameObjectsWithTag("Enemy")));
     }
 
-    public IEnumerator BecomeVulnerableEnumerator(GameObject[] enemies)
+    public IEnumerator BackVulnerableEnumerator(GameObject[] enemies)
     {
         yield return new WaitForSeconds(InvincibleTime);
         foreach (var enemy in enemies)
-            Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, false);
+            if (enemy != null)
+                Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, false);
         isInvincible = false;
-        StopCoroutine(BecomeVulnerable);
-        BecomeVulnerable = null;
+        StopCoroutine(BackVulnerable);
+        BackVulnerable = null;
+    }
+
+    public IEnumerator BecomeInvulnerableEnumerator(GameObject[] enemies)
+    {
+        yield return new WaitForSeconds(OffSetBecomInvulnerable);
+        if (BackVulnerable != null) yield break;
+        foreach (var enemy in enemies)
+            Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, true);
+        isInvincible = true;
+        BackVulnerable = StartCoroutine(BackVulnerableEnumerator(enemies));
+        StopCoroutine(BecomeInvulnerable);
+        BecomeInvulnerable = null;
     }
 }
