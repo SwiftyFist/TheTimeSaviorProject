@@ -2,7 +2,7 @@
 
 public class TriggerGate : MonoBehaviour
 {
-
+    public float offSetActivation = 3f;
     public bool Activating;
     private Transform playerTransform;
 
@@ -13,7 +13,7 @@ public class TriggerGate : MonoBehaviour
 
     void Update()
     {
-        if (playerTransform.position.x >= (transform.position.x + 3))
+        if (playerTransform.position.x >= (transform.position.x + offSetActivation))
         {
             GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().SetActive(Activating);
             transform.GetChild(0).gameObject.SetActive(true);
