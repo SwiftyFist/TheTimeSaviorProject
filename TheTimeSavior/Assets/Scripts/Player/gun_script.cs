@@ -5,8 +5,9 @@ public class gun_script : MonoBehaviour
 {
     #region Variabili
     //Bullet
-    public Transform BulletPrefab;
-	public Transform FlashPrefab;
+    public Transform BulletMinigunPrefab;
+    public Transform BulletSingleShotPrefab;
+    public Transform FlashPrefab;
 	Transform FirePoint;
     Coroutine Shooting1;
 
@@ -80,17 +81,7 @@ public class gun_script : MonoBehaviour
 
     void Update ()
     {
-        if (Input.GetButtonDown("Fire2"))
-        {
-            if (singleShootAvailable)
-            {
-                Shoot();
-                singleShootAvailable = false;
-                singleShotCoroutine = StartCoroutine(singleShotCoolTime());
-            }
-                
-        }
-        else if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             isHolding = true;
             if (enumerationStarted == false && isCold)
@@ -102,20 +93,30 @@ public class gun_script : MonoBehaviour
                 audioManager.MinigunActivate();
             }
         }
-	}
+        else if (Input.GetButtonDown("Fire2"))
+        {
+            if (singleShootAvailable)
+            {
+                Shoot(BulletSingleShotPrefab);
+                singleShootAvailable = false;
+                singleShotCoroutine = StartCoroutine(singleShotCoolTime());
+            }
+
+        }
+    }
 
     #endregion
 
-    void Shoot()
+    void Shoot(Transform bulletType)
     {
-        Effect();
+        Effect(bulletType);
         GameObject.Find("Arm").GetComponent<KnockBackArm>().KnockBack();
     }
 
-    void Effect()
+    void Effect(Transform bulletType)
     {
         // Crea il Bullet
-        Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
+        Instantiate(bulletType, FirePoint.position, FirePoint.rotation);
         // Crea il Muzzle Flash
         Transform clone = Instantiate(FlashPrefab, FirePoint.position, FirePoint.rotation) as Transform;
         clone.parent = FirePoint;
@@ -174,7 +175,7 @@ public class gun_script : MonoBehaviour
 
         if (isHolding && isCold)
         {
-            Shoot();
+            Shoot(BulletMinigunPrefab);
             //TODO Chiamata al knock back
             StartCoroutine(Shooting());
         }
@@ -194,7 +195,7 @@ public class gun_script : MonoBehaviour
 
         if (isHolding && isCold)
         {
-            Shoot();
+            Shoot(BulletMinigunPrefab);
             StartCoroutine(Shooting());
         }
     }
