@@ -24,3 +24,5 @@ ExportedObj/
 *.svd
 *.pdb
 Plugins
+NGUI
+NGUI.meta

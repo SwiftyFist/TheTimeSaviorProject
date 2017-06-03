@@ -5,17 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour {
 
+
     [SerializeField]
+    private float loadingTime = 4f;
+    [SerializeField]
+    private GameObject menuPanel;
+    [SerializeField]
+    private GameObject loadingMenu;
+    [SerializeField]
+    private TweenScale pcScreenTween;
+    
     private float timeToWait;
-    [SerializeField]
+    
     private float timeForExpand;
-    [SerializeField]
+    
     private float sizeMoltiplier;
-    [SerializeField]
+    
     private GameObject[] menuSprites;
-    [SerializeField]
+    
     private GameObject menuCanvas;
-    [SerializeField]
+    
     private GameObject fakeLoading;
 
 
@@ -24,9 +33,20 @@ public class MainMenuManager : MonoBehaviour {
 
 
 
+    public void Deactivate(GameObject toDeactivate)
+    {
+        toDeactivate.SetActive(false);
+    }
+
+    public void Activate(GameObject toActivate)
+    {
+        toActivate.SetActive(true);
+    }
+
     private void Start()
     {
-        StartCoroutine(WaitCoroutine(timeToWait));
+        //StartCoroutine(WaitCoroutine(timeToWait));
+
         audioManager = FindObjectOfType<AudioManagerFmod>();
     }
 
@@ -34,15 +54,17 @@ public class MainMenuManager : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            StartCoroutine(LerpCoroutine(menuSprites[1].transform.localScale, menuSprites[1].transform.localScale * 2, timeForExpand, 1));
+            pcScreenTween.PlayForward();
+            //StartCoroutine(LerpCoroutine(menuSprites[1].transform.localScale, menuSprites[1].transform.localScale * 2, timeForExpand, 1));
             audioManager.StartMusicLoop();
         }
     }
 
+
     
     private void Update()
     {
-        if(afterStart)
+        //if(afterStart)
             PressStart();
     }
 
@@ -65,7 +87,9 @@ public class MainMenuManager : MonoBehaviour {
             yield return null;
         }
 
-        if (time >= t)
+
+
+        /*if (time >= t)
         {
             menuSprites[1].SetActive(false);
             menuSprites[2].SetActive(true);
@@ -77,7 +101,7 @@ public class MainMenuManager : MonoBehaviour {
                 menuSprites[2].SetActive(false);
                 menuCanvas.SetActive(true);
             }
-        }
+        }*/
     }
 
     private IEnumerator Wait()
@@ -97,12 +121,11 @@ public class MainMenuManager : MonoBehaviour {
         //StartCoroutine(LerpCoroutine(menuSprites[0].transform.localScale, menuSprites[0].transform.localScale / sizeMoltiplier, timeForExpand));
     }
 
-    private IEnumerator FakeLoading()
+    public IEnumerator FakeLoading()
     {
-        menuCanvas.SetActive(false);
-        fakeLoading.SetActive(true);
+        
         audioManager.EnterGame();
-        yield return new WaitForSeconds(11.6f);
+        yield return new WaitForSeconds(loadingTime);
         audioManager.ReloadScene();
         SceneManager.LoadScene("Level_Hub");
         StartCoroutine(Wait());
