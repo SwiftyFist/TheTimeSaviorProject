@@ -111,6 +111,7 @@ public class MainMenuManager : MonoBehaviour {
             {
                 yield return new WaitForSeconds(0.3f);
                 menuSprites[2].SetActive(false);
+                menuSprites[3].SetActive(true);
                 menuCanvas.SetActive(true);
             }
         }
@@ -137,6 +138,8 @@ public class MainMenuManager : MonoBehaviour {
     {
         
         audioManager.EnterGame();
+        fakeLoading.SetActive(true);
+        menuCanvas.SetActive(false);
         yield return new WaitForSeconds(loadingTime);
         audioManager.ReloadScene();
         SceneManager.LoadScene("Level_Hub");
