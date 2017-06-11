@@ -484,7 +484,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114220383803431440, guid: d6478b776d4c64f44bddb5b8d7dbe33a, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: logo
   mFillCenter: 1
 --- !u!1 &152758701
@@ -502,7 +502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &152758702
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -653,9 +653,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingTime: 4
-  menuPanel: {fileID: 2014321114}
-  loadingMenu: {fileID: 378440938}
-  pcScreenTween: {fileID: 330334154}
+  timeToWait: 2
+  timeForExpand: 2
+  sizeMoltiplier: 5
+  menuSprites:
+  - {fileID: 152758701}
+  - {fileID: 26343836}
+  - {fileID: 1864783480}
+  - {fileID: 235519909}
+  menuCanvas: {fileID: 48469400}
+  fakeLoading: {fileID: 1550085573}
 --- !u!4 &267032637
 Transform:
   m_ObjectHideFlags: 0
@@ -898,7 +905,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114220383803431440, guid: d6478b776d4c64f44bddb5b8d7dbe33a, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: PC_2version
   mFillCenter: 1
 --- !u!4 &330334156
@@ -1094,7 +1101,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114220383803431440, guid: d6478b776d4c64f44bddb5b8d7dbe33a, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: Continue1
   mFillCenter: 1
 --- !u!1 &378440938
@@ -1207,7 +1214,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114220383803431440, guid: d6478b776d4c64f44bddb5b8d7dbe33a, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: Newgame1
   mFillCenter: 1
 --- !u!1001 &687923656
@@ -1735,7 +1742,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114220383803431440, guid: d6478b776d4c64f44bddb5b8d7dbe33a, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: Exit1
   mFillCenter: 1
 --- !u!1 &1210898330
@@ -1818,7 +1825,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114220383803431440, guid: d6478b776d4c64f44bddb5b8d7dbe33a, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: 0
   mFillCenter: 1
 --- !u!1 &1508786629
@@ -2032,7 +2039,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114220383803431440, guid: d6478b776d4c64f44bddb5b8d7dbe33a, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: Loading
   mFillCenter: 1
 --- !u!1 &1621425643
@@ -2309,7 +2316,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114220383803431440, guid: d6478b776d4c64f44bddb5b8d7dbe33a, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: 0
   mFillCenter: 1
 --- !u!1 &1864783480
@@ -2461,7 +2468,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114220383803431440, guid: d6478b776d4c64f44bddb5b8d7dbe33a, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: option1
   mFillCenter: 1
 --- !u!1 &1960906617
@@ -2600,7 +2607,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114220383803431440, guid: d6478b776d4c64f44bddb5b8d7dbe33a, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: 18_Start_Menu
   mFillCenter: 1
 --- !u!1 &2014321114
@@ -2787,7 +2794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &2041749486
 Rigidbody:
   m_ObjectHideFlags: 0
