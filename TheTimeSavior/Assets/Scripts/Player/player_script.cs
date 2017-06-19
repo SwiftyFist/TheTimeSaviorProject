@@ -257,7 +257,8 @@ public class player_script : MonoBehaviour
         yield return new WaitForSeconds(OffSetBecomInvulnerable);
         if (BackVulnerable != null) yield break;
         foreach (var enemy in enemies)
-            Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, true);
+            if(enemy != null)
+                Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, true);
         isInvincible = true;
         BackVulnerable = StartCoroutine(BackVulnerableEnumerator(enemies));
         StopCoroutine(BecomeInvulnerable);
