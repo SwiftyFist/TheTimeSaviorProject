@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun_Shell_Pool : PooledObject {
+public class Gun_Shell_Pool : MonoBehaviour {
 
     [SerializeField]
+    private Gun_Shell gunShellPrefab;
+    [SerializeField]
     private Transform spawnpoint;
+    [SerializeField]
+    private float durationInScene;
 
     [SerializeField]
     private float minForce, maxForce, minAngle, maxAngle;
@@ -14,7 +18,7 @@ public class Gun_Shell_Pool : PooledObject {
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        
     }
 
 
@@ -22,8 +26,17 @@ public class Gun_Shell_Pool : PooledObject {
     {
         float force = Random.Range(minForce, maxForce);
         float angle = Random.Range(minAngle, maxAngle);
-        Gun_Shell_Pool shell = GetPooledInstance<Gun_Shell_Pool>();
+        Gun_Shell shell = gunShellPrefab.GetPooledInstance<Gun_Shell>();
+        shell.transform.position = spawnpoint.position;
+        shell.Shoot(force, angle);
+        StartCoroutine(ReturnShellToPool(shell));
         //shell.transform.position = spawnpoint
 
+    }
+
+    private IEnumerator ReturnShellToPool(Gun_Shell shellToReturn)
+    {
+        yield return new WaitForSeconds(durationInScene);
+        shellToReturn.ReturnToPool();
     }
 }

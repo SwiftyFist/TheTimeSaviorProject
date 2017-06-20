@@ -43,6 +43,9 @@ public class gun_script : MonoBehaviour
     public float minRotationVelocity = 0f, maxRotationVelocity = 10f;
 
 
+    private Gun_Shell_Pool shellPool;
+
+
     public bool IsCold
     {
         get { return isCold; }
@@ -71,6 +74,7 @@ public class gun_script : MonoBehaviour
     private void Start()
     {
         audioManager = FindObjectOfType<AudioManagerFmod>();
+        shellPool = FindObjectOfType<Gun_Shell_Pool>();
     }
 
 
@@ -110,6 +114,7 @@ public class gun_script : MonoBehaviour
     void Shoot(Transform bulletType)
     {
         Effect(bulletType);
+        shellPool.ShootShell();
         GameObject.Find("Arm").GetComponent<KnockBackArm>().KnockBack();
     }
 
