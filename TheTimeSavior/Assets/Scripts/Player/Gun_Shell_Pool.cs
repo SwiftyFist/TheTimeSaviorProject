@@ -14,11 +14,11 @@ public class Gun_Shell_Pool : MonoBehaviour {
     [SerializeField]
     private float minForce, maxForce, minAngle, maxAngle;
 
-    private Rigidbody2D rb;
+    private Transform rotation;
 
     private void Awake()
     {
-        
+        rotation = FindObjectOfType<arm_rotation_script>().transform;
     }
 
 
@@ -28,7 +28,7 @@ public class Gun_Shell_Pool : MonoBehaviour {
         float angle = Random.Range(minAngle, maxAngle);
         Gun_Shell shell = gunShellPrefab.GetPooledInstance<Gun_Shell>();
         shell.transform.position = spawnpoint.position;
-        shell.Shoot(force, angle);
+        shell.Shoot(angle, force, rotation.rotation);
         StartCoroutine(ReturnShellToPool(shell));
         //shell.transform.position = spawnpoint
 

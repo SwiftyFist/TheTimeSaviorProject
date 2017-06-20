@@ -11,10 +11,11 @@ public class Gun_Shell : PooledObject {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Shoot(float angle, float force)
+    public void Shoot(float angle, float force, Quaternion startingRot)
     {
-        Vector2 newVector = new Vector2(0, -angle);
-        rb.AddForce(newVector * force, ForceMode2D.Impulse);
+        Vector3 newVector3 = startingRot.eulerAngles;
+        transform.rotation = Quaternion.Euler(newVector3.x, newVector3.y, (newVector3.z - 90) + angle);
+        rb.AddForce(transform.up * (force / 100), ForceMode2D.Impulse);
     }
 
    
