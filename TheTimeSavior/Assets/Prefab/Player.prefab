@@ -209,8 +209,8 @@ MonoBehaviour:
   playerPosition: {x: -6.9, y: -7.8, z: 0}
   lookRight: 1
   isGrounded: 1
-  InvincibleTime: 1
-  OffSetBecomInvulnerable: 0.5
+  InvincibleTime: 0.8
+  OffSetBecomInvulnerable: 0.4
   isInvincible: 0
   JumpForce: 20
   maxJumpTime: 0.5

@@ -91,6 +91,7 @@ public class gun_script : MonoBehaviour
             if (enumerationStarted == false && isCold)
             {
                 StopAllCoroutines();
+                singleShootAvailable = true;
                 enumerationStarted = true;
                 StartCoroutine(StopHolding());
                 StartCoroutine(StartShooting());
