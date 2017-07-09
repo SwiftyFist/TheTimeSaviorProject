@@ -58,8 +58,8 @@ public class EnemyAI : MonoBehaviour
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         RightLimitPosition = RightLimit.position;
         LeftLimitPosition = LeftLimit.position;
-        Destroy(RightLimit);
-        Destroy(LeftLimit);
+        Destroy(RightLimit.gameObject);
+        Destroy(LeftLimit.gameObject);
         SetStatus();
     }
 

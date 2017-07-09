@@ -72,8 +72,11 @@ public class AudioManagerFmod : MonoBehaviour {
     private void Awake()
     {
         //musicEmitter = GetComponent<StudioEventEmitter>();
-        //musicEmitter.Play();
-        //musicEmitter.SetParameter("Intro_Loop", 0);
+        if (musicEmitter != null)
+        {
+            musicEmitter.Play();
+            musicEmitter.SetParameter("Intro_Loop", 0);
+        }
         SceneManager.activeSceneChanged += OnChangeSceneHub;
     }
 
