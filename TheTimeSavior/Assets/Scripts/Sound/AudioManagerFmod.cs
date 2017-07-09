@@ -76,8 +76,8 @@ public class AudioManagerFmod : MonoBehaviour {
         {
             musicEmitter.Play();
             musicEmitter.SetParameter("Intro_Loop", 0);
+            SceneManager.activeSceneChanged += OnChangeSceneHub;
         }
-        SceneManager.activeSceneChanged += OnChangeSceneHub;
     }
 
 
