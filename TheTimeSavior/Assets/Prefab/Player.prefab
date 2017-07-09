@@ -336,6 +336,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1512190400384214
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4619419679357892}
+  - component: {fileID: 114377907236348928}
+  m_Layer: 9
+  m_Name: ShellSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1826164041852696
 GameObject:
   m_ObjectHideFlags: 1
@@ -409,6 +425,7 @@ Transform:
   - {fileID: 4656693747863048}
   - {fileID: 4421512570060090}
   - {fileID: 4000012669882850}
+  - {fileID: 4619419679357892}
   m_Father: {fileID: 456930}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -453,6 +470,19 @@ Transform:
   m_Father: {fileID: 4000011382265098}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4619419679357892
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1512190400384214}
+  m_LocalRotation: {x: 0, y: 0, z: -0.8616291, w: 0.5075384}
+  m_LocalPosition: {x: 0.03, y: -0.48, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4000011382265098}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -64.949005}
 --- !u!4 &4656693747863048
 Transform:
   m_ObjectHideFlags: 1
@@ -656,6 +686,25 @@ MonoBehaviour:
   FirePoint: {fileID: 4000011104674110}
   UsingMouse: 1
   R_analog_threshold: 0.01
+--- !u!114 &114377907236348928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1512190400384214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ded9e459e3d1544adb77a5707e799a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunShellPrefab: {fileID: 114296630130049316, guid: 55e50e5e027f9134eb539022fbc46521,
+    type: 2}
+  spawnpoint: {fileID: 4619419679357892}
+  durationInScene: 10
+  minForce: 0.00125
+  maxForce: 0.0017
+  minAngle: -60
+  maxAngle: 0
 --- !u!114 &114396541587541074
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -8,25 +8,25 @@ public class MainMenuManager : MonoBehaviour {
 
     [SerializeField]
     private float loadingTime = 4f;
-    [SerializeField]
+    //[SerializeField]
     private GameObject menuPanel;
-    [SerializeField]
+    //[SerializeField]
     private GameObject loadingMenu;
-    [SerializeField]
+    //[SerializeField]
     private TweenScale pcScreenTween;
 
     private UIRoot mainRoot;
-
+    [SerializeField]
     private float timeToWait;
-    
+    [SerializeField]
     private float timeForExpand;
-    
+    [SerializeField]
     private float sizeMoltiplier;
-    
+    [SerializeField]
     private GameObject[] menuSprites;
-    
+    [SerializeField]
     private GameObject menuCanvas;
-    
+    [SerializeField]
     private GameObject fakeLoading;
 
 
@@ -45,19 +45,19 @@ public class MainMenuManager : MonoBehaviour {
         toActivate.SetActive(true);
     }
 
-    private void Awake()
+    /*private void Awake()
     {
         mainRoot = FindObjectOfType<UIRoot>();
         mainRoot.scalingStyle = UIRoot.Scaling.Constrained;
         mainRoot.manualHeight = Screen.currentResolution.height;
         mainRoot.manualWidth = Screen.currentResolution.width;
         
-    }
+    }*/
 
 
     private void Start()
     {
-        //StartCoroutine(WaitCoroutine(timeToWait));
+        StartCoroutine(WaitCoroutine(timeToWait));
 
         audioManager = FindObjectOfType<AudioManagerFmod>();
     }
@@ -66,8 +66,8 @@ public class MainMenuManager : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            pcScreenTween.PlayForward();
-            //StartCoroutine(LerpCoroutine(menuSprites[1].transform.localScale, menuSprites[1].transform.localScale * 2, timeForExpand, 1));
+            //pcScreenTween.PlayForward();
+            StartCoroutine(LerpCoroutine(menuSprites[1].transform.localScale, menuSprites[1].transform.localScale * 2, timeForExpand, 1));
             audioManager.StartMusicLoop();
         }
     }
@@ -101,7 +101,7 @@ public class MainMenuManager : MonoBehaviour {
 
 
 
-        /*if (time >= t)
+        if (time >= t)
         {
             menuSprites[1].SetActive(false);
             menuSprites[2].SetActive(true);
@@ -111,9 +111,10 @@ public class MainMenuManager : MonoBehaviour {
             {
                 yield return new WaitForSeconds(0.3f);
                 menuSprites[2].SetActive(false);
+                menuSprites[3].SetActive(true);
                 menuCanvas.SetActive(true);
             }
-        }*/
+        }
     }
 
     private IEnumerator Wait()
@@ -137,6 +138,8 @@ public class MainMenuManager : MonoBehaviour {
     {
         
         audioManager.EnterGame();
+        fakeLoading.SetActive(true);
+        menuCanvas.SetActive(false);
         yield return new WaitForSeconds(loadingTime);
         audioManager.ReloadScene();
         SceneManager.LoadScene("Level_Hub");
