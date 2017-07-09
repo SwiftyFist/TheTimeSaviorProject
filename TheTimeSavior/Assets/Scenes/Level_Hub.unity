@@ -421,7 +421,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4190030995674614, guid: 484452cf7c0b0e543bd1cc2f69c4cddd, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 484452cf7c0b0e543bd1cc2f69c4cddd, type: 2}
@@ -2185,7 +2185,7 @@ Transform:
   - {fileID: 1749816514}
   - {fileID: 701841264}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1911186931
 GameObject:
