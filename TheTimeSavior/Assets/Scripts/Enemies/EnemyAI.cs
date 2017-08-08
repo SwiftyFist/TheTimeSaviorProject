@@ -3,14 +3,6 @@ using UnityEngine;
 
 namespace Enemies
 {
-    public enum EStatus
-    {
-        Inactive,
-        Walking,
-        Running,
-        Patrol
-    }
-    
     public class EnemyAi : Enemy
     {
 

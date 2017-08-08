@@ -2,7 +2,16 @@
 
 namespace Enemies
 {
-    public class Enemy : MonoBehaviour {
+    public enum EStatus
+    {
+        Inactive,
+        Walking,
+        Running,
+        Patrol
+    }
+    
+    public class Enemy : MonoBehaviour
+    {
         public EStatus MyStatus = EStatus.Inactive;
     }
 }
