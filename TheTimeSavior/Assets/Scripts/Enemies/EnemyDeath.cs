@@ -45,7 +45,7 @@ namespace Enemies
         IEnumerator DeathDelay()
         {
             if (transform.name == "Enemy")
-                GetComponent<EnemyAi>().enabled = false;
+                GetComponent<EnemyAI>().enabled = false;
             else  
                 GetComponent<DroneAI_v2>().enabled = false;
 

@@ -68,7 +68,7 @@ public class move_bullet_script : MonoBehaviour {
 				//Il nemico perde vita
 				colInfo.GetComponent<enemy_health_manager_script>().giveDamage (damageToGive);
 	            //Se il nemico viene colpito si triggera in automatico
-				colInfo.GetComponent<EnemyAi>().SetTrigger();
+				colInfo.GetComponent<EnemyAI>().SetTrigger();
 			}
 			if (colInfo.name == "Enemy_Type_2") {
 

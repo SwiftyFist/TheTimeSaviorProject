@@ -24,7 +24,7 @@ public class AudioManagerFmod : MonoBehaviour {
     private StudioEventEmitter backgroundEmitter;
 
     [HideInInspector]
-    public List<EnemyAi> normalEnemyList;
+    public List<EnemyAI> normalEnemyList;
     [HideInInspector]
     public List<DroneAI_v2> droneList;
     [HideInInspector]

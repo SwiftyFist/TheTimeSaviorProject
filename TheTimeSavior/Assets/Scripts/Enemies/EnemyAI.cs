@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Enemies
 {
-    public class EnemyAi : Enemy
+    public class EnemyAI : Enemy
     {
 
         #region Variabili
@@ -35,7 +35,7 @@ namespace Enemies
 
         private void Awake()
         {
-            
+            //_scoreManager = GameObject.Find("Score_Manager").GetComponent<score_manager_script>();
             _myAnimator = GetComponent<Animator>();
             _myRigidBody2D = GetComponent<Rigidbody2D>();
             _myTransform = GetComponent<Transform>();
@@ -193,13 +193,7 @@ namespace Enemies
                 var distance = CalcDistanceFromPlayer();
                 
                 if (MyStatus == EStatus.Running)
-                {
-                    MyStatus = EStatus.Running;
-                    _myAnimator.SetBool("Triggered", true);
-                    _myAnimator.SetBool("Rotate", true);
-                    
                     return;
-                }
                 
                 if (distance >= RangeToActivate)
                 {
@@ -249,7 +243,7 @@ namespace Enemies
             else if (_myCurrentVelocity < MaxRunningVelocity)
                 _myCurrentVelocity += AccelerationOnRun;
 
-            if (IsOutOfPosition())
+            if (IsOutOfPosition() && StayOnPlatform)
                 _myCurrentVelocity = 0;
 
             _myAnimator.SetFloat("Velocity", Mathf.Abs(_myCurrentVelocity));

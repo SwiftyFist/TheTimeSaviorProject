@@ -15,8 +15,8 @@ namespace Enemies
 
             if (enemy.GetComponent<DroneAI_v2>() != null)
                 enemy.GetComponent<DroneAI_v2>().SetTriggerOn();
-            else if (enemy.GetComponent<EnemyAi>() != null)
-                enemy.GetComponent<EnemyAi>().SetTrigger();
+            else if (enemy.GetComponent<EnemyAI>() != null)
+                enemy.GetComponent<EnemyAI>().SetTrigger();
             else if (enemy.GetComponent<enemy2_script>() != null)
                 enemy.GetComponent<enemy2_script>().SetTriggerOn();
             else
