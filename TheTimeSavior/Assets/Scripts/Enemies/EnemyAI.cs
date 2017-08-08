@@ -20,6 +20,9 @@ namespace Enemies
         public Vector3 RightLimitPosition, LeftLimitPosition;
         public bool StayOnPlatform;
         public float WalkVelocity = 8f;
+        [Range(0, -1)]
+        public float PushBackVelocityModificatorOnPlatform = -1;
+        public GameObject PlatformToStay;
         
         private bool _bIsFacingLeft = true;
         private bool _called;
@@ -35,7 +38,7 @@ namespace Enemies
 
         private void Awake()
         {
-            //_scoreManager = GameObject.Find("Score_Manager").GetComponent<score_manager_script>();
+            _scoreManager = GameObject.Find("Score_Manager").GetComponent<score_manager_script>();
             _myAnimator = GetComponent<Animator>();
             _myRigidBody2D = GetComponent<Rigidbody2D>();
             _myTransform = GetComponent<Transform>();
@@ -78,7 +81,7 @@ namespace Enemies
             }
 
             if (IsOutOfPosition() && StayOnPlatform && MyStatus == EStatus.Running)
-                _myCurrentVelocity = _myCurrentVelocity * -1;
+                _myCurrentVelocity = _myCurrentVelocity * PushBackVelocityModificatorOnPlatform;
 
             _myRigidBody2D.velocity = new Vector2(_myCurrentVelocity, _myRigidBody2D.velocity.y);
 
@@ -98,7 +101,11 @@ namespace Enemies
         public void OnCollisionEnter2D(Collision2D collision)
         {
             var collidedGameObject = collision.gameObject;
-            if (collidedGameObject.name == "Player")
+            if (collidedGameObject.GetInstanceID() == PlatformToStay.GetInstanceID() && !StayOnPlatform)
+            {
+                StayOnPlatform = true;
+            }
+            else if (collidedGameObject.name == "Player")
             {
                 var playerScript = collidedGameObject.GetComponent<player_script>();
 
