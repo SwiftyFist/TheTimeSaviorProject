@@ -15,7 +15,6 @@ namespace Enemies
         public float PushBackVelocityModificatorOnPlatform = -1;
         public GameObject PlatformToStay;
         private Vector3 _rightLimitPosition, _leftLimitPosition;
-        
 
         #endregion
 
@@ -29,9 +28,8 @@ namespace Enemies
             base.Awake();
         }
 
-        private void Update()
+        protected override void Update()
         {
-            Debug.Log(MyCurrentVelocity);
             switch (MyStatus)
             {
                 case EStatus.Inactive:
@@ -56,9 +54,9 @@ namespace Enemies
             if (IsOutOfPosition() && StayOnPlatform && MyStatus == EStatus.Triggered)
                 MyCurrentVelocity = MyCurrentVelocity * PushBackVelocityModificatorOnPlatform;
 
-            MyRigidBody2D.velocity = new Vector2(MyCurrentVelocity, MyRigidBody2D.velocity.y);
+            Move();
         }
-        
+
         private void PatrolScheme()
         {
             if (IsOutOfPosition())
@@ -116,9 +114,8 @@ namespace Enemies
         public override void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.GetInstanceID() == PlatformToStay.GetInstanceID() && !StayOnPlatform)
-            {
                 StayOnPlatform = true;
-            }
+            
             base.OnCollisionEnter2D(collision);
         }
         

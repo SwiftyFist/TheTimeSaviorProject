@@ -17,6 +17,7 @@ namespace Enemies
         public const string AnimatorTriggered = "Triggered";
         public const string AnimatorVelocity = "Velocity";
         
+        #region Variabili
         
         public EStatus MyStatus = EStatus.Inactive;
         public float AccelerationOnRun = 2.5f; //Drone 2
@@ -37,6 +38,8 @@ namespace Enemies
         protected Coroutine LastRunningVelIncreaser, RunningVelIncreaser;
         protected bool Called;
         
+        #endregion
+        
         protected virtual void Awake()
         {
             ScoreManager = GameObject.Find("Score_Manager").GetComponent<score_manager_script>();
@@ -47,7 +50,32 @@ namespace Enemies
             SetStatus();
             SetTheRightFacing();
         }
-        
+
+        protected virtual void Update()
+        {
+            switch (MyStatus)
+            {
+                case EStatus.Inactive:
+                    InactiveScheme();
+                    break;
+                case EStatus.Walking:
+                    SetTheRightFacing();
+                    WalkingScheme();
+                    break;
+                case EStatus.Triggered:
+                    SetTheRightFacing();
+                    RunningScheme();
+                    break;
+                case EStatus.Patrol:
+                    break;
+                default:
+                    InactiveScheme();
+                    break;
+            }
+            
+            Move();
+        }
+
         protected void FixedUpdate()
         {
             if (CalcDistanceFromPlayer() > DistanceFromPlayerToDeath)
@@ -166,7 +194,11 @@ namespace Enemies
                 MyAnimator.SetBool(AnimatorRun, true);
             }
         }
-        
+
+        protected virtual void Move()
+        {
+            MyRigidBody2D.velocity = new Vector2(MyCurrentVelocity, MyRigidBody2D.velocity.y);
+        }
         
         protected void InactiveScheme()
         {
@@ -183,7 +215,6 @@ namespace Enemies
             if (!Called)
                 LastRunningVelIncreaser = StartCoroutine(RunningVelIncrease());
         }
-        
         
     }
 }
