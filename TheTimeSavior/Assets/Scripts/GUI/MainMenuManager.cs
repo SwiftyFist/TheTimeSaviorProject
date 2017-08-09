@@ -15,6 +15,8 @@ public class MainMenuManager : MonoBehaviour {
     //[SerializeField]
     private TweenScale pcScreenTween;
 
+    private bool _keyPressed = false;
+
     private UIRoot mainRoot;
     [SerializeField]
     private float timeToWait;
@@ -64,9 +66,10 @@ public class MainMenuManager : MonoBehaviour {
 
     private void PressStart()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && !_keyPressed)
         {
             //pcScreenTween.PlayForward();
+            _keyPressed = true;
             StartCoroutine(LerpCoroutine(menuSprites[1].transform.localScale, menuSprites[1].transform.localScale * 2, timeForExpand, 1));
             audioManager.StartMusicLoop();
         }

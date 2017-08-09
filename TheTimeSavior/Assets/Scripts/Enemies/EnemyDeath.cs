@@ -15,7 +15,7 @@ namespace Enemies
         {
             ScoreManager = GameObject.Find("Score_Manager").GetComponent<score_manager_script>();
             myAnimator = GetComponent<Animator>();
-            SpawnParticle = transform.FindChild("SpawnParticle");
+            SpawnParticle = transform.Find("SpawnParticle");
         }
 
         public void DestroyEnemy(int pointsOnDeath, bool byPlayer = false)

@@ -22,7 +22,7 @@ public class move_bullet_script : MonoBehaviour {
 
 	void Awake()
 	{
-		SpawnEffect = transform.FindChild("Spawn_Effect");
+		SpawnEffect = transform.Find("Spawn_Effect");
 	}
 
 
@@ -90,7 +90,7 @@ public class move_bullet_script : MonoBehaviour {
 				//Il nemico perde vita
 				colInfo.GetComponent<enemy_health_manager_script> ().giveDamage (damageToGive);
                 //Se il nemico viene colpito si triggera in automatico
-                colInfo.GetComponent<DroneAI_v2>().SetTriggerOn();
+                colInfo.GetComponent<DroneAI_v2>().SetTrigger();
 
             }
 
