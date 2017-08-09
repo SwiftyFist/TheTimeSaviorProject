@@ -1,208 +1,148 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
-
-public class EnemyAI : MonoBehaviour
+namespace Enemies
 {
-    public enum EStatus
+    public class EnemyAI : Enemy
     {
-        Inactive,
-        Walking,
-        Running
-    }
 
-    //Variabili per lo stato e ìl movimento
-    public float rangeToRun = 8.5f, rangeToActivate = 14; 
-    public float walkVelocity = 6f;
-    public float maxRunningVelocity = 10f;
-    public float accelerationOnRun = 2f; 
-    float myCurrentVelocity = 0f;
-    public EStatus myStatus;
-    public float pushBackOnHit = 6;
-    public bool StayOnPlatform = false;
-    public Transform RightLimit, LeftLimit;
-    public Vector3 RightLimitPosition, LeftLimitPosition;
-    bool IsOutOfPosition = false;
-    public float LimitPushBackVelocity = 2f;
-
-    //Variabili dell'oggetto
-    Rigidbody2D myRigidBody2D;
-    Transform myTransform;
-    bool bIsFacingLeft = true;
-    bool isGrounded;
-    public LayerMask groundLayer;
-    public Transform Enemy_Ground;
-
-    //Variabili del player
-    Transform playerTransform;
-
-    //Variabili per l animazione
-    Animator myAnimator;
-
-    //Variabili per l'enumeratore del'incremento di velocità
-    Coroutine lastRunningVelIncreaser, runningVelIncreaser;
-    bool called = false;
-
-    private score_manager_script ScoreManager;
-
-    public float DistanceFromPlayerToDeath;
-
-    void Awake()
-    {
-        ScoreManager = GameObject.Find("Score_Manager").GetComponent<score_manager_script>();
-        myAnimator = GetComponent<Animator>();
-        myRigidBody2D = GetComponent<Rigidbody2D>();
-        myTransform = GetComponent<Transform>();
-        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
-        RightLimitPosition = RightLimit.position;
-        LeftLimitPosition = LeftLimit.position;
-        Destroy(RightLimit.gameObject);
-        Destroy(LeftLimit.gameObject);
-        SetStatus();
-    }
-
-    void FixedUpdate()
-    {
-        isGrounded = Physics2D.OverlapCircle(Enemy_Ground.position, 0.1f, groundLayer); //Controlla se è a terra
-        if (myStatus != EStatus.Running)
-            SetStatus();
-    }
-
-    void Update()
-    {
-        IsOutOfPosition = (myTransform.position.x >= RightLimitPosition.x) || (myTransform.position.x <= LeftLimitPosition.x);
-        SetTheRightFacing();
-        switch (myStatus)
-        {
-            case EStatus.Inactive:
-                InactiveScheme();
-                break;
-            case EStatus.Walking:
-                WalkingScheme();
-                break;
-            case EStatus.Running:
-                RunningScheme();
-                break;
-        }
-
+        #region Variabili
         
-        myRigidBody2D.velocity = new Vector2(myCurrentVelocity, myRigidBody2D.velocity.y);
-        if (IsOutOfPosition && StayOnPlatform)
-            myRigidBody2D.velocity = new Vector2(
-                LimitPushBackVelocity * (myTransform.position.x >= RightLimitPosition.x ? -1 : 1), myRigidBody2D.velocity.y);
+        public Transform EnemyGround;
+        public LayerMask GroundLayer;
+        public Transform RightLimit, LeftLimit;
+        public bool StayOnPlatform;
+        public float PushBackVelocityModificatorOnPlatform = -1;
+        public GameObject PlatformToStay;
+        private Vector3 _rightLimitPosition, _leftLimitPosition;
 
-        if (CalcDistanceFromPlayer() > DistanceFromPlayerToDeath)
-            GetComponent<EnemyDeath>().DestroyEnemy(0);
-    }
+        #endregion
 
-    //Cambia colore quando il player è in range
-    //void OnDrawGizmosSelected()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawSphere(transform.position, rangeToActivate);
-    //    Gizmos.color = Color.black;
-    //    Gizmos.DrawSphere(transform.position, rangeToRun);
-    //}
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        var collidedGameObject = collision.gameObject;
-        if (collidedGameObject.name == "Player")
+        protected override void Awake()
         {
-            var playerScript = collidedGameObject.GetComponent<player_script>();
-
-            GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().VelocityModificatorByGame(0);
-
-            ScoreManager.EnemyDeathCountReset();
-
-            if (!playerScript.isInvincible)
-                playerScript.SetInvincible();
+            PlayerTransform = GameObject.Find("Player").GetComponent<Transform>();
+            _rightLimitPosition = RightLimit.position;
+            _leftLimitPosition = LeftLimit.position;
+            Destroy(RightLimit.gameObject);
+            Destroy(LeftLimit.gameObject);
+            base.Awake();
         }
 
-        if (collidedGameObject.tag == "TriggerGate")
-            GetComponent<EnemyDeath>().DestroyEnemy(0);
-    }
-
-    public void SetTheRightFacing()
-    {
-        if (bIsFacingLeft && playerTransform.position.x > myTransform.position.x
-            || !bIsFacingLeft && playerTransform.position.x < myTransform.position.x)
+        protected override void Update()
         {
-            myTransform.localScale = new Vector3(myTransform.localScale.x * -1, myTransform.localScale.y, myTransform.localScale.z);
-            bIsFacingLeft = !bIsFacingLeft;
+            switch (MyStatus)
+            {
+                case EStatus.Inactive:
+                    InactiveScheme();
+                    break;
+                case EStatus.Walking:
+                    SetTheRightFacing();
+                    WalkingScheme();
+                    break;
+                case EStatus.Triggered:
+                    SetTheRightFacing();
+                    RunningScheme();
+                    break;
+                case EStatus.Patrol:
+                    PatrolScheme();
+                    break;
+                default:
+                    InactiveScheme();
+                    break;
+            }
+
+            if (IsOutOfPosition() && StayOnPlatform && MyStatus == EStatus.Triggered)
+                MyCurrentVelocity = MyCurrentVelocity * PushBackVelocityModificatorOnPlatform;
+
+            Move();
         }
-    }
 
-    public void SetTriggerOn()
-    {
-        myStatus = EStatus.Running;
-        myAnimator.SetBool("Triggered", true);
-        myAnimator.SetBool("Rotate", true);
-    }
-
-    void InactiveScheme()
-    {
-        myRigidBody2D.velocity = new Vector2(0, myRigidBody2D.velocity.y);
-    }
-    
-    void WalkingScheme()
-    {
-        if (bIsFacingLeft)
-            myCurrentVelocity = walkVelocity * -1;
-        else
-            myCurrentVelocity = walkVelocity;
-    }
-    
-    void RunningScheme()
-    {
-        if (!called)
-            lastRunningVelIncreaser = StartCoroutine(RunningVelIncreaser());
-    }
-    
-    void SetStatus()
-    {
-        float distance = CalcDistanceFromPlayer();
-        if (distance >= rangeToActivate)
+        private void PatrolScheme()
         {
-            myStatus = EStatus.Inactive;
-            myAnimator.SetBool("Triggered", false);
-            myAnimator.SetBool("Rotate", false);
+            if (IsOutOfPosition())
+                FlipFacing();
+            
+            MyCurrentVelocity = WalkVelocity * (BIsFacingLeft ? -1 : 1);
         }
-        else if (distance < rangeToActivate && distance >= rangeToRun)
+
+        private bool IsOutOfPosition()
         {
-            myStatus = EStatus.Walking;
-            myAnimator.SetBool("Triggered", false);
-            myAnimator.SetBool("Rotate", false);
+            return (
+                MyTransform.position.x >= _rightLimitPosition.x ||
+                MyTransform.position.x <= _leftLimitPosition.x
+             );
         }
-        else if (distance < rangeToRun)
+
+        private bool PlayerOnPlatform()
         {
-            myStatus = EStatus.Running;
-            myAnimator.SetBool("Triggered", true);
-            myAnimator.SetBool("Rotate", true);
+            return ( 
+                PlayerTransform.position.y >= _rightLimitPosition.y && 
+                PlayerTransform.position.x <= _rightLimitPosition.x && 
+                PlayerTransform.position.x >= _leftLimitPosition.x
+             );
         }
-    }
 
-    float CalcDistanceFromPlayer()
-    {
-        return Mathf.Abs(myTransform.position.x - playerTransform.position.x);
-    }
+        protected override IEnumerator RunningVelIncrease()
+        {
+            Called = true;
+            RunningVelIncreaser = LastRunningVelIncreaser;
 
-    IEnumerator RunningVelIncreaser()
-    {
-        called = true;
-        runningVelIncreaser = lastRunningVelIncreaser;
+            yield return new WaitForSeconds(0.2f);
 
-        yield return new WaitForSeconds(0.2f);
+            if (BIsFacingLeft && MyCurrentVelocity > MaxRunningVelocity * -1)
+                MyCurrentVelocity -= AccelerationOnRun;
+            else if (MyCurrentVelocity < MaxRunningVelocity)
+                MyCurrentVelocity += AccelerationOnRun;
 
-        if (bIsFacingLeft && myCurrentVelocity > (maxRunningVelocity * -1))
-            myCurrentVelocity -= accelerationOnRun;
-        else if (myCurrentVelocity < maxRunningVelocity)
-            myCurrentVelocity += accelerationOnRun;
-
-        myAnimator.SetFloat("Velocity", Mathf.Abs(myCurrentVelocity));
-        lastRunningVelIncreaser = StartCoroutine(RunningVelIncreaser());
-        StopCoroutine(runningVelIncreaser);
+            if (IsOutOfPosition() && StayOnPlatform)
+                MyCurrentVelocity = 0;
+            
+            MyAnimator.SetFloat(AnimatorVelocity, Mathf.Abs(MyCurrentVelocity));
+        
+            if (MyStatus == EStatus.Triggered)
+            {
+                LastRunningVelIncreaser = StartCoroutine(RunningVelIncrease());
+                if (RunningVelIncreaser != null)
+                    StopCoroutine(RunningVelIncreaser);
+            }
+            else
+            {
+                Called = false;
+            }
+        }
+        
+        public override void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.GetInstanceID() == PlatformToStay.GetInstanceID() && !StayOnPlatform)
+                StayOnPlatform = true;
+            
+            base.OnCollisionEnter2D(collision);
+        }
+        
+        protected override void SetStatus()
+        {
+            if (StayOnPlatform)
+            {
+                if (!PlayerOnPlatform())
+                {
+                    StopAllCoroutines();
+                    MyStatus = EStatus.Patrol;
+                    MyAnimator.SetBool(AnimatorTriggered, false);
+                    MyAnimator.SetBool(AnimatorRun, false);
+                }
+                else
+                {
+                    MyStatus = EStatus.Triggered;
+                    MyAnimator.SetBool(AnimatorTriggered, true);
+                    MyAnimator.SetBool(AnimatorRun, true);
+                }
+            }
+            else
+            {
+                base.SetStatus();
+            }
+            
+        }
+        
     }
 }
