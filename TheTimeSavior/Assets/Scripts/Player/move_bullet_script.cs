@@ -56,7 +56,7 @@ public class move_bullet_script : MonoBehaviour {
 
                 //test.localScale = new Vector3 (1,1,1);
                 //Destroy (test.gameObject,0.03f);
-                colInfo.transform.gameObject.GetComponent<ShieldManager>().SpawnShieldEnemy(transform);
+                //colInfo.transform.gameObject.GetComponent<ShieldManager>().SpawnShieldEnemy(transform);
                 Destroy (gameObject);
 				//Camera Shake
 				GameObject.Find("Camera").GetComponent<Camera_Shake_Script>().Shake (EnemyShakeAmt, EnemyShakeLenght);
@@ -78,7 +78,7 @@ public class move_bullet_script : MonoBehaviour {
                 //test.localScale = new Vector3 (1,1,1);
                 //Destroy (test.gameObject,0.05f);
 
-			    colInfo.transform.gameObject.GetComponent<ShieldManager>().SpawnShieldEnemy(transform);
+			    //colInfo.transform.gameObject.GetComponent<ShieldManager>().SpawnShieldEnemy(transform);
                 Destroy (gameObject);
 				//Camera Shake
 				GameObject.Find("Camera").GetComponent<Camera_Shake_Script>().Shake (EnemyShakeAmt, EnemyShakeLenght);

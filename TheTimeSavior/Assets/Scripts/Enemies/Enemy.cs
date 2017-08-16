@@ -1,5 +1,6 @@
-﻿using System.Collections;
-using JetBrains.Annotations;
+﻿using System;
+using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace Enemies
@@ -37,6 +38,7 @@ namespace Enemies
         protected Animator MyAnimator;
         protected Coroutine LastRunningVelIncreaser, RunningVelIncreaser;
         protected bool Called;
+        protected GameObject Shield;
         
         #endregion
         
@@ -47,6 +49,10 @@ namespace Enemies
             MyRigidBody2D = GetComponent<Rigidbody2D>();
             MyTransform = GetComponent<Transform>();
             PlayerTransform = GameObject.Find("Player").GetComponent<Transform>();
+            var shield = gameObject.GetComponentsInChildren<Transform>()
+                .FirstOrDefault(x => x.gameObject.CompareTag("Shield"));
+            if ( shield != null)
+                Shield = shield.gameObject;   
             SetStatus();
             SetTheRightFacing();
         }
@@ -215,6 +221,40 @@ namespace Enemies
             if (!Called)
                 LastRunningVelIncreaser = StartCoroutine(RunningVelIncrease());
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Bullet"))
+                ActiveShield(other.transform.position);
+        }
+
+        private void ActiveShield(Vector3 bulletPosition)
+        {
+            var myPosition = Camera.main.ScreenToWorldPoint(MyTransform.position);
+            bulletPosition = Camera.main.ScreenToWorldPoint(bulletPosition);
+            var angularCoefficentBullet =
+                (bulletPosition.y - myPosition.y) /
+                (bulletPosition.x - myPosition.x);
+            var rotZ = Mathf.Atan(angularCoefficentBullet) * Mathf.Rad2Deg;
+            var currentEulerAngle = Shield.transform.localEulerAngles;
+
+            var offSet = (myPosition.y > bulletPosition.y) ? -90 : 0;
+            
+            Shield.transform.localEulerAngles = new Vector3(
+                currentEulerAngle.x,
+                currentEulerAngle.y,
+                rotZ + offSet
+                );
+            
+            var mySprite = Shield.GetComponent<SpriteRenderer>();
+            mySprite.enabled = true;
+            StartCoroutine(ShieldDown(mySprite));
+        }
         
+        private static IEnumerator ShieldDown(SpriteRenderer mySprite)
+        {
+            yield return new WaitForSeconds(0.5f);
+            mySprite.enabled = false;
+        }
     }
 }

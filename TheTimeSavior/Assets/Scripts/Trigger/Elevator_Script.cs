@@ -1,45 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Elevator_Script : MonoBehaviour
+namespace Trigger
 {
-    private bool Trigger = false;
-    private Animator myAnimator;
-
-    void Awake()
+    public class Elevator_Script : MonoBehaviour
     {
-        myAnimator = GetComponent<Animator>();
-    }
+        private bool _trigger;
+        private Animator _myAnimator;
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
+        private void Awake()
         {
-            Trigger = true;
-            myAnimator.SetBool("Elevator_Trigger",Trigger);
-            
+            _myAnimator = GetComponent<Animator>();
         }
-    }
 
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            Trigger = false;
-            myAnimator.SetBool("Elevator_Trigger", Trigger);
+            if (!collision.gameObject.CompareTag("Player")) return;
+            _trigger = true;
+            _myAnimator.SetBool("Elevator_Trigger",_trigger);
         }
-    }
 
-     void Update()
-    {
-        if (Trigger == true && Input.GetButtonDown("Submit"))
+        private void OnTriggerExit2D(Collider2D collision)
         {
+            if (!collision.gameObject.CompareTag("Player")) return;
+            _trigger = false;
+            _myAnimator.SetBool("Elevator_Trigger", _trigger);
+        }
+
+        private void Update()
+        {
+            if (_trigger != true || !Input.GetButtonDown("Submit")) return;
             FindObjectOfType<AudioManagerFmod>().StartInGameMusic();
-            SceneManager.LoadScene("Level_Test");
+            SceneManager.LoadScene("Level_Present");
             GameObject.Find("Gun").GetComponent<gun_script>().StopShooting();
-            
         }
     }
 }
