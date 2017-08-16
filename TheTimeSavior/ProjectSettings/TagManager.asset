@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - NeverDestroy
   - TriggerGate
+  - Shield
   layers:
   - Default
   - TransparentFX
