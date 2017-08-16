@@ -56,7 +56,7 @@ public class move_bullet_script : MonoBehaviour {
 
                 //test.localScale = new Vector3 (1,1,1);
                 //Destroy (test.gameObject,0.03f);
-                colInfo.transform.gameObject.GetComponent<ShieldManager>().SpawnShieldEnemy(transform);
+                //colInfo.transform.gameObject.GetComponent<ShieldManager>().SpawnShieldEnemy(transform);
                 Destroy (gameObject);
 				//Camera Shake
 				GameObject.Find("Camera").GetComponent<Camera_Shake_Script>().Shake (EnemyShakeAmt, EnemyShakeLenght);
@@ -78,7 +78,7 @@ public class move_bullet_script : MonoBehaviour {
                 //test.localScale = new Vector3 (1,1,1);
                 //Destroy (test.gameObject,0.05f);
 
-			    colInfo.transform.gameObject.GetComponent<ShieldManager>().SpawnShieldEnemy(transform);
+			    //colInfo.transform.gameObject.GetComponent<ShieldManager>().SpawnShieldEnemy(transform);
                 Destroy (gameObject);
 				//Camera Shake
 				GameObject.Find("Camera").GetComponent<Camera_Shake_Script>().Shake (EnemyShakeAmt, EnemyShakeLenght);
@@ -90,7 +90,7 @@ public class move_bullet_script : MonoBehaviour {
 				//Il nemico perde vita
 				colInfo.GetComponent<enemy_health_manager_script> ().giveDamage (damageToGive);
                 //Se il nemico viene colpito si triggera in automatico
-                colInfo.GetComponent<DroneAI_v2>().SetTriggerOn();
+                colInfo.GetComponent<DroneAI_v2>().SetTrigger();
 
             }
 

@@ -14,7 +14,7 @@ namespace Enemies
             var enemy = (Instantiate(Enemy, spawnTransform.position, spawnTransform.rotation));
 
             if (enemy.GetComponent<DroneAI_v2>() != null)
-                enemy.GetComponent<DroneAI_v2>().SetTriggerOn();
+                enemy.GetComponent<DroneAI_v2>().SetTrigger();
             else if (enemy.GetComponent<EnemyAI>() != null)
                 enemy.GetComponent<EnemyAI>().SetTrigger();
             else if (enemy.GetComponent<enemy2_script>() != null)
