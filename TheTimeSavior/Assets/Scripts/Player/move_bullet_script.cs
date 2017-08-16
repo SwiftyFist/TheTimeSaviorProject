@@ -22,7 +22,7 @@ public class move_bullet_script : MonoBehaviour {
 
 	void Awake()
 	{
-		SpawnEffect = transform.FindChild("Spawn_Effect");
+		SpawnEffect = transform.Find("Spawn_Effect");
 	}
 
 

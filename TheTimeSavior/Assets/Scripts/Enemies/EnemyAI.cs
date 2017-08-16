@@ -78,7 +78,7 @@ namespace Enemies
             }
 
             if (IsOutOfPosition() && StayOnPlatform && MyStatus == EStatus.Running)
-                _myCurrentVelocity = _myCurrentVelocity * -1;
+                _myCurrentVelocity = _myCurrentVelocity * -1f;
 
             _myRigidBody2D.velocity = new Vector2(_myCurrentVelocity, _myRigidBody2D.velocity.y);
 
