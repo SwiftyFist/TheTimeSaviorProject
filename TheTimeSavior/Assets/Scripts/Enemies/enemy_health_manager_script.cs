@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enemies;
 
 public class enemy_health_manager_script : MonoBehaviour
 {

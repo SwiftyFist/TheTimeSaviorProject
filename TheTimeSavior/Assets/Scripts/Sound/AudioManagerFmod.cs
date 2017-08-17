@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Enemies;
 using UnityEngine;
 using FMODUnity;
 using FMOD;
@@ -72,9 +73,12 @@ public class AudioManagerFmod : MonoBehaviour {
     private void Awake()
     {
         //musicEmitter = GetComponent<StudioEventEmitter>();
-        musicEmitter.Play();
-        musicEmitter.SetParameter("Intro_Loop", 0);
-        SceneManager.activeSceneChanged += OnChangeSceneHub;
+        if (musicEmitter != null)
+        {
+            musicEmitter.Play();
+            musicEmitter.SetParameter("Intro_Loop", 0);
+            SceneManager.activeSceneChanged += OnChangeSceneHub;
+        }
     }
 
 

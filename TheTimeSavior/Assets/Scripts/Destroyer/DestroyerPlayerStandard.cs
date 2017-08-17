@@ -45,7 +45,8 @@ public class DestroyerPlayerStandard : MonoBehaviour
         {
             LevelReset(); //Resetta il livello se collide con il player
         }
-        else if (collision.gameObject.tag!="NeverDestroy")
+        else if (!collision.gameObject.CompareTag("NeverDestroy") 
+                 && !collision.gameObject.CompareTag("Shield"))
         {
             Destroy(collision.gameObject); //Distrugge quello che incontra per alleggerire il gioco
         }
