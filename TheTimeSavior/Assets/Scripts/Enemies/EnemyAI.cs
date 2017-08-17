@@ -50,15 +50,8 @@ namespace Enemies
                     InactiveScheme();
                     break;
             }
-
-<<<<<<< HEAD
-            if (IsOutOfPosition() && StayOnPlatform && MyStatus == EStatus.Running)
-                _myCurrentVelocity = _myCurrentVelocity * -1f;
-=======
             if (IsOutOfPosition() && StayOnPlatform && MyStatus == EStatus.Triggered)
                 MyCurrentVelocity = MyCurrentVelocity * PushBackVelocityModificatorOnPlatform;
->>>>>>> 4eed51c12d78f77b624bb56b71a4176a4e93f41e
-
             Move();
         }
 

@@ -502,16 +502,9 @@ MonoBehaviour:
     m_Bits: 256
   RightLimit: {fileID: 4162773399021008}
   LeftLimit: {fileID: 4624105410412850}
-<<<<<<< HEAD
-  RightLimitPosition: {x: 0, y: 0, z: 0}
-  LeftLimitPosition: {x: 0, y: 0, z: 0}
-  StayOnPlatform: 0
-  WalkVelocity: 8
-=======
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
   PlatformToStay: {fileID: 0}
->>>>>>> 4eed51c12d78f77b624bb56b71a4176a4e93f41e
 --- !u!114 &114938641121818116
 MonoBehaviour:
   m_ObjectHideFlags: 1
