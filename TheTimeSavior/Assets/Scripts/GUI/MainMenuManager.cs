@@ -87,6 +87,14 @@ public class MainMenuManager : MonoBehaviour {
     {
         StartCoroutine(FakeLoading());
     }
+    public void Option()
+    {
+        return;
+    }
+    public void Exit()
+    {
+        return;
+    }
 
     private IEnumerator LerpCoroutine(Vector2 startScale, Vector2 endScale, float t, int counter)
     {
