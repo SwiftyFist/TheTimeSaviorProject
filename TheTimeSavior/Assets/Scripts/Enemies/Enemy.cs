@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Linq;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 namespace Enemies
