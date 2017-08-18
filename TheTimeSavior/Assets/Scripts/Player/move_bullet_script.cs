@@ -53,12 +53,7 @@ public class move_bullet_script : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
-
-
-
-	   
-
- }
+}
 
 
 
