@@ -222,17 +222,17 @@ namespace Enemies
                 LastRunningVelIncreaser = StartCoroutine(RunningVelIncrease());
         }
 
-        public void ActiveShield(Vector3 bulletPosition)
+        public void ActiveShield(Vector3 playerPosition)
         {
             var myPosition = Camera.main.ScreenToWorldPoint(MyTransform.position);
-            bulletPosition = Camera.main.ScreenToWorldPoint(bulletPosition);
+            playerPosition = Camera.main.ScreenToWorldPoint(playerPosition);
             var angularCoefficentBullet =
-                (bulletPosition.y - myPosition.y) /
-                (bulletPosition.x - myPosition.x);
+                (playerPosition.y - myPosition.y) /
+                (playerPosition.x - myPosition.x);
             var rotZ = Mathf.Atan(angularCoefficentBullet) * Mathf.Rad2Deg;
             var currentEulerAngle = Shield.transform.localEulerAngles;
 
-            var offSet = (myPosition.y > bulletPosition.y) ? -90 : 0;
+            var offSet = (myPosition.y > playerPosition.y) ? -90 : 0;
             
             Shield.transform.localEulerAngles = new Vector3(
                 currentEulerAngle.x,
