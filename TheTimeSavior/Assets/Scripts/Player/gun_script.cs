@@ -63,7 +63,7 @@ public class gun_script : MonoBehaviour
         GunRotation = GameObject.Find("spr_gun").GetComponent<Animator>();
         fireRate = maxFireRate;
         fireRateBackUp = fireRate;
-        FirePoint = transform.FindChild("FirePoint");
+        FirePoint = transform.Find("FirePoint");
 	
         if (FirePoint == null)
         {
