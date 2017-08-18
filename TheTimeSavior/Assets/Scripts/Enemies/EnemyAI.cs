@@ -1,15 +1,13 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Enemies
 {
     public class EnemyAI : Enemy
     {
-
         #region Variabili
         
-        public Transform EnemyGround;
-        public LayerMask GroundLayer;
         public Transform RightLimit, LeftLimit;
         public bool StayOnPlatform;
         public float PushBackVelocityModificatorOnPlatform = -1;
@@ -71,12 +69,12 @@ namespace Enemies
              );
         }
 
-        private bool PlayerOnPlatform()
+        private bool OnPlatform(Vector3 position)
         {
             return ( 
-                PlayerTransform.position.y >= _rightLimitPosition.y && 
-                PlayerTransform.position.x <= _rightLimitPosition.x && 
-                PlayerTransform.position.x >= _leftLimitPosition.x
+                position.y >= _rightLimitPosition.y && 
+                position.x <= _rightLimitPosition.x && 
+                position.x >= _leftLimitPosition.x
              );
         }
 
@@ -108,10 +106,16 @@ namespace Enemies
                 Called = false;
             }
         }
-        
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (PlatformToStay == null || collision.gameObject.GetInstanceID() == PlatformToStay.GetInstanceID())
+                StayOnPlatform = false;
+        }
+
         public override void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.GetInstanceID() == PlatformToStay.GetInstanceID() && !StayOnPlatform)
+            if (PlatformToStay != null && collision.gameObject.GetInstanceID() == PlatformToStay.GetInstanceID() && !StayOnPlatform)
                 StayOnPlatform = true;
             
             base.OnCollisionEnter2D(collision);
@@ -121,7 +125,7 @@ namespace Enemies
         {
             if (StayOnPlatform)
             {
-                if (!PlayerOnPlatform())
+                if (!OnPlatform(PlayerTransform.position))
                 {
                     StopAllCoroutines();
                     MyStatus = EStatus.Patrol;
@@ -140,7 +144,6 @@ namespace Enemies
                 base.SetStatus();
             }
             
-        }
-        
+        }        
     }
 }
