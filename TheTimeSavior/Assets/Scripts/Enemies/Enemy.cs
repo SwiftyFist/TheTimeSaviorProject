@@ -82,7 +82,7 @@ namespace Enemies
             Move();
         }
 
-        protected void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             if (CalcDistanceFromPlayer() > DistanceFromPlayerToDeath)
             {
