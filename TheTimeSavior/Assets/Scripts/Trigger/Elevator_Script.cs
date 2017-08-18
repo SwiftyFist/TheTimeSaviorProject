@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using GameManager;
+using UnityEngine;
 
 namespace Trigger
 {
@@ -30,9 +30,7 @@ namespace Trigger
         private void Update()
         {
             if (_trigger != true || !Input.GetButtonDown("Submit")) return;
-            FindObjectOfType<AudioManagerFmod>().StartInGameMusic();
-            SceneManager.LoadScene("Level_Present");
-            GameObject.Find("Gun").GetComponent<gun_script>().StopShooting();
+            LevelManager.GoToPresent();
         }
     }
 }
