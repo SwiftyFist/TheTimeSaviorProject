@@ -222,13 +222,7 @@ namespace Enemies
                 LastRunningVelIncreaser = StartCoroutine(RunningVelIncrease());
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject.CompareTag("Bullet") && this.enabled)
-                ActiveShield(other.transform.position);
-        }
-
-        private void ActiveShield(Vector3 bulletPosition)
+        public void ActiveShield(Vector3 bulletPosition)
         {
             var myPosition = Camera.main.ScreenToWorldPoint(MyTransform.position);
             bulletPosition = Camera.main.ScreenToWorldPoint(bulletPosition);
