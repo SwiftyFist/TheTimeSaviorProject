@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 namespace Enemies
@@ -233,18 +234,18 @@ namespace Enemies
             var currentEulerAngle = Shield.transform.localEulerAngles;
 
             var offSet = (myPosition.y > playerPosition.y) ? -90 : 0;
-            
+
             Shield.transform.localEulerAngles = new Vector3(
                 currentEulerAngle.x,
                 currentEulerAngle.y,
                 rotZ + offSet
                 );
-            
+
             var mySprite = Shield.GetComponent<SpriteRenderer>();
             mySprite.enabled = true;
             StartCoroutine(ShieldDown(mySprite));
         }
-        
+
         private static IEnumerator ShieldDown(SpriteRenderer mySprite)
         {
             yield return new WaitForSeconds(0.5f);

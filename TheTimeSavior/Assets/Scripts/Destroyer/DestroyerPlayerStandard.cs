@@ -8,7 +8,6 @@ public class DestroyerPlayerStandard : MonoBehaviour
     #region Variabili
 
     public Rigidbody2D myRigidBody2D; //RigidBody2D del destroyer
-    private Transform myTransform; //Transform del destroyer
 
     public static float antivirVelocity = 5f; //Velocità antivirus attuale
     public float _antivirVelocity; //Velocità antivirus iniziale
@@ -26,7 +25,6 @@ public class DestroyerPlayerStandard : MonoBehaviour
     void Awake()
     {
         ModificatorSet();
-        myTransform = GetComponent<Transform>();
         myRigidBody2D = GetComponent<Rigidbody2D>();
         myRigidBody2D.velocity = Vector2.right * antivirVelocity;
         StartCoroutine(VelocityModificatorByTime()); //Aumenta la velocità overtime

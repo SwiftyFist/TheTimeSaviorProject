@@ -10,7 +10,6 @@ public class DestroyerPlayerInactivity : MonoBehaviour
     public static float velocityModificatorByInactivity = 0;
     public float velocityVariationTimeByInactivity = 0.2f;
     Coroutine lastInactivityDetection = null;
-    Coroutine lastVelocityModificatorByInactivity = null;
 
     void Start()
     {
@@ -32,7 +31,7 @@ public class DestroyerPlayerInactivity : MonoBehaviour
     {
         yield return new WaitForSeconds(inactivityTime);
         isInactive = true;
-        lastVelocityModificatorByInactivity = StartCoroutine(VelocityModificatorByInactivity());
+        StartCoroutine(VelocityModificatorByInactivity());
     }
 
     IEnumerator VelocityModificatorByInactivity ()
@@ -41,7 +40,7 @@ public class DestroyerPlayerInactivity : MonoBehaviour
         if (isInactive)
         {
             velocityModificatorByInactivity += velocityVariationTimeByInactivity;
-            lastVelocityModificatorByInactivity = StartCoroutine(VelocityModificatorByInactivity());
+            StartCoroutine(VelocityModificatorByInactivity());
         }
         else
         {
