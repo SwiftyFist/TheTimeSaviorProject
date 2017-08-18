@@ -22,7 +22,8 @@ public class move_bullet_script : MonoBehaviour
 	{
 		if (colInfo.tag == "Enemy")
 		{
-            colInfo.gameObject.GetComponent<Enemy>().ActiveShield(transform.position);
+            var playerPosition = GameObject.Find("Player").transform.position;
+            colInfo.gameObject.GetComponent<Enemy>().ActiveShield(playerPosition);
             Destroy(gameObject);
 
             GameObject.Find("Camera").GetComponent<Camera_Shake_Script>().Shake(EnemyShakeAmt, EnemyShakeLenght);
