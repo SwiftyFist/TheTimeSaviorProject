@@ -38,6 +38,7 @@ namespace Enemies
         protected Coroutine LastRunningVelIncreaser, RunningVelIncreaser;
         protected bool Called;
         protected GameObject Shield;
+        protected bool HasBeenTriggered;
         
         #endregion
         
@@ -83,7 +84,7 @@ namespace Enemies
 
         protected virtual void FixedUpdate()
         {
-            if (CalcDistanceFromPlayer() > DistanceFromPlayerToDeath)
+            if (CalcDistanceFromPlayer() > DistanceFromPlayerToDeath && HasBeenTriggered)
             {
                 GetComponent<EnemyDeath>().DestroyEnemy(0);
                 return;
@@ -142,6 +143,7 @@ namespace Enemies
         
         public void SetTrigger(bool activate = true)
         {
+            HasBeenTriggered = true;
             MyStatus = activate ? EStatus.Triggered : EStatus.Inactive;
             MyAnimator.SetBool(AnimatorTriggered, activate);
             MyAnimator.SetBool(AnimatorRun, activate);
@@ -194,9 +196,7 @@ namespace Enemies
             }
             else if (distance < RangeToRun)
             {
-                MyStatus = EStatus.Triggered;
-                MyAnimator.SetBool(AnimatorTriggered, true);
-                MyAnimator.SetBool(AnimatorRun, true);
+                SetTrigger(true);
             }
         }
 
