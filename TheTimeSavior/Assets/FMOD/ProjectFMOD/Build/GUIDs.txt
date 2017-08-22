@@ -1,8 +1,13 @@
 {d67ae242-714c-47ba-9a2a-7d7f3f8f1ee5} event:/BKG
+{5f896c0b-7a54-449d-9437-be84d0107582} event:/Destroyer
 {71e6bafb-7aab-4ee3-b052-3b6bc21af4a5} event:/Footstep
 {ca058c15-6992-4443-a7f4-15fb204c3361} event:/Minigun
 {d1d3b198-c271-4049-a47c-355c7c57905a} event:/Music_Future
-{b34e41a8-611d-43ad-b934-85d2786fe6cb} event:/New Event
+{b34e41a8-611d-43ad-b934-85d2786fe6cb} event:/Shell
+{ff36c530-a561-4296-9f7e-2f5dc27f2dd3} event:/Shoot
 {55c158cb-7d2c-42a4-92da-18d308b810fa} bus:/
+{6b3c5191-eff3-48d4-adab-9a771c5b4fb4} bus:/Music
+{9d129357-70ee-4f42-9b16-03e543d598b9} bus:/Player_Sound
 {63863b5a-9fd3-47b9-b41c-6a6b8e25503a} bus:/Reverb
+{f3e01c6e-ad06-4308-8d52-885035d8f483} snapshot:/High_pass_filter
 {4dc27029-c9d7-49c0-8d05-645dc1483600} bank:/Master Bank
