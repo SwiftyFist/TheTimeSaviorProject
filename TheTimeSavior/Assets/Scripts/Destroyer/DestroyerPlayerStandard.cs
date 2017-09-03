@@ -39,7 +39,7 @@ public class DestroyerPlayerStandard : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             LevelReset(); //Resetta il livello se collide con il player
         }
