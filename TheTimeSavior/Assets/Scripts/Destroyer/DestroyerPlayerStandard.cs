@@ -37,14 +37,17 @@ public class DestroyerPlayerStandard : MonoBehaviour
     {
         //Debug.Log("Velocità " + myRigidBody2D.velocity.x);
         myRigidBody2D.velocity = Vector2.right * AntivirVelocity();
+
+        if (GameObject.Find("Player") != null &&
+            GameObject.Find("Player").GetComponent<Transform>().position.x
+            < myTransform.position.x)
+            LevelReset();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            LevelReset(); //Resetta il livello se collide con il player
-        }
+        if (collision.gameObject.CompareTag("Player"))
+            LevelReset();
         else if (!collision.gameObject.CompareTag("NeverDestroy") 
                  && !collision.gameObject.CompareTag("Shield"))
         {

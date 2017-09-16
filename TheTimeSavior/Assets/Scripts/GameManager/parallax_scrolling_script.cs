@@ -22,7 +22,8 @@ public class parallax_scrolling_script : MonoBehaviour {
 		parallaxScale = new float[backgrounds.Length];
 		for (int i = 0; i < backgrounds.Length; i++) 
 		{
-			parallaxScale [i] = backgrounds [i].position.z * -1;
+            if (backgrounds[i] != null)
+			    parallaxScale[i] = backgrounds[i].position.z * -1;
 		}
 	}
 	

@@ -14,6 +14,7 @@ public class TriggerGate : MonoBehaviour
 
     void Update()
     {
+        if (playerTransform == null) return;
         if (playerTransform.position.x >= (transform.position.x + offSetActivation) && !Activated)
         {
             Activated = true;
