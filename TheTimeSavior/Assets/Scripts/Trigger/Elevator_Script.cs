@@ -30,9 +30,13 @@ namespace Trigger
         private void Update()
         {
             if (_trigger != true || !Input.GetButtonDown("Submit")) return;
-            FindObjectOfType<AudioManagerFmod>().StartInGameMusic();
+            var audioManager = FindObjectOfType<AudioManagerFmod>();
+            var gun = GameObject.Find("Gun");
+            if (audioManager != null)
+                audioManager.StartInGameMusic();
             SceneManager.LoadScene("Level_Present");
-            GameObject.Find("Gun").GetComponent<gun_script>().StopShooting();
+            if(gun != null)
+               gun.GetComponent<gun_script>().StopShooting();
         }
     }
 }

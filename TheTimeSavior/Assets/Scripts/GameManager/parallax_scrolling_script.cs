@@ -32,6 +32,7 @@ public class parallax_scrolling_script : MonoBehaviour {
 	{
 		for (int i = 0; i < backgrounds.Length; i++) 
 		{
+            if (backgrounds[i] == null) return;
 			float parallax = (previousCamPos.x - cam.position.x) * parallaxScale [i];
 			float backgroundTargetPosX = backgrounds [i].position.x + parallax;
 			Vector3 backgroundTargetPos = new Vector3 (backgroundTargetPosX,backgrounds[i].position.y,backgrounds[i].position.z);

@@ -57,7 +57,7 @@ public class player_script : MonoBehaviour
 			GameObject.DontDestroyOnLoad (gameObject);
 			pl_script = this;
 		}
-
+        isInvincible = false;
         myRigidBody2d = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myTransform = GetComponent<Transform>();
