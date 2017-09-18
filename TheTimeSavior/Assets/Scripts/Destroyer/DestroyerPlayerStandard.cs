@@ -19,6 +19,8 @@ public class DestroyerPlayerStandard : MonoBehaviour
 
     public score_manager_script ScoreManager;
 
+    private GameObject _player;
+
     #endregion
 
     #region Funzioni per Unity
@@ -31,6 +33,7 @@ public class DestroyerPlayerStandard : MonoBehaviour
         myRigidBody2D.velocity = Vector2.right * antivirVelocity;
         StartCoroutine(VelocityModificatorByTime()); //Aumenta la velocità overtime
         ScoreManager = GameObject.Find("Score_Manager").GetComponent<score_manager_script>();
+        _player = GameObject.Find("Player");
     }
 
     void Update()
@@ -68,7 +71,10 @@ public class DestroyerPlayerStandard : MonoBehaviour
         SceneManager.LoadScene("Level_Hub");
         GameObject.Find("Gun").GetComponent<gun_script>().StopShooting();
         DestroyerPlayerInactivity.velocityModificatorByInactivity = 0;
-        player_script.pl_script.myTransform.position = player_script.pl_script.playerPosition;
+        _player.GetComponent<Transform>().position = 
+            _player.GetComponent<player_script>().playerPosition;
+        _player.GetComponent<player_script>()
+            .SetIgnoreCollisionWithEnemy(GameObject.FindGameObjectsWithTag("Enemy"), false);
         antivirVelocity = _antivirVelocity;
         score_manager_script.SendToHub();
         ScoreManager.Reset();

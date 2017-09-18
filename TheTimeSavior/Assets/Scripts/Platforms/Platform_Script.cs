@@ -1,38 +1,29 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Platform_Script : MonoBehaviour {
 
-	private Rigidbody2D myRigidBody;
-	private Animator myAnimator;
-	private bool Gate;
+	private Animator _myAnimator;
+	private bool _gate;
+    private player_script _playerScript;
 
-	void Awake () {
-	
-		myRigidBody = GetComponent<Rigidbody2D> ();
-		myAnimator = GetComponent<Animator> ();
-
-	}
-	
-	void OnCollisionEnter2D (Collision2D other)
-	{
-		if (other.gameObject.name == "Player" && player_script.pl_script.isGrounded == true) 
-		{
-			Gate = true;
-			myAnimator.SetBool ("Gate", Gate);
-		}
-
-
+	private void Awake ()
+    {
+		_myAnimator = GetComponent<Animator> ();
+        _playerScript = GameObject.Find("Player").GetComponent<player_script>();
     }
-	void OnCollisionExit2D (Collision2D other)
+	
+	private void OnCollisionEnter2D (Collision2D other)
 	{
-		if (other.gameObject.name == "Player") 
-		{
-			Gate = false;
-			myAnimator.SetBool ("Gate", Gate);
-		}
+	    if (other.gameObject.name != "Player" || !_playerScript.isGrounded) return;
+	    _gate = true;
+	    _myAnimator.SetBool ("Gate", _gate);
+	}
 
-
+	private void OnCollisionExit2D (Collision2D other)
+	{
+	    if (other.gameObject.name != "Player") return;
+	    _gate = false;
+	    _myAnimator.SetBool ("Gate", _gate);
 	}
 
 }

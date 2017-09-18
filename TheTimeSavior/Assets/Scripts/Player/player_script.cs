@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Linq;
+using Singleton;
 
 public class player_script : MonoBehaviour
 {
@@ -50,7 +50,7 @@ public class player_script : MonoBehaviour
 
         if (pl_script != null) 
 		{
-			GameObject.Destroy (gameObject);
+			GameObject.Destroy(gameObject);
 		} 
 		else 
 		{
@@ -238,16 +238,15 @@ public class player_script : MonoBehaviour
     public void SetInvincible()
     {
         if (BecomeInvulnerable == null)
-            BecomeInvulnerable = StartCoroutine(BecomeInvulnerableEnumerator(GameObject.FindGameObjectsWithTag("Enemy")));
+            BecomeInvulnerable = StartCoroutine(
+                BecomeInvulnerableEnumerator(GameObject.FindGameObjectsWithTag("Enemy"))
+            );
     }
 
     public IEnumerator BackVulnerableEnumerator(GameObject[] enemies)
     {
         yield return new WaitForSeconds(InvincibleTime);
-        foreach (var enemy in enemies)
-            if (enemy != null)
-                Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, false);
-        isInvincible = false;
+        SetIgnoreCollisionWithEnemy(enemies, false);
         StopCoroutine(BackVulnerable);
         BackVulnerable = null;
     }
@@ -256,12 +255,17 @@ public class player_script : MonoBehaviour
     {
         yield return new WaitForSeconds(OffSetBecomInvulnerable);
         if (BackVulnerable != null) yield break;
-        foreach (var enemy in enemies)
-            if(enemy != null)
-                Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, true);
-        isInvincible = true;
+        SetIgnoreCollisionWithEnemy(enemies, true);
         BackVulnerable = StartCoroutine(BackVulnerableEnumerator(enemies));
         StopCoroutine(BecomeInvulnerable);
         BecomeInvulnerable = null;
+    }
+
+    public void SetIgnoreCollisionWithEnemy(GameObject[] enemies, bool active)
+    {
+        foreach (var enemy in enemies)
+            if (enemy != null)
+                Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, active);
+        isInvincible = active;
     }
 }

@@ -19,7 +19,12 @@ public class Camera_Script : MonoBehaviour {
 
 	void Update () {
 	
-		CamPos = player_script.pl_script.myTransform.position.x + 2f;
-		gameObject.transform.position = new Vector3 (Mathf.Clamp (CamPos, min, max), gameObject.transform.position.y, gameObject.transform.position.z);
+		CamPos = GameObject.Find("Player")
+            .GetComponent<Transform>().position.x + 2f;
+		gameObject.transform.position = new Vector3 (
+            Mathf.Clamp(CamPos, min, max), 
+            gameObject.transform.position.y, 
+            gameObject.transform.position.z
+        );
 	}
 }
