@@ -253,11 +253,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 838502206}
-  LeftLimit: {fileID: 1169459480}
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 0}
 --- !u!114 &3768816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1405,11 +1402,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1493942831}
-  LeftLimit: {fileID: 112610359}
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 0}
 --- !u!114 &63450708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1856,11 +1850,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1885707271}
-  LeftLimit: {fileID: 545593293}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 738113478}
 --- !u!114 &81917004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2195,11 +2186,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1171012116}
-  LeftLimit: {fileID: 2137574166}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 1334456016}
 --- !u!114 &83339226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3601,11 +3589,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1765327996}
-  LeftLimit: {fileID: 1181374700}
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 0}
 --- !u!114 &212066065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4134,11 +4119,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 470912875}
-  LeftLimit: {fileID: 370320444}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 790647174}
 --- !u!114 &279881983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5267,11 +5249,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &369418154 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 850667300}
 --- !u!1 &370320443
 GameObject:
   m_ObjectHideFlags: 0
@@ -5369,11 +5346,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1157352037}
-  LeftLimit: {fileID: 2003891288}
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 0}
 --- !u!114 &372550868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5909,11 +5883,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1136737768}
-  LeftLimit: {fileID: 289024808}
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 369418154}
 --- !u!114 &425860129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6130,11 +6101,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &428298941 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 705124282}
 --- !u!1 &430155138
 GameObject:
   m_ObjectHideFlags: 0
@@ -6317,11 +6283,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 186003083}
-  LeftLimit: {fileID: 261307022}
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 0}
 --- !u!114 &457160843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8607,11 +8570,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1440519280}
-  LeftLimit: {fileID: 1032488723}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 428298941}
 --- !u!114 &567459649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9637,11 +9597,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1934948428}
-  LeftLimit: {fileID: 355846111}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 1189268219}
 --- !u!114 &632023009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10449,11 +10406,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 693636785}
-  LeftLimit: {fileID: 1726411642}
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 0}
 --- !u!114 &705235503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10792,11 +10746,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 570323824}
-  LeftLimit: {fileID: 1388469446}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 1529775080}
 --- !u!114 &709494995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11501,11 +11452,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1066226524}
-  LeftLimit: {fileID: 521638952}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 2030142578}
 --- !u!114 &734124259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11722,11 +11670,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &738113478 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 1366077595}
 --- !u!1 &739411084
 GameObject:
   m_ObjectHideFlags: 0
@@ -12136,11 +12079,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &790647174 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 1095141259}
 --- !u!1 &794847819
 GameObject:
   m_ObjectHideFlags: 0
@@ -12457,11 +12395,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1525316125}
-  LeftLimit: {fileID: 1207990580}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 886946641}
 --- !u!114 &798764457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12852,11 +12787,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 222010938}
-  LeftLimit: {fileID: 1566016488}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 1652427977}
 --- !u!114 &811994108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13296,11 +13228,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 119086437}
-  LeftLimit: {fileID: 1943162207}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 1080091478}
 --- !u!114 &817781566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14326,11 +14255,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1710750422}
-  LeftLimit: {fileID: 1918624862}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 1941522950}
 --- !u!114 &859909107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14868,11 +14794,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &886946641 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 886946640}
 --- !u!4 &886946642 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000013474518552, guid: 2b570aa32aeb2df4a84def4ca050a013,
@@ -16421,11 +16342,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1892083043}
-  LeftLimit: {fileID: 1111675163}
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 0}
 --- !u!114 &1056191721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16728,11 +16646,6 @@ Transform:
   m_Father: {fileID: 40883909}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1080091478 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 1913506444}
 --- !u!1001 &1091164856
 Prefab:
   m_ObjectHideFlags: 0
@@ -17549,11 +17462,6 @@ Transform:
   m_Father: {fileID: 372550866}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1167527298 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 1851823355}
 --- !u!1 &1169459479
 GameObject:
   m_ObjectHideFlags: 0
@@ -17808,16 +17716,6 @@ Transform:
   m_Father: {fileID: 1554867178}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1188097146 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 423782435}
---- !u!1 &1189268219 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 826820926}
 --- !u!1 &1191740872
 GameObject:
   m_ObjectHideFlags: 0
@@ -18956,11 +18854,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013474518552, guid: 2b570aa32aeb2df4a84def4ca050a013,
     type: 2}
   m_PrefabInternal: {fileID: 1334456014}
---- !u!1 &1334456016 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 1334456014}
 --- !u!1 &1335568354
 GameObject:
   m_ObjectHideFlags: 0
@@ -19146,11 +19039,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 29061127}
-  LeftLimit: {fileID: 667645668}
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 0}
 --- !u!114 &1371656559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20642,11 +20532,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1009333373}
-  LeftLimit: {fileID: 1432834063}
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 0}
 --- !u!114 &1512839587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21030,11 +20917,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013474518552, guid: 2b570aa32aeb2df4a84def4ca050a013,
     type: 2}
   m_PrefabInternal: {fileID: 1529775078}
---- !u!1 &1529775080 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 1529775078}
 --- !u!1001 &1532003295
 Prefab:
   m_ObjectHideFlags: 0
@@ -21188,11 +21070,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1323789648}
-  LeftLimit: {fileID: 677037475}
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 0}
 --- !u!114 &1552749826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21720,11 +21599,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 1397282154}
-  LeftLimit: {fileID: 1307930279}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 1188097146}
 --- !u!114 &1584975892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22655,11 +22531,6 @@ Prefab:
 --- !u!4 &1652427976 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000013474518552, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 1652427975}
---- !u!1 &1652427977 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
     type: 2}
   m_PrefabInternal: {fileID: 1652427975}
 --- !u!1001 &1658004928
@@ -25201,11 +25072,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013474518552, guid: 2b570aa32aeb2df4a84def4ca050a013,
     type: 2}
   m_PrefabInternal: {fileID: 1941522948}
---- !u!1 &1941522950 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 1941522948}
 --- !u!1 &1943162206
 GameObject:
   m_ObjectHideFlags: 0
@@ -25754,11 +25620,8 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 18220697}
-  LeftLimit: {fileID: 247701845}
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
-  PlatformToStay: {fileID: 1167527298}
 --- !u!114 &2015464143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25975,11 +25838,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &2030142578 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
-    type: 2}
-  m_PrefabInternal: {fileID: 994126916}
 --- !u!4 &2035150791
 Transform:
   m_ObjectHideFlags: 0

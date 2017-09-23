@@ -20,7 +20,7 @@ public class move_bullet_script : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D colInfo)
 	{
-		if (colInfo.tag == "Enemy")
+		if (colInfo.CompareTag("Enemy"))
 		{
             var playerPosition = GameObject.Find("Player").transform.position;
             colInfo.gameObject.GetComponent<Enemy>().ActiveShield(playerPosition);
@@ -30,7 +30,7 @@ public class move_bullet_script : MonoBehaviour
 
             colInfo.GetComponent<EnemySoundManager>().PlayOnHitByBullet();
             colInfo.GetComponent<enemy_health_manager_script>().giveDamage(DamageToGive);
-            colInfo.GetComponent<Enemy>().SetTrigger();
+            colInfo.GetComponent<Enemy>().SetTrigger(true, true);
         }
 
 		if (colInfo.tag == "LevelObject")
