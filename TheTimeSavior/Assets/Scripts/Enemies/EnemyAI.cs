@@ -8,7 +8,6 @@ namespace Enemies
     {
         #region Variabili
         
-        public Transform RightLimit, LeftLimit;
         public bool StayOnPlatform;
         public float PushBackVelocityModificatorOnPlatform = -1;
         public GameObject PlatformToStay;
@@ -19,15 +18,28 @@ namespace Enemies
         protected override void Awake()
         {
             PlayerTransform = GameObject.Find("Player").GetComponent<Transform>();
-            _rightLimitPosition = RightLimit.position;
-            _leftLimitPosition = LeftLimit.position;
-            Destroy(RightLimit.gameObject);
-            Destroy(LeftLimit.gameObject);
+            if (PlatformToStay != null)
+            {
+                var lunghezzaPiattaforma = PlatformToStay.GetComponent<Collider2D>().bounds.size.x;
+
+                _rightLimitPosition = new Vector3(
+                    (PlatformToStay.transform.position.x + lunghezzaPiattaforma / 2) -2f,
+                    PlatformToStay.transform.position.y - 0.05f,
+                    PlatformToStay.transform.position.z
+                );
+
+                _leftLimitPosition = new Vector3(
+                    (PlatformToStay.transform.position.x - lunghezzaPiattaforma / 2) + 2f,
+                    PlatformToStay.transform.position.y - 0.05f,
+                    PlatformToStay.transform.position.z
+                );
+            }
             base.Awake();
         }
 
         protected override void Update()
         {
+            SetStatus();
             switch (MyStatus)
             {
                 case EStatus.Inactive:
@@ -55,17 +67,34 @@ namespace Enemies
 
         private void PatrolScheme()
         {
-            if (IsOutOfPosition())
-                FlipFacing();
-            
+            if (MyTransform.position.x > _rightLimitPosition.x)
+            {
+                BIsFacingLeft = true;
+                MyTransform.localScale = new Vector3(
+                    -1,
+                    MyTransform.localScale.y,
+                    MyTransform.localScale.z
+                );
+            }
+            else if (MyTransform.position.x < _leftLimitPosition.x)
+            {
+                BIsFacingLeft = false;
+                MyTransform.localScale = new Vector3(
+                    1,
+                    MyTransform.localScale.y,
+                    MyTransform.localScale.z
+                );
+            }
+
+
             MyCurrentVelocity = WalkVelocity * (BIsFacingLeft ? -1 : 1);
         }
 
         private bool IsOutOfPosition()
         {
             return (
-                MyTransform.position.x >= _rightLimitPosition.x ||
-                MyTransform.position.x <= _leftLimitPosition.x
+                MyTransform.position.x > _rightLimitPosition.x ||
+                MyTransform.position.x < _leftLimitPosition.x
              );
         }
 
@@ -134,9 +163,7 @@ namespace Enemies
                 }
                 else
                 {
-                    MyStatus = EStatus.Triggered;
-                    MyAnimator.SetBool(AnimatorTriggered, true);
-                    MyAnimator.SetBool(AnimatorRun, true);
+                    SetTrigger();
                 }
             }
             else

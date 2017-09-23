@@ -59,6 +59,7 @@ namespace Enemies
 
         protected virtual void Update()
         {
+            SetStatus();
             switch (MyStatus)
             {
                 case EStatus.Inactive:
@@ -89,7 +90,6 @@ namespace Enemies
                 GetComponent<EnemyDeath>().DestroyEnemy(0);
                 return;
             }
-            SetStatus();
         }
         
         //Cambia colore quando il player è in range
@@ -195,9 +195,7 @@ namespace Enemies
             }
             else if (distance < RangeToRun)
             {
-                MyStatus = EStatus.Triggered;
-                MyAnimator.SetBool(AnimatorTriggered, true);
-                MyAnimator.SetBool(AnimatorRun, true);
+                SetTrigger();
             }
         }
 

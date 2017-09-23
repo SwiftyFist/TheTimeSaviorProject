@@ -8,13 +8,13 @@ namespace Singleton
         public static int DontDestroyOnLoad<T>(this T component)
         {
             var type = typeof(T);
-            var objects = MonoBehaviour.FindObjectsOfType(type);                
+            var objects = Object.FindObjectsOfType(type);                
 
             if (objects.Length > 1)
                 for (int i = 1; i < objects.Length; i++)
-                    MonoBehaviour.DestroyImmediate(objects[i]);
+                    Object.Destroy(objects[i]);
             else
-                MonoBehaviour.DontDestroyOnLoad(objects[0]);
+                Object.DontDestroyOnLoad(objects[0]);
 
             return 0;
         }
