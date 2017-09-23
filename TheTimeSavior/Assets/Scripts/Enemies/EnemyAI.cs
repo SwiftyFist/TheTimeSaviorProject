@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Enemies
@@ -12,28 +12,14 @@ namespace Enemies
         public float PushBackVelocityModificatorOnPlatform = -1;
         public GameObject PlatformToStay;
         private Vector3 _rightLimitPosition, _leftLimitPosition;
+        private bool _stayOnPlatform;
 
         #endregion
 
         protected override void Awake()
         {
+            _stayOnPlatform = StayOnPlatform;
             PlayerTransform = GameObject.Find("Player").GetComponent<Transform>();
-            if (PlatformToStay != null)
-            {
-                var lunghezzaPiattaforma = PlatformToStay.GetComponent<Collider2D>().bounds.size.x;
-
-                _rightLimitPosition = new Vector3(
-                    (PlatformToStay.transform.position.x + lunghezzaPiattaforma / 2) -2f,
-                    PlatformToStay.transform.position.y - 0.05f,
-                    PlatformToStay.transform.position.z
-                );
-
-                _leftLimitPosition = new Vector3(
-                    (PlatformToStay.transform.position.x - lunghezzaPiattaforma / 2) + 2f,
-                    PlatformToStay.transform.position.y - 0.05f,
-                    PlatformToStay.transform.position.z
-                );
-            }
             base.Awake();
         }
 
@@ -60,8 +46,6 @@ namespace Enemies
                     InactiveScheme();
                     break;
             }
-            if (IsOutOfPosition() && StayOnPlatform && MyStatus == EStatus.Triggered)
-                MyCurrentVelocity = MyCurrentVelocity * PushBackVelocityModificatorOnPlatform;
             Move();
         }
 
@@ -119,7 +103,7 @@ namespace Enemies
             else if (MyCurrentVelocity < MaxRunningVelocity)
                 MyCurrentVelocity += AccelerationOnRun;
 
-            if (IsOutOfPosition() && StayOnPlatform)
+            if (IsOutOfPosition() && _stayOnPlatform && !TriggeredByGun)
                 MyCurrentVelocity = 0;
             
             MyAnimator.SetFloat(AnimatorVelocity, Mathf.Abs(MyCurrentVelocity));
@@ -138,21 +122,52 @@ namespace Enemies
 
         private void OnCollisionExit2D(Collision2D collision)
         {
-            if (PlatformToStay == null || collision.gameObject.GetInstanceID() == PlatformToStay.GetInstanceID())
-                StayOnPlatform = false;
+            if (!StayOnPlatform) return;
+            if (PlatformToStay == null ||
+                collision.gameObject.GetInstanceID() == PlatformToStay.GetInstanceID())
+                _stayOnPlatform = false;
         }
 
         public override void OnCollisionEnter2D(Collision2D collision)
         {
-            if (PlatformToStay != null && collision.gameObject.GetInstanceID() == PlatformToStay.GetInstanceID() && !StayOnPlatform)
-                StayOnPlatform = true;
-            
+            if (StayOnPlatform)
+            {
+                if (PlatformToStay == null && collision.gameObject.CompareTag("LevelObject"))
+                {
+                    SetPlatform(collision.gameObject);
+                }
+                if (PlatformToStay != null &&
+                    collision.gameObject.GetInstanceID() == PlatformToStay.GetInstanceID() &&
+                    !_stayOnPlatform)
+                {
+                    _stayOnPlatform = true;
+                }
+            }
             base.OnCollisionEnter2D(collision);
         }
-        
+
+        private void SetPlatform(GameObject platform)
+        {
+            PlatformToStay = platform;
+
+            var lunghezzaPiattaforma = PlatformToStay.GetComponent<Collider2D>().bounds.size.x;
+
+            _rightLimitPosition = new Vector3(
+                (PlatformToStay.transform.position.x + lunghezzaPiattaforma / 2) - 2f,
+                PlatformToStay.transform.position.y - 0.05f,
+                PlatformToStay.transform.position.z
+            );
+
+            _leftLimitPosition = new Vector3(
+                (PlatformToStay.transform.position.x - lunghezzaPiattaforma / 2) + 2f,
+                PlatformToStay.transform.position.y - 0.05f,
+                PlatformToStay.transform.position.z
+            );
+        }
+
         protected override void SetStatus()
         {
-            if (StayOnPlatform)
+            if (_stayOnPlatform && !TriggeredByGun)
             {
                 if (!OnPlatform(PlayerTransform.position))
                 {
@@ -170,7 +185,6 @@ namespace Enemies
             {
                 base.SetStatus();
             }
-            
         }        
     }
 }

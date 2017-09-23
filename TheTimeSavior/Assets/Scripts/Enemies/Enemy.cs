@@ -39,6 +39,7 @@ namespace Enemies
         protected Coroutine LastRunningVelIncreaser, RunningVelIncreaser;
         protected bool Called;
         protected GameObject Shield;
+        protected bool TriggeredByGun;
         
         #endregion
         
@@ -141,8 +142,9 @@ namespace Enemies
                 GetComponent<EnemyDeath>().DestroyEnemy(0);
         }
         
-        public void SetTrigger(bool activate = true)
+        public virtual void SetTrigger(bool activate = true, bool byGun = false)
         {
+            TriggeredByGun = byGun;
             MyStatus = activate ? EStatus.Triggered : EStatus.Inactive;
             MyAnimator.SetBool(AnimatorTriggered, activate);
             MyAnimator.SetBool(AnimatorRun, activate);
