@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using GameManager;
 using Singleton;
+using UnityEngine.SceneManagement;
 
 public class player_script : MonoBehaviour
 {
@@ -115,6 +117,11 @@ public class player_script : MonoBehaviour
                     if (enemy != null)
                         Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, false);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+                LevelManager.LevelReset();
         }
     }
 

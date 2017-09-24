@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Destroyer;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace GameManager
@@ -18,8 +19,12 @@ namespace GameManager
             var audioManager = FindObjectOfType<AudioManagerFmod>();
 
             playerAnimator.Play("Player_Idle");
-            audioManager.StopFootstep();
-            audioManager.StartInGameMusic();
+            if (audioManager != null)
+            {
+                audioManager.StopFootstep();
+                audioManager.StartInGameMusic();
+            }
+            
             SceneManager.LoadScene(level);
             playerAnimator.Play("Player_Idle");
             GameObject.Find("Gun").GetComponent<gun_script>().StopShooting();
@@ -51,6 +56,25 @@ namespace GameManager
             var gun = GameObject.Find("Gun");
             if (gun != null)
                 gun.GetComponent<gun_script>().StopShooting();
+        }
+
+        public static void LevelReset()
+        {
+            if (SceneManager.GetActiveScene().name == "Level_Hub") return;
+            var player = GameObject.Find("Player");
+            var destroyer = GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>();
+            var scoreManager = GameObject.Find("Score_Manager").GetComponent<score_manager_script>();
+            
+            SceneManager.LoadScene(LevelHub);
+            GameObject.Find("Gun").GetComponent<gun_script>().StopShooting();
+            DestroyerPlayerInactivity.velocityModificatorByInactivity = 0;
+            player.GetComponent<Transform>().position = 
+                player.GetComponent<player_script>().playerPosition;
+            player.GetComponent<player_script>()
+                .SetIgnoreCollisionWithEnemy(GameObject.FindGameObjectsWithTag("Enemy"), false);
+            DestroyerPlayerStandard.antivirVelocity = destroyer._antivirVelocity;
+            score_manager_script.SendToHub();
+            scoreManager.Reset();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Destroyer;
+using UnityEngine;
 
 public class TriggerGate : MonoBehaviour
 {
