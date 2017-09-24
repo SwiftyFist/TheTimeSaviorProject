@@ -39,6 +39,7 @@ namespace Enemies
         protected Coroutine LastRunningVelIncreaser, RunningVelIncreaser;
         protected bool Called;
         protected GameObject Shield;
+        protected bool TriggeredByGun;
         
         #endregion
         
@@ -59,6 +60,7 @@ namespace Enemies
 
         protected virtual void Update()
         {
+            SetStatus();
             switch (MyStatus)
             {
                 case EStatus.Inactive:
@@ -89,7 +91,6 @@ namespace Enemies
                 GetComponent<EnemyDeath>().DestroyEnemy(0);
                 return;
             }
-            SetStatus();
         }
         
         //Cambia colore quando il player è in range
@@ -141,8 +142,9 @@ namespace Enemies
                 GetComponent<EnemyDeath>().DestroyEnemy(0);
         }
         
-        public void SetTrigger(bool activate = true)
+        public virtual void SetTrigger(bool activate = true, bool byGun = false)
         {
+            TriggeredByGun = byGun;
             MyStatus = activate ? EStatus.Triggered : EStatus.Inactive;
             MyAnimator.SetBool(AnimatorTriggered, activate);
             MyAnimator.SetBool(AnimatorRun, activate);
@@ -195,9 +197,7 @@ namespace Enemies
             }
             else if (distance < RangeToRun)
             {
-                MyStatus = EStatus.Triggered;
-                MyAnimator.SetBool(AnimatorTriggered, true);
-                MyAnimator.SetBool(AnimatorRun, true);
+                SetTrigger();
             }
         }
 
@@ -222,17 +222,17 @@ namespace Enemies
                 LastRunningVelIncreaser = StartCoroutine(RunningVelIncrease());
         }
 
-        public void ActiveShield(Vector3 bulletPosition)
+        public void ActiveShield(Vector3 playerPosition)
         {
             var myPosition = Camera.main.ScreenToWorldPoint(MyTransform.position);
-            bulletPosition = Camera.main.ScreenToWorldPoint(bulletPosition);
+            playerPosition = Camera.main.ScreenToWorldPoint(playerPosition);
             var angularCoefficentBullet =
-                (bulletPosition.y - myPosition.y) /
-                (bulletPosition.x - myPosition.x);
+                (playerPosition.y - myPosition.y) /
+                (playerPosition.x - myPosition.x);
             var rotZ = Mathf.Atan(angularCoefficentBullet) * Mathf.Rad2Deg;
             var currentEulerAngle = Shield.transform.localEulerAngles;
 
-            var offSet = (myPosition.y > bulletPosition.y) ? -90 : 0;
+            var offSet = (myPosition.y > playerPosition.y) ? -90 : 0;
             
             Shield.transform.localEulerAngles = new Vector3(
                 currentEulerAngle.x,

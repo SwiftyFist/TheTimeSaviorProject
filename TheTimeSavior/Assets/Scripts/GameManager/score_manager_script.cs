@@ -4,53 +4,54 @@ using UnityEngine.UI;
 
 public class score_manager_script : MonoBehaviour
 {
-    public int multiplier;
-    public int enemyCount;
-	public static int score;
-    private multiplier_number MultiplierObj;
+    public int Multiplier;
+    public int EnemyCount;
+	public static int Score;
+    private multiplier_number _multiplierObj;
 
 	Text text;
 
 	void Start () 
 	{
         text = GetComponent<Text> ();
-        MultiplierObj = GameObject.Find("Multiplier").GetComponent<multiplier_number>();
+        _multiplierObj = GameObject.Find("Multiplier").GetComponent<multiplier_number>();
+
 	}
 
 	void Update () 
 	{
-		if (score < 0)
-			score = 0;
+		if (Score < 0)
+			Score = 0;
 
-		text.text = "" + score;
+		text.text = "" + Score;
     }
 
 	public void AddPoints (int pointsToAdd)
 	{
-        score += pointsToAdd * multiplier;
+        Score += pointsToAdd * Multiplier;
         
 	}
 
     public void EnemyDeathCount()
     {
-        enemyCount += 1;
-        multiplier = MultiplierObj.SetTextMultiplier(enemyCount);
+        EnemyCount += 1;
+        Multiplier = _multiplierObj.SetTextMultiplier(EnemyCount);
     }
     public void EnemyDeathCountReset()
     {
-        enemyCount = 0;
-        multiplier = MultiplierObj.SetTextMultiplier(enemyCount);
+        EnemyCount = 0;
+        Multiplier = _multiplierObj.SetTextMultiplier(EnemyCount);
     }
 
     public void Reset()
 	{
-		score = 0;
-        enemyCount = 0;
-        multiplier =  MultiplierObj.SetTextMultiplier(1);
+		Score = 0;
+        EnemyCount = 0;
+        Multiplier =  _multiplierObj.SetTextMultiplier(1);
     }
 
 	public static void SendToHub()
 	{
-		player_script.pl_script.upgradePoints = player_script.pl_script.upgradePoints + score;
+		player_script.pl_script.upgradePoints = player_script.pl_script.upgradePoints + Score;
 	}
 }

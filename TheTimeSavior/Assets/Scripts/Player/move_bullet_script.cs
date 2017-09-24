@@ -20,16 +20,17 @@ public class move_bullet_script : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D colInfo)
 	{
-		if (colInfo.tag == "Enemy")
+		if (colInfo.CompareTag("Enemy"))
 		{
-            colInfo.gameObject.GetComponent<Enemy>().ActiveShield(transform.position);
+            var playerPosition = GameObject.Find("Player").transform.position;
+            colInfo.gameObject.GetComponent<Enemy>().ActiveShield(playerPosition);
             Destroy(gameObject);
 
             GameObject.Find("Camera").GetComponent<Camera_Shake_Script>().Shake(EnemyShakeAmt, EnemyShakeLenght);
 
             colInfo.GetComponent<EnemySoundManager>().PlayOnHitByBullet();
             colInfo.GetComponent<enemy_health_manager_script>().giveDamage(DamageToGive);
-            colInfo.GetComponent<Enemy>().SetTrigger();
+            colInfo.GetComponent<Enemy>().SetTrigger(true, true);
         }
 
 		if (colInfo.tag == "LevelObject")
