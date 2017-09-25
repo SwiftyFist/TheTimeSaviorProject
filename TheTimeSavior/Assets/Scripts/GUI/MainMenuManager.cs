@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GameManager;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -131,9 +132,6 @@ public class MainMenuManager : MonoBehaviour {
     private IEnumerator Wait()
     {   
         yield return new WaitForSeconds(0.3f);
-
-        
-
     }
 
     private IEnumerator WaitCoroutine(float timeToWait)
@@ -153,7 +151,7 @@ public class MainMenuManager : MonoBehaviour {
         menuCanvas.SetActive(false);
         yield return new WaitForSeconds(loadingTime);
         audioManager.ReloadScene();
-        SceneManager.LoadScene("Level_Hub");
+        LevelManager.GoToHub();
         StartCoroutine(Wait());
     }
 
