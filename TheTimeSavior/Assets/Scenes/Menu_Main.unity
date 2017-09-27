@@ -3044,3 +3044,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2042911258}
+--- !u!1 &2061688272 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013216977064, guid: 10e8ce394eeb8ac449cb98c23d5c723d,
+    type: 2}
+  m_PrefabInternal: {fileID: 687923656}
+--- !u!114 &2061688273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2061688272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db0532cbf27aa0847bbf7392f5740d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
