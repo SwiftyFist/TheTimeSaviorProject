@@ -89,7 +89,6 @@ public class player_script : MonoBehaviour
         {
             footstepStarted = true;
             AudioManagerFmod.instance.StartFootstep();
-
         }
         else if(myRigidBody2d.velocity.magnitude < 0.4f)
         {
@@ -102,7 +101,7 @@ public class player_script : MonoBehaviour
             AudioManagerFmod.instance.StopFootstep();
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetButtonDown("Invincibility"))
         {
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");
             if (isInvincible)
