@@ -218,12 +218,10 @@ GameObject:
   - component: {fileID: 3768824}
   - component: {fileID: 3768823}
   - component: {fileID: 3768822}
-  - component: {fileID: 3768821}
   - component: {fileID: 3768820}
   - component: {fileID: 3768819}
   - component: {fileID: 3768818}
   - component: {fileID: 3768817}
-  - component: {fileID: 3768816}
   - component: {fileID: 3768815}
   m_Layer: 0
   m_Name: Enemy
@@ -253,20 +251,10 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  StayOnPlatform: 0
+  StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
---- !u!114 &3768816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114255924670848514, guid: e98913de30659834ead000d5486732ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 3768814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  PlatformToStay: {fileID: 1117674288}
+  JumpForce: 10
 --- !u!114 &3768817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,41 +327,6 @@ MonoBehaviour:
   HitByBulletVolume: 0.5
   myDeathSound: {fileID: 8300000, guid: af250d8890a5692498a65a7d6bf68621, type: 3}
   DeathVolume: 0.5
---- !u!60 &3768821
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 60000014198783168, guid: e98913de30659834ead000d5486732ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 3768814}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.7333333, y: 1.4444444}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.33333334, y: 0.7111111}
-      - {x: -0.6666667, y: 0.6}
-      - {x: -0.8, y: 0.4}
-      - {x: -0.8666667, y: 0.26666668}
-      - {x: -0.8666667, y: -0.51111114}
-      - {x: -0.6666667, y: -0.7111111}
-      - {x: 0.7111111, y: -0.7111111}
-      - {x: 0.8666667, y: -0.6}
-      - {x: 0.8666667, y: 0.4888889}
-      - {x: 0.64444447, y: 0.7111111}
 --- !u!114 &3768822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,7 +700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &33848257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1380,7 +1333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &63450707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,6 +1357,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &63450708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1828,7 +1783,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &81917003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1852,6 +1807,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &81917004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2144,7 +2101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &83339224
 Transform:
   m_ObjectHideFlags: 0
@@ -2188,6 +2145,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &83339226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3124,6 +3083,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -3567,7 +3530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &212066064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3591,6 +3554,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &212066065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4097,7 +4062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &279881982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4121,6 +4086,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &279881983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4502,7 +4469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &291790688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4972,6 +4939,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -5006,7 +4977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &366111802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5304,7 +5275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &372550866
 Transform:
   m_ObjectHideFlags: 0
@@ -5348,6 +5319,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &372550868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5805,6 +5778,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -5861,7 +5838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &425860128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5885,6 +5862,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &425860129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6241,7 +6220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &457160841
 Transform:
   m_ObjectHideFlags: 0
@@ -6285,6 +6264,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &457160843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6527,7 +6508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &459848140
 Transform:
   m_ObjectHideFlags: 0
@@ -6863,7 +6844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &467326288
 Transform:
   m_ObjectHideFlags: 0
@@ -7165,6 +7146,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_3x1_Davanti (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012748581956, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
   m_IsPrefabParent: 0
@@ -7380,7 +7365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &511130660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7816,7 +7801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &535204403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8250,7 +8235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &546941136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8548,7 +8533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &567459648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8572,6 +8557,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &567459649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8985,7 +8972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &596581217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9575,7 +9562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &632023008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9599,6 +9586,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &632023009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10356,6 +10345,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -10384,7 +10377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &705235502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10408,6 +10401,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &705235503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10704,7 +10699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &709494993
 Transform:
   m_ObjectHideFlags: 0
@@ -10748,6 +10743,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &709494995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11037,7 +11034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &723328416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11430,7 +11427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &734124258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11454,6 +11451,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &734124259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12105,7 +12104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &794847820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12373,7 +12372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &798764456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12397,6 +12396,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &798764457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12681,6 +12682,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_3x1_Davanti (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012748581956, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
   m_IsPrefabParent: 0
@@ -12765,7 +12770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &811994107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12789,6 +12794,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &811994108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13206,7 +13213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &817781565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13230,6 +13237,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &817781566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13739,6 +13748,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -13823,7 +13836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &829614345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14169,6 +14182,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -14213,7 +14230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &859909105
 Transform:
   m_ObjectHideFlags: 0
@@ -14257,6 +14274,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &859909107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14791,6 +14810,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -14919,6 +14942,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_3x1_Davanti (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012748581956, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
   m_IsPrefabParent: 0
@@ -15004,7 +15031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &907337582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15490,6 +15517,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_3x1_Davanti (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012748581956, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
   m_IsPrefabParent: 0
@@ -15633,6 +15664,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -15683,6 +15718,10 @@ Prefab:
     - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
       propertyPath: m_Name
       value: Normal_4x1_Davanti (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
@@ -15743,7 +15782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1021230533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16320,7 +16359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1056191720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16344,6 +16383,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &1056191721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16740,6 +16781,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -16816,7 +16861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1110180576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17119,6 +17164,11 @@ Transform:
   m_Father: {fileID: 83339224}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1117674288 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013,
+    type: 2}
+  m_PrefabInternal: {fileID: 1452178382}
 --- !u!1 &1126637132
 GameObject:
   m_ObjectHideFlags: 0
@@ -17788,6 +17838,10 @@ Prefab:
     - target: {fileID: 1000012748581956, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
       propertyPath: m_Name
       value: Normal_3x1_Davanti (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012748581956, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
@@ -18846,6 +18900,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -18989,6 +19047,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -19017,7 +19079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1371656558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19041,6 +19103,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &1371656559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19493,7 +19557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1387917869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20510,7 +20574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1512839586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20534,6 +20598,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &1512839587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20909,6 +20975,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -21048,7 +21118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1552749825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21072,6 +21142,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &1552749826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21577,7 +21649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1584975891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21601,6 +21673,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &1584975892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22098,6 +22172,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -22524,6 +22602,10 @@ Prefab:
     - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
       propertyPath: m_Name
       value: Normal_4x1_Davanti (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
@@ -23314,6 +23396,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -23728,6 +23814,10 @@ Prefab:
     - target: {fileID: 4000011898520040, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
       propertyPath: m_RootOrder
       value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012748581956, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4cd013d1e8f60f48bfa06ea42831faa, type: 2}
@@ -24307,6 +24397,10 @@ Prefab:
       propertyPath: m_Name
       value: Normal_4x1_Davanti (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -24473,7 +24567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1888622629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24866,6 +24960,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
   m_IsPrefabParent: 0
@@ -25063,6 +25161,10 @@ Prefab:
     - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
       propertyPath: m_Name
       value: Normal_4x1_Davanti (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010479760054, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b570aa32aeb2df4a84def4ca050a013, type: 2}
@@ -25598,7 +25700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2015464142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25622,6 +25724,8 @@ MonoBehaviour:
   WalkVelocity: 8
   StayOnPlatform: 1
   PushBackVelocityModificatorOnPlatform: -1
+  PlatformToStay: {fileID: 0}
+  JumpForce: 100
 --- !u!114 &2015464143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26384,7 +26488,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 3768814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.63, y: 1.1400003, z: 0}
+  m_LocalPosition: {x: 77.58, y: 1.52, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 1538697169}
