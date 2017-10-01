@@ -1,15 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Security.Cryptography.X509Certificates;
+using UnityEngine;
 
 public class Platform_Script : MonoBehaviour {
 
 	private Animator _myAnimator;
 	private bool _gate;
     private player_script _playerScript;
+	public float Lunghezza;
 
 	private void Awake ()
     {
 		_myAnimator = GetComponent<Animator> ();
         _playerScript = GameObject.Find("Player").GetComponent<player_script>();
+	    Lunghezza = GetComponent<Collider2D>().bounds.size.x;
     }
 	
 	private void OnCollisionEnter2D (Collision2D other)

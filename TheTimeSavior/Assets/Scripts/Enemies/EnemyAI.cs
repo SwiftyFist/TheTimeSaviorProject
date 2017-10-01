@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Enemies
 {
@@ -11,6 +13,8 @@ namespace Enemies
         public bool StayOnPlatform;
         public float PushBackVelocityModificatorOnPlatform = -1;
         public GameObject PlatformToStay;
+        public float JumpForce = 10f;
+        public float StartJumpOffSet = 5;
         private Vector3 _rightLimitPosition, _leftLimitPosition;
         private bool _stayOnPlatform;
 
@@ -18,13 +22,29 @@ namespace Enemies
 
         protected override void Awake()
         {
-            _stayOnPlatform = StayOnPlatform;
             PlayerTransform = GameObject.Find("Player").GetComponent<Transform>();
             base.Awake();
         }
 
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += OnLevelFinishedLoading;
+        }
+
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+        }
+
+        private void OnLevelFinishedLoading(Scene arg0, LoadSceneMode arg1)
+        {
+            if (PlatformToStay != null) SetPlatform(PlatformToStay);
+        }
+
         protected override void Update()
         {
+            if (StayOnPlatform && PlatformToStay != null && _rightLimitPosition == new Vector3(0,0,0))
+                SetPlatform(PlatformToStay);
             SetStatus();
             switch (MyStatus)
             {
@@ -91,6 +111,39 @@ namespace Enemies
              );
         }
 
+        protected override void Move()
+        {
+            if (StayOnPlatform && HaveToJumpOnPlatform())
+            {
+                Jump();
+            }
+            base.Move();
+        }
+
+        private void Jump()
+        {
+//            var y = Vector3.MoveTowards(
+//                MyTransform.position, 
+//                PlatformToStay.transform.position, 
+//                Mathf.Abs(JumpVelocity) * Time.deltaTime).y;
+//        
+//            MyTransform.position = new Vector2(MyTransform.position.x, y);
+            MyRigidBody2D.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+        }
+
+        private bool HaveToJumpOnPlatform()
+        {
+            if (PlatformToStay == null || 
+                !(PlatformToStay.transform.position.y > MyTransform.position.y)) return false;
+            
+            return (!BIsFacingLeft 
+                    && MyTransform.position.x > _leftLimitPosition.x - StartJumpOffSet
+                    && MyTransform.position.x < _leftLimitPosition.x)
+                || (BIsFacingLeft 
+                    && MyTransform.position.x < _rightLimitPosition.x + StartJumpOffSet
+                    && MyTransform.position.x > _rightLimitPosition.x);
+        }
+
         protected override IEnumerator RunningVelIncrease()
         {
             Called = true;
@@ -150,8 +203,10 @@ namespace Enemies
         {
             PlatformToStay = platform;
 
-            var lunghezzaPiattaforma = PlatformToStay.GetComponent<Collider2D>().bounds.size.x;
+            var lunghezzaPiattaforma = PlatformToStay.GetComponent<Platform_Script>().Lunghezza;
 
+            if (lunghezzaPiattaforma == 0) return;
+            
             _rightLimitPosition = new Vector3(
                 (PlatformToStay.transform.position.x + lunghezzaPiattaforma / 2) - 2f,
                 PlatformToStay.transform.position.y - 0.05f,
