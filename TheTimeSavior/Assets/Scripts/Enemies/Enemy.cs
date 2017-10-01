@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -39,6 +38,7 @@ namespace Enemies
         protected Coroutine LastRunningVelIncreaser, RunningVelIncreaser;
         protected bool Called;
         protected GameObject Shield;
+        protected bool HasBeenTriggered;
         protected bool TriggeredByGun;
         
         #endregion
@@ -86,7 +86,7 @@ namespace Enemies
 
         protected virtual void FixedUpdate()
         {
-            if (CalcDistanceFromPlayer() > DistanceFromPlayerToDeath)
+            if (CalcDistanceFromPlayer() > DistanceFromPlayerToDeath && HasBeenTriggered)
             {
                 GetComponent<EnemyDeath>().DestroyEnemy(0);
                 return;
@@ -148,6 +148,7 @@ namespace Enemies
             MyStatus = activate ? EStatus.Triggered : EStatus.Inactive;
             MyAnimator.SetBool(AnimatorTriggered, activate);
             MyAnimator.SetBool(AnimatorRun, activate);
+            HasBeenTriggered = true;
         }
         
         protected virtual IEnumerator RunningVelIncrease()
@@ -233,18 +234,18 @@ namespace Enemies
             var currentEulerAngle = Shield.transform.localEulerAngles;
 
             var offSet = (myPosition.y > playerPosition.y) ? -90 : 0;
-            
+
             Shield.transform.localEulerAngles = new Vector3(
                 currentEulerAngle.x,
                 currentEulerAngle.y,
                 rotZ + offSet
                 );
-            
+
             var mySprite = Shield.GetComponent<SpriteRenderer>();
             mySprite.enabled = true;
             StartCoroutine(ShieldDown(mySprite));
         }
-        
+
         private static IEnumerator ShieldDown(SpriteRenderer mySprite)
         {
             yield return new WaitForSeconds(0.5f);
