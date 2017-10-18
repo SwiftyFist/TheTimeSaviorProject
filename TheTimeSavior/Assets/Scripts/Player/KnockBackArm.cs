@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class KnockBackArm : MonoBehaviour
 {
-    Transform myTransform;
-    Transform backPointTransform;
+    private Transform _myTransform;
+    private Transform _backPointTransform;
+    private Transform _initialPointTransform;
 
-    public float backVelocity = 1;
-    public float knockBackVelocity = 4;
-
-    private Transform initialPointTransform;
+    public float BackVelocity = 10;
+    public float KnockBackVelocity = 4;    
 
     public void Awake()
     {
-        myTransform = GetComponent<Transform>();
-        backPointTransform = GameObject.Find("BackPoint").GetComponent<Transform>();
-        initialPointTransform = GameObject.Find("InitialPoint").GetComponent<Transform>();
-
+        _myTransform = GetComponent<Transform>();
+        _backPointTransform = GameObject.Find("BackPoint").GetComponent<Transform>();
+        _initialPointTransform = GameObject.Find("InitialPoint").GetComponent<Transform>();
     }
 
     void Update()
@@ -27,27 +25,28 @@ public class KnockBackArm : MonoBehaviour
 
     public void KnockBack()
     {
-        //muovo con il movetowards verso quel punto
-        myTransform.position = Vector3.MoveTowards(myTransform.position, backPointTransform.position, knockBackVelocity * Time.deltaTime);        
-                    
+        _myTransform.position = Vector3.MoveTowards(
+            _myTransform.position,
+            _backPointTransform.position,
+            KnockBackVelocity * Time.deltaTime
+        );                   
     }
 
     void BackInPosition()
     {
-        if (myTransform.position != GetInitialPosition())//se la transform dell arma é diversa dalla transform iniziale
-            myTransform.position = Vector3.MoveTowards(myTransform.position, GetInitialPosition(), backVelocity * Time.deltaTime);//muovi verso la transform iniziale
+        if (_myTransform.position != _initialPointTransform.position)
+            _myTransform.position = Vector3.MoveTowards(
+                _myTransform.position,
+                _initialPointTransform.position,
+                BackVelocity * Time.deltaTime
+            );
     }
 
     bool IsInPosition()
     {
-        if (myTransform.position == initialPointTransform.position)
+        if (_myTransform.position == _initialPointTransform.position)
             return true;
         else
             return false;
-    }
-
-    Vector3 GetInitialPosition()
-    {
-        return initialPointTransform.position;
     }
 }
