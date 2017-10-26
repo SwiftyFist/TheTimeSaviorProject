@@ -21,6 +21,7 @@ public class player_script : MonoBehaviour
     public float InvincibleTime = 1f;
     public float OffSetBecomInvulnerable = 0.5f;
     public bool isInvincible = false;
+    public bool IsInMenu = false; //Controlla se il player sta guardando un Menù in caso positivo lo blocca
     public Coroutine BackVulnerable = null;
     public Coroutine BecomeInvulnerable = null;
 
@@ -76,31 +77,34 @@ public class player_script : MonoBehaviour
 
     void Update()
     {
-        myRigidBody2d.velocity = new Vector2(horizontalAxes * maxSpeed, myRigidBody2d.velocity.y);
-        myAnimator.SetFloat("Horizontal_Speed", Mathf.Abs(myRigidBody2d.velocity.x));
+        if(!IsInMenu)
+        {
+            myRigidBody2d.velocity = new Vector2(horizontalAxes * maxSpeed, myRigidBody2d.velocity.y);
+            myAnimator.SetFloat("Horizontal_Speed", Mathf.Abs(myRigidBody2d.velocity.x));
 
-        SetArmPosition();
+            SetArmPosition();
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            Jump();
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                Jump();
+            }
+            if (!footstepStarted && isGrounded && myRigidBody2d.velocity.magnitude > 0.2f)
+            {
+                footstepStarted = true;
+                AudioManagerFmod.instance.StartFootstep();
+            }
+            else if (myRigidBody2d.velocity.magnitude < 0.4f)
+            {
+                footstepStarted = false;
+                AudioManagerFmod.instance.StopFootstep();
+            }
+            else if (!isGrounded)
+            {
+                footstepStarted = false;
+                AudioManagerFmod.instance.StopFootstep();
+            }
         }
-        if(!footstepStarted && isGrounded && myRigidBody2d.velocity.magnitude > 0.2f )
-        {
-            footstepStarted = true;
-            AudioManagerFmod.instance.StartFootstep();
-        }
-        else if(myRigidBody2d.velocity.magnitude < 0.4f)
-        {
-            footstepStarted = false;
-            AudioManagerFmod.instance.StopFootstep();
-        }
-        else if (!isGrounded)
-        {
-            footstepStarted = false;
-            AudioManagerFmod.instance.StopFootstep();
-        }
-
+     
         if (Input.GetButtonDown("Invincibility"))
         {
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -129,10 +133,7 @@ public class player_script : MonoBehaviour
         horizontalAxes = Input.GetAxis("Horizontal");
         isGrounded = Physics2D.OverlapCircle(player_ground.position, 0.2f, Layer_Ground);
         myAnimator.SetBool("Ground", isGrounded);
-        myAnimator.SetFloat("Vertical_Speed", myRigidBody2d.velocity.y);
-
-       
-          
+        myAnimator.SetFloat("Vertical_Speed", myRigidBody2d.velocity.y);       
     }
 
     void OnCollisionEnter2D(Collision2D other)

@@ -14,11 +14,13 @@ public class UITerminalActivation : MonoBehaviour
         {
             if(!Terminal.gameObject.activeInHierarchy)
             {
+                player_script.pl_script.IsInMenu = true;
                 Terminal.gameObject.SetActive(true);
             }
             else
             {
                 Terminal.gameObject.SetActive(false);
+                player_script.pl_script.IsInMenu = false;
             }
         }
     }
