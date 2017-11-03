@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Enemies;
-using UnityEngine;
+﻿using Enemies;
 using FMODUnity;
-using FMOD;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 

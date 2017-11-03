@@ -56,7 +56,8 @@ namespace Destroyer
         {
             if (!collision.gameObject.CompareTag("NeverDestroy") 
                 && !collision.gameObject.CompareTag("Shield")
-                && !collision.gameObject.CompareTag("Player"))
+                && !collision.gameObject.CompareTag("Player")
+                && !collision.gameObject.CompareTag("Enemy"))
             {
                 Destroy(collision.gameObject); //Distrugge quello che incontra per alleggerire il gioco
             }

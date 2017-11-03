@@ -232,13 +232,7 @@ namespace Enemies
             var rotZ = Mathf.Atan(angularCoefficentBullet) * Mathf.Rad2Deg;
             var currentEulerAngle = Shield.transform.localEulerAngles;
 
-            var offSet = (myPosition.y > playerPosition.y) ? -90 : 0;
-            
-            Shield.transform.localEulerAngles = new Vector3(
-                currentEulerAngle.x,
-                currentEulerAngle.y,
-                rotZ + offSet
-                );
+            Shield.transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
             
             var mySprite = Shield.GetComponent<SpriteRenderer>();
             mySprite.enabled = true;

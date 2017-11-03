@@ -23,13 +23,11 @@ GameObject:
   - component: {fileID: 114000013716519824}
   - component: {fileID: 114000011823184934}
   - component: {fileID: 95000012746782288}
-  - component: {fileID: 60000010277261150}
   - component: {fileID: 50000012796919902}
   - component: {fileID: 114000012372369486}
   - component: {fileID: 61000011778505572}
   - component: {fileID: 114541058032159622}
   - component: {fileID: 114124950510998398}
-  - component: {fileID: 114523284350696034}
   m_Layer: 0
   m_Name: Enemy_Type_2
   m_TagString: Enemy
@@ -129,45 +127,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &60000010277261150
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010582885768}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9555556, y: 1.4888889}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.35, y: -0.55}
-      - {x: 0.475, y: -0.6}
-      - {x: 0.625, y: -0.6}
-      - {x: 0.975, y: -0.275}
-      - {x: 0.975, y: -0.05}
-      - {x: 0.6, y: 0.2}
-      - {x: 0.125, y: 0.7}
-      - {x: -0.375, y: 0.7}
-      - {x: -1.075, y: -0.125}
-      - {x: -1.075, y: -0.375}
-      - {x: -0.90000004, y: -0.6}
-      - {x: -0.625, y: -0.6}
-      - {x: -0.45000002, y: -0.45000002}
-      - {x: -0.22500001, y: -0.375}
-      - {x: 0.275, y: -0.4}
 --- !u!61 &61000011778505572
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -271,23 +230,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackDistance: 0.45
---- !u!114 &114523284350696034
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010582885768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 958ffc0111b5954479278621e42ee257, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LimSupAttivazioneScudiLaterali: 0.5
-  LimInfAttivazioneScudiLaterali: -0.5
-  TopShield: {fileID: 212089715577312884}
-  BottomShield: {fileID: 0}
-  FrontShield: {fileID: 0}
-  RearShield: {fileID: 0}
 --- !u!114 &114541058032159622
 MonoBehaviour:
   m_ObjectHideFlags: 1
