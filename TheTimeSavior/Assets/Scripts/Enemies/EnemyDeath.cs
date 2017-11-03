@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Enemies
@@ -44,16 +45,19 @@ namespace Enemies
 
         IEnumerator DeathDelay()
         {
-            if (transform.name == "Enemy")
-                GetComponent<EnemyAI>().enabled = false;
-            else  
-                GetComponent<DroneAI_v2>().enabled = false;
+            try
+            {
+                GetComponent<Enemy>().enabled = false;
 
-      
-            GetComponent<Rigidbody2D>().isKinematic = true;
-            GetComponent<BoxCollider2D>().enabled = false;
+                GetComponent<Rigidbody2D>().isKinematic = true;
+                GetComponent<BoxCollider2D>().enabled = false;
+            }
+            catch (Exception exc)
+            {
+                throw exc;
+            }
             yield return new WaitForSeconds(0.7f);
-       
+
             //Spawn del particellare della morte
             GameObject clone0 = Instantiate(DeathParticle0, SpawnParticle.position, SpawnParticle.rotation) as GameObject;
             GameObject clone1 = Instantiate(DeathParticle1, SpawnParticle.position, SpawnParticle.rotation) as GameObject;

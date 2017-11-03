@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 61000013087894408}
   - component: {fileID: 114938641121818116}
   - component: {fileID: 114038093862402852}
-  - component: {fileID: 114255924670848514}
   - component: {fileID: 114415547258459410}
   m_Layer: 0
   m_Name: Enemy
@@ -459,23 +458,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackDistance: 0.45
---- !u!114 &114255924670848514
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 958ffc0111b5954479278621e42ee257, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LimSupAttivazioneScudiLaterali: 0.5
-  LimInfAttivazioneScudiLaterali: -0.5
-  TopShield: {fileID: 0}
-  BottomShield: {fileID: 0}
-  FrontShield: {fileID: 0}
-  RearShield: {fileID: 0}
 --- !u!114 &114415547258459410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -496,8 +478,6 @@ MonoBehaviour:
   RangeToRun: 12
   RangeToActivate: 20
   WalkVelocity: 8
-  RightLimit: {fileID: 4162773399021008}
-  LeftLimit: {fileID: 4624105410412850}
   StayOnPlatform: 0
   PushBackVelocityModificatorOnPlatform: -1
   PlatformToStay: {fileID: 0}

@@ -114,26 +114,24 @@ public class gun_script : MonoBehaviour
 
     void Shoot(Transform bulletType)
     {
-        Effect(bulletType);
+        ShootEffect(bulletType, FirePoint, FlashPrefab);
         shellPool.ShootShell();
         GameObject.Find("Arm").GetComponent<KnockBackArm>().KnockBack();
+        this.GetComponent<AudioSource>().Play();
+        GameObject.Find("Camera").GetComponent<Gun_Shake_Script>().Shake(GetCamShakeAmt(), camShakeLenght);
     }
 
-    void Effect(Transform bulletType)
+    public static void ShootEffect(Transform bulletType, Transform firePoint, Transform flashPrefab)
     {
         // Crea il Bullet
-        Instantiate(bulletType, FirePoint.position, FirePoint.rotation);
+        Instantiate(bulletType, firePoint.position, firePoint.rotation);
         // Crea il Muzzle Flash
-        Transform clone = Instantiate(FlashPrefab, FirePoint.position, FirePoint.rotation) as Transform;
-        clone.parent = FirePoint;
+        Transform clone = Instantiate(flashPrefab, firePoint.position, firePoint.rotation) as Transform;
+        clone.parent = firePoint;
         float size = Random.Range(0.6f, 0.9f);
         clone.localScale = new Vector3(size, size, size);
         //Distrugge il Muzzle Flash
         Destroy(clone.gameObject, 0.04f);
-        GetComponent<AudioSource>().Play();
-
-        //Camera Shake
-        GameObject.Find("Camera").GetComponent<Gun_Shake_Script>().Shake(GetCamShakeAmt(), camShakeLenght);
     }
 
     float GetCamShakeAmt()
