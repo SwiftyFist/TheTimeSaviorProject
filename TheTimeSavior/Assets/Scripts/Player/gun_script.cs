@@ -179,7 +179,7 @@ public class gun_script : MonoBehaviour
     {
         yield return new WaitForSeconds(shootStartDelay);
 
-        if (isHolding && isCold)
+        if (isHolding && isCold && !player_script.pl_script.IsInMenu)
         {
             Shoot(BulletMinigunPrefab);
             //TODO Chiamata al knock back
