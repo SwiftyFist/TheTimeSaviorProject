@@ -130,10 +130,13 @@ public class player_script : MonoBehaviour
 
     void FixedUpdate()
     {
-        horizontalAxes = Input.GetAxis("Horizontal");
-        isGrounded = Physics2D.OverlapCircle(player_ground.position, 0.2f, Layer_Ground);
-        myAnimator.SetBool("Ground", isGrounded);
-        myAnimator.SetFloat("Vertical_Speed", myRigidBody2d.velocity.y);       
+        if(!IsInMenu)
+        {
+            horizontalAxes = Input.GetAxis("Horizontal");
+            isGrounded = Physics2D.OverlapCircle(player_ground.position, 0.2f, Layer_Ground);
+            myAnimator.SetBool("Ground", isGrounded);
+            myAnimator.SetFloat("Vertical_Speed", myRigidBody2d.velocity.y);
+        }   
     }
 
     void OnCollisionEnter2D(Collision2D other)
