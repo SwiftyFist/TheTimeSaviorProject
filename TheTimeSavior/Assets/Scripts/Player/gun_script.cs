@@ -118,7 +118,7 @@ public class gun_script : MonoBehaviour
         shellPool.ShootShell();
         GameObject.Find("Arm").GetComponent<KnockBackArm>().KnockBack();
         this.GetComponent<AudioSource>().Play();
-        GameObject.Find("Camera").GetComponent<Gun_Shake_Script>().Shake(GetCamShakeAmt(), camShakeLenght);
+        GameObject.Find("CameraManager").GetComponent<Gun_Shake_Script>().Shake(GetCamShakeAmt(), camShakeLenght);
     }
 
     public static void ShootEffect(Transform bulletType, Transform firePoint, Transform flashPrefab)
