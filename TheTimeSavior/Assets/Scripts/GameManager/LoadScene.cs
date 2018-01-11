@@ -21,7 +21,7 @@ public class LoadScene : MonoBehaviour
     {
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         destroyerTransform = GameObject.Find("Destroyer").GetComponent<Transform>();
-        myTransform = GameObject.Find("Camera").GetComponent<Transform>();
+        myTransform = GameObject.Find("MainCamera").GetComponent<Transform>();
         canSkip = GameObject.Find("GameMaster").GetComponent<save_GM_script>().loadScene;
 
     }
@@ -35,7 +35,7 @@ public class LoadScene : MonoBehaviour
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().enabled = false;
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().enabled = false;
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerInactivity>().enabled = false;
-        GameObject.Find("Camera").GetComponent<Camera_Script>().enabled = false;//Blocco lo script del movimento della camera
+        GameObject.Find("MainCamera").GetComponent<Camera_Script>().enabled = false;//Blocco lo script del movimento della camera
         StartCoroutine(WaitTimeToSkip());
     }
 
@@ -98,7 +98,7 @@ public class LoadScene : MonoBehaviour
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerGame>().enabled = true;
         GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().enabled = true;
        // GameObject.Find("Destroyer").GetComponent<DestroyerPlayerInactivity>().enabled = true;
-        GameObject.Find("Camera").GetComponent<Camera_Script>().enabled = true;
+        GameObject.Find("MainCamera").GetComponent<Camera_Script>().enabled = true;
         //Disattiva questo script
         GetComponent<LoadScene>().enabled = false;
         GameObject.Find("GameMaster").GetComponent<save_GM_script>().loadScene = true;
