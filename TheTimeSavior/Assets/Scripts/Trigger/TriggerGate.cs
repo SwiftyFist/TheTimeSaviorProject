@@ -1,38 +1,35 @@
 ﻿using Destroyer;
 using UnityEngine;
 
-public class TriggerGate : MonoBehaviour
+namespace Trigger
 {
-    public float offSetActivation = 3f;
-    public bool Activating;
-    private bool Activated = false;
-    private Transform playerTransform;
-
-    void Awake()
+    public class TriggerGate : MonoBehaviour
     {
-        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
-    }
+        public float OffSetActivation = 3f;
+        public bool Activating;
+        public LevelMaking.LevelMaking.LevelTypes NextLevelType = LevelMaking.LevelMaking.LevelTypes.Middle;
+        private bool _activated;
+        private Transform _playerTransform;
+        private LevelMaking.LevelMaking _levelMaking;
 
-    void Update()
-    {
-        if (playerTransform == null) return;
-        if (playerTransform.position.x >= (transform.position.x + offSetActivation) && !Activated)
+        public void Awake()
         {
-            Activated = true;
-            GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().SetActive(Activating);
-            transform.GetChild(0).gameObject.SetActive(true);
+            _levelMaking = GameObject.Find("LevelMaker").GetComponent<LevelMaking.LevelMaking>();
+            _playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+        }
+
+        public void Update()
+        {
+            if (_playerTransform == null) return;
+            if ((_playerTransform.position.x >= (transform.position.x + OffSetActivation) && !_activated))
+            {
+                _activated = true;
+                GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().SetActive(Activating);
+                transform.GetChild(0).gameObject.SetActive(true);
+
+                if (!Activating)
+                    _levelMaking.InstantiateNextLevel(NextLevelType);
+            }            
         }
     }
-
-    //void OnTriggerEnter2D(Collider2D collision)
-    //{
-
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().SetActive(Activating);
-    //        transform.GetChild(0).gameObject.SetActive(true);
-    //    }
-
-    //}
-
 }
