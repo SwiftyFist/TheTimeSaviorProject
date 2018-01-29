@@ -57,7 +57,13 @@ namespace Assets.Scripts.LevelMaking
 		{
 			try
 			{
-				CurrentDifficulty = 1; //Implementare lo scalo di velocità	
+			    var maxDifficulty = GetMaxDifficultyPerType(type);
+			    CurrentDifficulty = difficulty ?? (
+			        CurrentDifficulty + 1 > maxDifficulty
+                        ? CurrentDifficulty += 1
+                        : CurrentDifficulty = maxDifficulty
+			    );
+                                    
 				var levelGameObject = GetLevelePrefab(type, CurrentDifficulty);
 				
 				CreatedLevelsList.Add(Instantiate(
@@ -97,6 +103,11 @@ namespace Assets.Scripts.LevelMaking
 			CurrentDifficulty = 0;
 			EndOfCurrentLevelPosition = new Vector3(86.69f, 0f, 35f);
 		}
+
+	    protected int GetMaxDifficultyPerType(LevelTypes type)
+	    {
+	        return AvaiableLevels.Where(x => x.Type == type).Max(x => x.Difficulty);
+	    }
 	
 	}
 }

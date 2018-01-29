@@ -32,7 +32,7 @@ namespace GameManager
 
         public static void GoToPresent()
         {
-            GoToGameLevel(LevelTest);          
+            GoToGameLevel(LevelPresent);          
         }
 
         public static void GoToFuture()

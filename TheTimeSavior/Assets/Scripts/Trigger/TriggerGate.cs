@@ -15,7 +15,9 @@ namespace Trigger
 
         public void Awake()
         {
-            _levelMaking = GameObject.Find("LevelMaker").GetComponent<LevelMaking>();
+            _levelMaking = GameObject.Find("LevelMaker") != null ?
+                GameObject.Find("LevelMaker").GetComponent<LevelMaking>() :
+                null;
             _playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         }
 
@@ -28,7 +30,7 @@ namespace Trigger
                 GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().SetActive(Activating);
                 transform.GetChild(0).gameObject.SetActive(true);
 
-                if (!Activating)
+                if (!Activating && _levelMaking != null)
                     _levelMaking.InstantiateNextLevel(NextLevelType);
             }            
         }
