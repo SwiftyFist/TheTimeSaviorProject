@@ -1,4 +1,5 @@
-﻿using Destroyer;
+﻿using Assets.Scripts.LevelMaking;
+using Destroyer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -59,9 +60,9 @@ namespace GameManager
 
         public static void LevelReset()
         {
-            var levelMaker = GameObject.Find("LevelMaker").GetComponent<LevelMaking.LevelMaking>();
+            var levelMaker = GameObject.Find("LevelMaker").GetComponent<LevelMaking>();
             if (levelMaker != null)
-                levelMaker.Reset();
+                levelMaker.LevelMakerReset();
             
             if (SceneManager.GetActiveScene().name == "Level_Hub") return;
             var player = GameObject.Find("Player");

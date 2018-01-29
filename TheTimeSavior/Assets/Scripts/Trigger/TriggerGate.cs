@@ -1,4 +1,5 @@
-﻿using Destroyer;
+﻿using Assets.Scripts.LevelMaking;
+using Destroyer;
 using UnityEngine;
 
 namespace Trigger
@@ -7,14 +8,14 @@ namespace Trigger
     {
         public float OffSetActivation = 3f;
         public bool Activating;
-        public LevelMaking.LevelMaking.LevelTypes NextLevelType = LevelMaking.LevelMaking.LevelTypes.Middle;
+        public LevelTypes NextLevelType = LevelTypes.Middle;
         private bool _activated;
         private Transform _playerTransform;
-        private LevelMaking.LevelMaking _levelMaking;
+        private LevelMaking _levelMaking;
 
         public void Awake()
         {
-            _levelMaking = GameObject.Find("LevelMaker").GetComponent<LevelMaking.LevelMaking>();
+            _levelMaking = GameObject.Find("LevelMaker").GetComponent<LevelMaking>();
             _playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         }
 

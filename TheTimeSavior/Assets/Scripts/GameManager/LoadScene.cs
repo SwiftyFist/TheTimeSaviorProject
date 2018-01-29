@@ -2,6 +2,7 @@
 using Destroyer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets.Scripts.LevelMaking;
 
 namespace GameManager
 {
@@ -14,9 +15,7 @@ namespace GameManager
         
         private int _currentPhase = 1;
         private bool _isTimeToSkipPassed;
-        private bool _canSkip;
-        
-        private LevelMaking.LevelMaking _levelMaking;
+        private bool _canSkip;       
 
         public void Awake()
         {
@@ -24,8 +23,6 @@ namespace GameManager
             _destroyerTransform = GameObject.Find("Destroyer").GetComponent<Transform>();
             _myTransform = GameObject.Find("MainCamera").GetComponent<Transform>();
             _canSkip = GameObject.Find("GameMaster").GetComponent<save_GM_script>().loadScene;
-            _levelMaking = GameObject.Find("LevelMaker").GetComponent<LevelMaking.LevelMaking>();
-
         }
     
         public void Start ()
