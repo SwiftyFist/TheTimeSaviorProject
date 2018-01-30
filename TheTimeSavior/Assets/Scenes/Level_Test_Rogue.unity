@@ -708,6 +708,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114353827453496534, guid: ca0dfc7d6cc22c64c9c57ce2563aa369,
+        type: 2}
+      propertyPath: LoadNextPassage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca0dfc7d6cc22c64c9c57ce2563aa369, type: 2}
   m_IsPrefabParent: 0
@@ -2052,6 +2057,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentDifficulty: 0
   EndOfCurrentLevelPosition: {x: 86.69, y: 0, z: 35}
+  CreatedLevelsList: []
+  PassagesCount: 0
 --- !u!4 &588793933
 Transform:
   m_ObjectHideFlags: 0
