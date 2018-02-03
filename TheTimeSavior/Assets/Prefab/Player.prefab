@@ -46,7 +46,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9, y: -7.8, z: 0}
+  m_LocalPosition: {x: 3.6, y: -7.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 485224}
@@ -62,7 +62,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.166, y: -1.383, z: 1}
+  m_LocalPosition: {x: 0.65, y: -1.84, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 456930}
@@ -100,18 +100,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.107703924, y: -0.001540184}
+  m_Offset: {x: 0.6328745, y: -0.06433201}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.36, y: 3.12}
+    oldSize: {x: 2.8125, y: 3.96875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5775342, y: 3.0306816}
+  m_Size: {x: 0.96570396, y: 3.7042694}
   m_EdgeRadius: 0
 --- !u!82 &8253802
 AudioSource:
@@ -212,6 +212,7 @@ MonoBehaviour:
   InvincibleTime: 0.8
   OffSetBecomInvulnerable: 0.4
   isInvincible: 0
+  IsInMenu: 0
   JumpForce: 20
   maxJumpTime: 0.5
   maxSpeed: 10
@@ -251,7 +252,7 @@ SpriteRenderer:
   m_SortingLayerID: -2079455293
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 613edf3bc276b7248821b7187bd40969, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a9ec8f74f7b9b042a74dcc5f828b5a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -408,7 +409,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012573597258}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.163, y: -0.453, z: 0}
+  m_LocalPosition: {x: 0.01, y: -1.06, z: 0}
   m_LocalScale: {x: 1.2837846, y: 0.9845365, z: 1}
   m_Children: []
   m_Father: {fileID: 4000012669882850}
@@ -421,7 +422,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011948367778}
   m_LocalRotation: {x: -0, y: -0, z: 0.86289734, w: 0.5053793}
-  m_LocalPosition: {x: -0.03000021, y: 0.988, z: 0}
+  m_LocalPosition: {x: 0.53, y: 1.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4656693747863048}
@@ -452,7 +453,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013287182714}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.87, z: 0}
+  m_LocalPosition: {x: 0.2, y: 1.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 456930}
@@ -492,7 +493,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1938919550455230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.011, y: 0.256, z: 0}
+  m_LocalPosition: {x: 0.08, y: 0.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000011382265098}
@@ -578,7 +579,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -615,7 +616,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975765571871046}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: efd1667f7104bcc419fc54416f779282, type: 2}
   m_CullingMode: 0
@@ -808,7 +809,7 @@ SpriteRenderer:
   m_SortingLayerID: -2079455293
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 26af8e8a2b187ca4baaead7a58e5aeba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e391212a19f36a24baf3ecfb10f912f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -824,7 +825,7 @@ SpriteRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975765571871046}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_MotionVectors: 1
