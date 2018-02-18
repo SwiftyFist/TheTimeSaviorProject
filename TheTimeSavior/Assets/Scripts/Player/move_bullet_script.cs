@@ -26,7 +26,7 @@ public class move_bullet_script : MonoBehaviour
             colInfo.gameObject.GetComponent<Enemy>().ActiveShield(playerPosition);
             Destroy(gameObject);
 
-            GameObject.Find("Camera").GetComponent<Camera_Shake_Script>().Shake(EnemyShakeAmt, EnemyShakeLenght);
+            GameObject.Find("CameraManager").GetComponent<Camera_Shake_Script>().Shake(EnemyShakeAmt, EnemyShakeLenght);
 
             colInfo.GetComponent<EnemySoundManager>().PlayOnHitByBullet();
             colInfo.GetComponent<enemy_health_manager_script>().giveDamage(DamageToGive);

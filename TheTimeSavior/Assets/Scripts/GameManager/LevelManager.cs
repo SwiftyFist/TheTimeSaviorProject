@@ -1,4 +1,5 @@
-﻿using Destroyer;
+﻿using Assets.Scripts.LevelMaking;
+using Destroyer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,9 +10,8 @@ namespace GameManager
         private const string LevelPresent = "Level_Present";
         private const string LevelPast = "Level_Past";
         private const string LevelFuture = "Level_Future";
-        private const string LevelTest = "Level_Test";
+        private const string LevelTest = "Level_Test_Rogue";
         private const string LevelHub = "Level_Hub";
-
 
         public static void GoToGameLevel(string level)
         {
@@ -60,6 +60,12 @@ namespace GameManager
 
         public static void LevelReset()
         {
+            var levelMaker = GameObject.Find("LevelMaker") != null ?
+                GameObject.Find("LevelMaker").GetComponent<LevelMaking>() :
+                null;
+            if (levelMaker != null)
+                levelMaker.LevelMakerReset();
+            
             if (SceneManager.GetActiveScene().name == "Level_Hub") return;
             var player = GameObject.Find("Player");
             var destroyer = GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>();

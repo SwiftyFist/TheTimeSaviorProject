@@ -34,4 +34,12 @@ public class Utils
 
         return (xDentro && yDentro);
     }
+
+    public static List<GameObject> PopAdnDestroy (List<GameObject> list, int indexToDestroy)
+    {
+        var elementToDestroy = list[indexToDestroy];        
+        GameObject.Destroy(elementToDestroy);
+        list.RemoveAt(indexToDestroy);
+        return list;
+    }
 }

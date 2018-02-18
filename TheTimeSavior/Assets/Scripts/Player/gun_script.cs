@@ -118,7 +118,7 @@ public class gun_script : MonoBehaviour
         shellPool.ShootShell();
         GameObject.Find("Arm").GetComponent<KnockBackArm>().KnockBack();
         this.GetComponent<AudioSource>().Play();
-        GameObject.Find("Camera").GetComponent<Gun_Shake_Script>().Shake(GetCamShakeAmt(), camShakeLenght);
+        GameObject.Find("CameraManager").GetComponent<Gun_Shake_Script>().Shake(GetCamShakeAmt(), camShakeLenght);
     }
 
     public static void ShootEffect(Transform bulletType, Transform firePoint, Transform flashPrefab)
@@ -177,7 +177,7 @@ public class gun_script : MonoBehaviour
     {
         yield return new WaitForSeconds(shootStartDelay);
 
-        if (isHolding && isCold)
+        if (isHolding && isCold && !player_script.pl_script.IsInMenu)
         {
             Shoot(BulletMinigunPrefab);
             //TODO Chiamata al knock back
