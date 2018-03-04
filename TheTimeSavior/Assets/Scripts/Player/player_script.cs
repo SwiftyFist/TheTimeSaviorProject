@@ -69,10 +69,10 @@ public class player_script : MonoBehaviour
         ArmTransform = transform.GetChild(1);
         InitialArmPositionTransform = GameObject.Find("InitialPoint").GetComponent<Transform>();
         StartArmPosition = InitialArmPositionTransform.localPosition;
-        RunArmPosition = new Vector3(StartArmPosition.x + 0.37f, StartArmPosition.y + 0.04f, StartArmPosition.z);
-        WalkArmPosition = new Vector3(StartArmPosition.x, StartArmPosition.y + 0.10f, StartArmPosition.z);
-        JumpUpArmPosition = new Vector3(StartArmPosition.x, StartArmPosition.y, StartArmPosition.z);
-        JumpDownArmPosition = new Vector3(StartArmPosition.x -0.05f, StartArmPosition.y - 0.10f, StartArmPosition.z);
+        RunArmPosition = new Vector3(StartArmPosition.x + 0.60f, StartArmPosition.y -0.60f, StartArmPosition.z);
+        WalkArmPosition = RunArmPosition;
+        JumpUpArmPosition = new Vector3(StartArmPosition.x - 0.30f, StartArmPosition.y - 0.10f, StartArmPosition.z);
+        JumpDownArmPosition = new Vector3(StartArmPosition.x - 0.35f, StartArmPosition.y - 0.15f, StartArmPosition.z);
     }
 
     void Update()
