@@ -12,15 +12,15 @@ public class AudioManagerFmod : MonoBehaviour {
 
 
     [SerializeField]
-    private gun_script currentGun;
+    private gun_script _currentGun;
     [SerializeField]
-    private FMODUnity.StudioEventEmitter gunEmitter;
+    private StudioEventEmitter _gunEmitter;
     [SerializeField]
-    private GameObject scoreManagerCanvas;
+    private GameObject _scoreManagerCanvas;
     [SerializeField]
-    private StudioEventEmitter musicEmitter;
+    private StudioEventEmitter _musicEmitter;
     [SerializeField]
-    private StudioEventEmitter backgroundEmitter;
+    private StudioEventEmitter _backgroundEmitter;
 
     [HideInInspector]
     public List<EnemyAI> normalEnemyList;
@@ -30,25 +30,25 @@ public class AudioManagerFmod : MonoBehaviour {
     public Transform player;
 
 
-    [FMODUnity.EventRef]
-    public string enemyBank;
-    [FMODUnity.EventRef]
-    public string droneBank;
-    [FMODUnity.EventRef]
-    public string playerShoot;
-    [FMODUnity.EventRef]
-    public string playerMove = "event:/Footstep";
-    [FMODUnity.EventRef]
+    [EventRef]
+    public string EnemyBank;
+    [EventRef]
+    public string DroneBank;
+    [EventRef]
+    public string PlayerShoot;
+    [EventRef]
+    public string PlayerMove = "event:/Footstep";
+    [EventRef]
     public string MusicBank = "event:/Music_Future";
     [EventRef]
-    public string minigunBank = "event:/Minigun";
+    public string MinigunBank = "event:/Minigun";
    
 
 
     [HideInInspector]
-    public bool isMainMenu;
+    public bool IsMainMenu;
 
-    private StudioEventEmitter footEmitter;
+    private StudioEventEmitter _footEmitter;
 
     
 
@@ -72,10 +72,10 @@ public class AudioManagerFmod : MonoBehaviour {
     private void Awake()
     {
         //musicEmitter = GetComponent<StudioEventEmitter>();
-        if (musicEmitter != null)
+        if (_musicEmitter != null)
         {
-            musicEmitter.Play();
-            musicEmitter.SetParameter("Intro_Loop", 0);
+            _musicEmitter.Play();
+            _musicEmitter.SetParameter("Intro_Loop", 0);
             SceneManager.activeSceneChanged += OnChangeSceneHub;
         }
     }
@@ -83,7 +83,7 @@ public class AudioManagerFmod : MonoBehaviour {
 
     public void ReloadScene()
     {
-        scoreManagerCanvas.SetActive(true);
+        _scoreManagerCanvas.SetActive(true);
         isMainMenu = false;
         EnterGame();
         StartCoroutine(Reload());
@@ -94,10 +94,10 @@ public class AudioManagerFmod : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.1f);
         
-        currentGun = FindObjectOfType<gun_script>();
-        gunEmitter = GameObject.Find("InitialPoint").GetComponent<StudioEventEmitter>();
+        _currentGun = FindObjectOfType<gun_script>();
+        _gunEmitter = GameObject.Find("InitialPoint").GetComponent<StudioEventEmitter>();
         player = FindObjectOfType<player_script>().transform;
-        footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
+        _footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
     }
 
     private void Start()
@@ -106,13 +106,13 @@ public class AudioManagerFmod : MonoBehaviour {
             isMainMenu = false;
         else
             isMainMenu = true;
-        enemyInstance = FMODUnity.RuntimeManager.CreateInstance(enemyBank);
-        droneInstance = FMODUnity.RuntimeManager.CreateInstance(droneBank);
+        enemyInstance = RuntimeManager.CreateInstance(enemyBank);
+        droneInstance = RuntimeManager.CreateInstance(droneBank);
         musicInstance = RuntimeManager.CreateInstance(MusicBank);
         playerInstance = RuntimeManager.CreateInstance(playerMove);
         gunInstance = RuntimeManager.CreateInstance(minigunBank);
         if(!isMainMenu)
-            currentGun = FindObjectOfType<gun_script>();
+            _currentGun = FindObjectOfType<gun_script>();
 
         
         StartMusic();
@@ -123,8 +123,8 @@ public class AudioManagerFmod : MonoBehaviour {
 
     public void MinigunActivate()
     {
-        if(currentGun.GetRotationSpeed() <= 1)
-            gunEmitter.Play();
+        if(_currentGun.GetRotationSpeed() <= 1)
+            _gunEmitter.Play();
     }
 
     public void MinigunDeactivate()
@@ -135,30 +135,30 @@ public class AudioManagerFmod : MonoBehaviour {
 
     private IEnumerator WaitMinigun()
     {
-        while (currentGun.GetRotationSpeed() > 0.2f)
+        while (_currentGun.GetRotationSpeed() > 0.2f)
         {
             yield return new WaitForFixedUpdate();
         }
-        gunEmitter.Stop();
+        _gunEmitter.Stop();
     }
 
     private void Update()
     {
         if (!isMainMenu)
         {
-            if(currentGun == null)
+            if(_currentGun == null)
             {
-                currentGun = FindObjectOfType<gun_script>();
-                gunEmitter = GameObject.Find("InitialPoint").GetComponent<StudioEventEmitter>();
+                _currentGun = FindObjectOfType<gun_script>();
+                _gunEmitter = GameObject.Find("InitialPoint").GetComponent<StudioEventEmitter>();
                 player = FindObjectOfType<player_script>().transform;
-                footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
+                _footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
             }
             
-            gunEmitter.SetParameter("rotationSpeed", currentGun.GetRotationSpeed());
-            if (!currentGun.IsCold)
-                gunEmitter.SetParameter("isCold", 1);
+            _gunEmitter.SetParameter("rotationSpeed", _currentGun.GetRotationSpeed());
+            if (!_currentGun.IsCold)
+                _gunEmitter.SetParameter("isCold", 1);
             else
-                gunEmitter.SetParameter("isCold", 0);
+                _gunEmitter.SetParameter("isCold", 0);
         }
     }
 
@@ -199,7 +199,7 @@ public class AudioManagerFmod : MonoBehaviour {
     
     public void MusicGestion(float value)
     {
-        musicEmitter.SetParameter("Intro_Loop", value);
+        _musicEmitter.SetParameter("Intro_Loop", value);
     }
 
     public void StartMusic()
@@ -215,36 +215,36 @@ public class AudioManagerFmod : MonoBehaviour {
     {
         //yield return new WaitForSeconds(30.4f);
         if(SceneManager.GetActiveScene().name == "Menu_Main")
-            musicEmitter.SetParameter("Intro_Loop", 0.5f);
+            _musicEmitter.SetParameter("Intro_Loop", 0.5f);
 
     }
 
     public void StartInGameMusic()
     {
         //yield return new WaitForSeconds(0);
-        musicEmitter.SetParameter("Intro_Loop", 2f);
+        _musicEmitter.SetParameter("Intro_Loop", 2f);
     }
 
     public void EnterGame()
     {
-        musicEmitter.SetParameter("Intro_Loop", 1f);
+        _musicEmitter.SetParameter("Intro_Loop", 1f);
         //StartCoroutine(StartInGameMusic());
     }
 
     public void StopFootstep()
     {
-        footEmitter.Stop();
+        _footEmitter.Stop();
     }
 
     public void OnChangeSceneHub(Scene oldScene, Scene newScene)
     {
         if (newScene.name == "Level_Present")
         {
-            backgroundEmitter.Play();
+            _backgroundEmitter.Play();
         }
         else if (newScene.name == "Level_Hub")
         {
-            backgroundEmitter.Stop();
+            _backgroundEmitter.Stop();
             EnterGame();
         }
     }
@@ -252,6 +252,6 @@ public class AudioManagerFmod : MonoBehaviour {
     public IEnumerator WaitFootstep()
     {
         yield return new WaitForSeconds(00.4f);
-        footEmitter.Play();
+        _footEmitter.Play();
     }
 }
