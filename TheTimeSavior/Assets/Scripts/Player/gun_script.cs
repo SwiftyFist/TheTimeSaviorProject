@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Sound;
 
 public class gun_script : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class gun_script : MonoBehaviour
     public float shootSpeedIncrement = 0.02f; //Velocità con cui aumenta il rateo
     public float maxTimeToOverHeat = 3f; //Tempo di rateo massimo
     public float overHeatTime = 1f; //Tempo di raffreddamento
-    private AudioManagerFmod audioManager;
+    private AudioManager _audioManager;
 
     //Animazione sparo
     Animator GunRotation;
@@ -64,7 +65,9 @@ public class gun_script : MonoBehaviour
         fireRate = maxFireRate;
         fireRateBackUp = fireRate;
         FirePoint = transform.Find("FirePoint");
-	
+        _audioManager = this.GetSetEmitter(AudioManager.ShootEmitter);
+
+
         if (FirePoint == null)
         {
             Debug.LogError("No Firepoint");
@@ -73,7 +76,6 @@ public class gun_script : MonoBehaviour
 
     private void Start()
     {
-        audioManager = FindObjectOfType<AudioManagerFmod>();
         shellPool = FindObjectOfType<Gun_Shell_Pool>();
     }
 
@@ -85,6 +87,14 @@ public class gun_script : MonoBehaviour
 
     void Update ()
     {
+        
+        //_audioManager.SetParameter("rotationSpeed", GetRotationSpeed());
+        object[] parameters = { "rotationSpeed", GetRotationSpeed() };
+        _audioManager.FaiCose("SetParameter", AudioManager.ShootEmitter, parameters);
+
+        parameters = new object[] { "isCold", (!IsCold ? 1 : 0) };
+        _audioManager.FaiCose("SetParameter", AudioManager.ShootEmitter, parameters);
+
         if (Input.GetButtonDown("Fire1"))
         {
             isHolding = true;
@@ -95,7 +105,7 @@ public class gun_script : MonoBehaviour
                 enumerationStarted = true;
                 StartCoroutine(StopHolding());
                 StartCoroutine(StartShooting());
-                audioManager.MinigunActivate();
+                MinigunActivateSound();
             }
         }
         else if (Input.GetButtonDown("Fire2"))
@@ -159,7 +169,7 @@ public class gun_script : MonoBehaviour
     {
         if (!isHolding)
         {
-            audioManager.MinigunDeactivate();
+            MinigunDeactivateSound();
             if (fireRate < fireRateBackUp)
                 fireRate = fireRate + shootSpeedIncrement;
         }
@@ -262,6 +272,28 @@ public class gun_script : MonoBehaviour
         q = (minRotationVelocity - (m * maxFireRate));
         float rotationSpeed = ((m * fireRate) + q);
         return rotationSpeed;
+    }
+
+    protected void MinigunActivateSound()
+    {
+        if (GetRotationSpeed() > 1)
+        {
+            return;           
+        }
+
+        _audioManager.FaiCose("Play", AudioManager.ShootEmitter);
+
+    }
+
+    protected void MinigunDeactivateSound()
+    {
+        StartCoroutine(WaitMinigun());
+    }
+
+    private IEnumerator WaitMinigun()
+    {
+        yield return new WaitUntil(() => GetRotationSpeed() <= 0.2f);
+        _audioManager.FaiCose("Stop", AudioManager.FootEmitter);
     }
     #endregion
 

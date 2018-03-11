@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Sound;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,5 +42,17 @@ public class Utils
         GameObject.Destroy(elementToDestroy);
         list.RemoveAt(indexToDestroy);
         return list;
+    }
+
+    
+}
+public static class Extensions
+{
+    public static AudioManager GetSetEmitter(this MonoBehaviour obj, string emitterName)
+    {
+        var _audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        _audioManager.SetEmitter(obj.GetComponent<FMODUnity.StudioEventEmitter>(), emitterName);
+
+        return _audioManager;
     }
 }

@@ -3,57 +3,57 @@ using System.Collections;
 //Script che gestisce le musiche in-game è collegato al game master e non viene mai distrutto
 //Permette di creare gli oggetti per le musiche tramite codice e di cambiare valori come volume e pitch
 
-[System.Serializable]
-public class Sound {
+//[System.Serializable]
+//public class Sound {
 
-	public string name;
-	public AudioClip clip;
-	private AudioSource source;
+//	public string name;
+//	public AudioClip clip;
+//	private AudioSource source;
 
-	[Range(0f,1f)]
-	public float volume = 0.7f;
-	//[Range(0.5f,1.5f)]
-	//public float pitch = 1f;
+//	[Range(0f,1f)]
+//	public float volume = 0.7f;
+//	//[Range(0.5f,1.5f)]
+//	//public float pitch = 1f;
 
-	public void SetSource (AudioSource _source)
-	{
-		source = _source;
-		source.clip = clip;
+//	public void SetSource (AudioSource _source)
+//	{
+//		source = _source;
+//		source.clip = clip;
 	
-	}
+//	}
 
-	public void Play()
-	{
-		source.volume = volume;
-		//source.pitch = pitch;
-		source.Play ();
+//	public void Play()
+//	{
+//		source.volume = volume;
+//		//source.pitch = pitch;
+//		source.Play ();
 	
-	}
+//	}
 
-    public void Stop()
-    {
-        source.volume = volume;
-        //source.pitch = pitch;
-        source.Stop();
+//    public void Stop()
+//    {
+//        source.volume = volume;
+//        //source.pitch = pitch;
+//        source.Stop();
 
-    }
-
-
-}
+//    }
 
 
-public class audio_manager_script : MonoBehaviour {
-	//Script richiamabile ovunque
-	public static audio_manager_script _audioM;
+//}
 
-	//Vettore che contiene tutte le canzoni da inserire nel inspector
-	[SerializeField]
-	Sound[] sounds;
 
-	void Awake()
-	{
-		_audioM = this;
-	}
+//public class audio_manager_script : MonoBehaviour {
+//	//Script richiamabile ovunque
+//	public static audio_manager_script _audioM;
+
+//	//Vettore che contiene tutte le canzoni da inserire nel inspector
+//	[SerializeField]
+//	Sound[] sounds;
+
+//	void Awake()
+//	{
+//		_audioM = this;
+//	}
 
 	/*void Start ()
 	{
@@ -92,4 +92,4 @@ public class audio_manager_script : MonoBehaviour {
             }
         }
     }*/
-}
+//}

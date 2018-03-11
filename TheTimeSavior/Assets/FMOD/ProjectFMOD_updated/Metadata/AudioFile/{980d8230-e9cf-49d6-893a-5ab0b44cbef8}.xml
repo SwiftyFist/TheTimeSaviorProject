@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{980d8230-e9cf-49d6-893a-5ab0b44cbef8}">
+        <property name="assetPath">
+            <value>SFX/Enemy/Drone/Death/161211_SD_TS_Enemy01Morte_lmadioni.mp3</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.750204081632653</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{b42a1a65-5721-473a-badb-0324aa4e7dae}</destination>
+        </relationship>
+    </object>
+</objects>

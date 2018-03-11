@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{8c1cce84-d642-4ca2-8724-4ade33c23312}">
+        <property name="assetPath">
+            <value>Footstep/Enemy/161210_SD_TS_Enemy01Walk_lmadioni - Trimmed.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.34999999999999998</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{b42a1a65-5721-473a-badb-0324aa4e7dae}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -3,6 +3,9 @@ using System.Collections;
 using GameManager;
 using Singleton;
 using UnityEngine.SceneManagement;
+using Sound;
+using System.Collections.Generic;
+using System.Linq;
 
 public class player_script : MonoBehaviour
 {
@@ -24,26 +27,18 @@ public class player_script : MonoBehaviour
     public bool IsInMenu = false; //Controlla se il player sta guardando un Menù in caso positivo lo blocca
     public Coroutine BackVulnerable = null;
     public Coroutine BecomeInvulnerable = null;
-
     public float JumpForce; //Forza del salto
     private float jumpingScaleRate = 0.2f;
     private bool isHoldingJump;
     public float maxJumpTime;
-    
-
-
-
     public float maxSpeed = 10f; //Velocità massima di movimento
     public Transform player_ground; //Transform della sottoclasse del player
     public LayerMask Layer_Ground; //Layer mask di tutto ciò che è terreno
-
     Coroutine lastJumping = null;
-
     Transform ArmTransform, InitialArmPositionTransform;
-
     Vector3 StartArmPosition, WalkArmPosition, RunArmPosition, JumpUpArmPosition, JumpDownArmPosition;
-
     private bool footstepStarted = false;
+    private AudioManager _audioManager;
     #endregion
 
     #region Funzioni per Unity
@@ -73,7 +68,9 @@ public class player_script : MonoBehaviour
         WalkArmPosition = RunArmPosition;
         JumpUpArmPosition = new Vector3(StartArmPosition.x - 0.30f, StartArmPosition.y - 0.10f, StartArmPosition.z);
         JumpDownArmPosition = new Vector3(StartArmPosition.x - 0.35f, StartArmPosition.y - 0.15f, StartArmPosition.z);
+        _audioManager = this.GetSetEmitter(AudioManager.FootEmitter);
     }
+
 
     void Update()
     {
@@ -88,21 +85,21 @@ public class player_script : MonoBehaviour
             {
                 Jump();
             }
-            if (!footstepStarted && isGrounded && myRigidBody2d.velocity.magnitude > 0.2f)
-            {
-                footstepStarted = true;
-                AudioManagerFmod.instance.StartFootstep();
-            }
-            else if (myRigidBody2d.velocity.magnitude < 0.4f)
-            {
-                footstepStarted = false;
-                AudioManagerFmod.instance.StopFootstep();
-            }
-            else if (!isGrounded)
-            {
-                footstepStarted = false;
-                AudioManagerFmod.instance.StopFootstep();
-            }
+            //if (!footstepStarted && isGrounded && myRigidBody2d.velocity.magnitude > 0.2f)
+            //{
+            //    footstepStarted = true;
+            //    AudioManagerFmod.instance.StartFootstep();
+            //}
+            //else if (myRigidBody2d.velocity.magnitude < 0.4f)
+            //{
+            //    footstepStarted = false;
+            //    AudioManagerFmod.instance.StopFootstep();
+            //}
+            //else if (!isGrounded)
+            //{
+            //    footstepStarted = false;
+            //    AudioManagerFmod.instance.StopFootstep();
+            //}
         }
      
         if (Input.GetButtonDown("Invincibility"))
@@ -277,5 +274,10 @@ public class player_script : MonoBehaviour
             if (enemy != null)
                 Physics2D.IgnoreLayerCollision(gameObject.layer, enemy.layer, active);
         isInvincible = active;
+    }
+
+    public void PlayFootStep()
+    {
+        _audioManager.FaiCose("Play",AudioManager.FootEmitter);
     }
 }
