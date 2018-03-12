@@ -42,8 +42,7 @@ public class gun_script : MonoBehaviour
     //Animazione sparo
     Animator GunRotation;
     public float minRotationVelocity = 0f, maxRotationVelocity = 10f;
-
-
+    private Coroutine StopShootingCoroutine;
     private Gun_Shell_Pool shellPool;
 
 
@@ -83,18 +82,15 @@ public class gun_script : MonoBehaviour
     private void FixedUpdate()
     {
         GunRotation.SetFloat("SpeedVelocity", GetRotationSpeed());
-    }
-
-    void Update ()
-    {
-        
-        //_audioManager.SetParameter("rotationSpeed", GetRotationSpeed());
         object[] parameters = { "rotationSpeed", GetRotationSpeed() };
         _audioManager.FaiCose("SetParameter", AudioManager.ShootEmitter, parameters);
 
         parameters = new object[] { "isCold", (!IsCold ? 1 : 0) };
         _audioManager.FaiCose("SetParameter", AudioManager.ShootEmitter, parameters);
+    }
 
+    void Update ()
+    {
         if (Input.GetButtonDown("Fire1"))
         {
             isHolding = true;
@@ -116,7 +112,6 @@ public class gun_script : MonoBehaviour
                 singleShootAvailable = false;
                 singleShotCoroutine = StartCoroutine(singleShotCoolTime());
             }
-
         }
     }
 
@@ -277,23 +272,24 @@ public class gun_script : MonoBehaviour
     protected void MinigunActivateSound()
     {
         if (GetRotationSpeed() > 1)
-        {
-            return;           
-        }
+            return;
 
         _audioManager.FaiCose("Play", AudioManager.ShootEmitter);
-
     }
 
     protected void MinigunDeactivateSound()
     {
-        StartCoroutine(WaitMinigun());
+        if (StopShootingCoroutine != null)
+            return;
+
+        StopShootingCoroutine = StartCoroutine(WaitMinigun());
     }
 
     private IEnumerator WaitMinigun()
     {
         yield return new WaitUntil(() => GetRotationSpeed() <= 0.2f);
-        _audioManager.FaiCose("Stop", AudioManager.FootEmitter);
+        StopShootingCoroutine = null;
+        _audioManager.FaiCose("Stop", AudioManager.ShootEmitter);
     }
     #endregion
 
