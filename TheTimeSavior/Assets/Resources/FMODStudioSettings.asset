@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 
-  SourceProjectPathUnformatted: 
-  SourceBankPathUnformatted: 
+  sourceProjectPath: Assets\FMOD\ProjectFMOD_updated\TimeSavior_Sound_modify.fspro
+  SourceProjectPathUnformatted: Assets\FMOD\ProjectFMOD_updated\TimeSavior_Sound_modify.fspro
+  SourceBankPathUnformatted: Assets\FMOD\ProjectFMOD_updated\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -41,7 +41,9 @@ MonoBehaviour:
     Value: 1
   - Platform: 2
     Value: 0
-  BankDirectorySettings: []
+  BankDirectorySettings:
+  - Platform: 2
+    Value: Desktop
   VirtualChannelSettings:
   - Platform: 1
     Value: 1024
@@ -53,5 +55,5 @@ MonoBehaviour:
   - Platform: 2
     Value: 32
   Plugins: []
-  MasterBank: 
+  MasterBank: Master Bank
   Banks: []
