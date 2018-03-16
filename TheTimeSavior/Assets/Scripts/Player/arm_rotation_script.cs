@@ -2,13 +2,15 @@
 
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class arm_rotation_script : MonoBehaviour {
     //rotationOffset al momento è inutile possibile rimozione
 	public int rotationOffset;
-	public bool direction;
+	public bool isFacingRight;
     private Transform _transform;
-    private Vector3 difference;
+    private Vector3 mousePositionArm;
+    private Transform _playerTransform;
 	//Dal'inspector gli viene inserito l'oggetto vuoto dal qualche parte il proiettile
 	public Transform FirePoint;
 
@@ -20,8 +22,9 @@ public class arm_rotation_script : MonoBehaviour {
     //La variabile bool direction viene impostata a true perchè il player una volta avviato il gioco è diretto a destra (true=destra,false=sinistra)
     void Awake()
     {
-		direction = true;
+		isFacingRight = true;
         _transform = GetComponent<Transform>();
+        _playerTransform = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     private void FixedUpdate()
@@ -30,100 +33,67 @@ public class arm_rotation_script : MonoBehaviour {
             UsingMouse = false;
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
-            UsingMouse = true;        
+            UsingMouse = true;
     }
 
     void Update()
     {
-		//Controller Rotation (Right Stick )  FUNZIONANTE
-		//Asse x e y
-        float x = Input.GetAxis("RightStickX");
-        float y = Input.GetAxis("RightStickY");
+        var rightSitickX = Input.GetAxis("RightStickX");
+        var rightSitickY = Input.GetAxis("RightStickY");
+        var aimAngle = 0.0f;        
 
-        
-        float aim_angle = 0.0f;
-        // CANCEL ALL INPUT BELOW THIS FLOAT
-        
+        if (Mathf.Abs(rightSitickX) < R_analog_threshold) { rightSitickX = 0.0f; }
+        if (Mathf.Abs(rightSitickY) < R_analog_threshold) { rightSitickY = 0.0f; }
 
-        if (Mathf.Abs(x) < R_analog_threshold) { x = 0.0f; }
-
-        if (Mathf.Abs(y) < R_analog_threshold) { y = 0.0f; }
-
-        // CALCULATE ANGLE AND ROTATE
         if (!UsingMouse)
         {
-            if (x != 0.0f || y != 0.0f)
+            if (rightSitickX != 0.0f || rightSitickY != 0.0f)
             {
-                aim_angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
-                Debug.Log(aim_angle);
-                if (direction == true) 
-			    {
-				    rotationOffset = 90;
-			    }
-			    if (direction == false) 
-			    {
-				    rotationOffset = -90;
-			    }
-			    _transform.rotation = Quaternion.Euler(0f,0f,aim_angle+rotationOffset);
+                aimAngle = Mathf.Atan2(rightSitickY, rightSitickX) * Mathf.Rad2Deg;
+                rotationOffset = isFacingRight ? 90 : -90;
 
-			    //Due If che fanno ruotare il player in base a dove si trova l'arma
-			    //Mirando a sinistra con lo stick il player ruota a sinistra in automatico, lo stesso a destra
-			    if (aim_angle >= 0f && aim_angle <= 90f || aim_angle <= 0 && aim_angle >= -90f)
+			    _transform.rotation = Quaternion.Euler(0f,0f,aimAngle+rotationOffset);
+
+			    if (aimAngle >= 0f && Mathf.Abs(aimAngle) <= 90f || aimAngle <= 0 && aimAngle >= -90f)
 			    {
-				    if (direction == false)
+				    if (!isFacingRight)
 				    {
-					    direction = true;
+					    isFacingRight = true;
 					    Flip();
 				    }
 			    }
-			    if (aim_angle >= 100f && aim_angle <= 180f || aim_angle <= -100f && aim_angle >= -180f) 
+			    if (aimAngle >= 100f && aimAngle <= 180f || aimAngle <= -100f && aimAngle >= -180f) 
 			    {
-				    if (direction == true)
+				    if (isFacingRight)
 				    {
-					    direction = false;
+					    isFacingRight = false;
 					    Flip ();
 				    }
 			    }
             }
         }
-		//Mouse Rotation FUNZIONANTE
 		else
         {
-            //Sottrae dalla posizione del mouse la posizione  del player e poi la normalizza
-            difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _transform.position;
-            difference.Normalize();
+            var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePositionArm = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _transform.position;
+            var mousePositionPlayer = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _playerTransform.position;
+            mousePositionArm.Normalize();
 
-		    //Calcola l'angolo
-            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; 
-		    //Debug.Log ("rotation = "+rotZ);
-		    if (direction == true) 
-		    {
-			    rotationOffset = 90;
-		    }
-		    if (direction == false) 
-		    {
-			    rotationOffset = -90;
-		    }
-			    //Ruota il braccio
-		    _transform.rotation = Quaternion.Euler(0f, 0f, rotZ + rotationOffset);
+            var angle = Mathf.Atan2(mousePositionArm.y, mousePositionArm.x) * Mathf.Rad2Deg;
 
-			    //Due If che fanno ruotare il player in base a dove si trova l'arma
-			    //Mirando a sinistra con il mouse il player ruota a sinistra in automatico, lo stesso a destra
-		    if (rotZ > 0f && rotZ < 90f || rotZ < 0 && rotZ > -90f)
+            rotationOffset = isFacingRight ? 90 : -90;
+
+		    _transform.rotation = Quaternion.Euler(0f, 0f, angle + rotationOffset);
+            Debug.Log(mousePositionArm.x);
+            if (mousePositionPlayer.x >= 0 && !isFacingRight)
 		    {
-			    if (direction == false)
-			    {
-				    direction = true;
-				    Flip();
-			    }
+                isFacingRight = true;
+				Flip();
 		    }
-		    if (rotZ > 100f && rotZ < 180f || rotZ < -100f && rotZ > -180f) 
+		    else if (mousePositionPlayer.x < 0 && isFacingRight) 
 		    {
-			    if (direction == true)
-			    {
-				    direction = false;
-				    Flip ();
-			    }
+                isFacingRight = false;
+				Flip ();
 		    }
         }
 	}
@@ -131,7 +101,7 @@ public class arm_rotation_script : MonoBehaviour {
 	//Funzione che va a richiamare la funzione Gira() del player per far ruotare il player 
 	void Flip()
 	{
-		if (direction == false && player_script.pl_script.lookRight == true || direction == true && player_script.pl_script.lookRight == false) 
+		if (isFacingRight == false && player_script.pl_script.lookRight == true || isFacingRight == true && player_script.pl_script.lookRight == false) 
 		{
 			player_script.pl_script.Flip ();
 		}	

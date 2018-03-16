@@ -164,8 +164,7 @@ public class player_script : MonoBehaviour
     public void Flip()
     {
         lookRight = !lookRight;
-        myTransform.localScale = new Vector3 (myTransform.localScale.x*-1, myTransform.localScale.y, myTransform.localScale.z);
-        
+        myTransform.localScale = new Vector3 (myTransform.localScale.x*-1, myTransform.localScale.y, myTransform.localScale.z);        
     }
 
     void Jump()
