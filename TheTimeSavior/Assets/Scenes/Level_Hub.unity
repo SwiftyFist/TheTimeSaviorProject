@@ -681,7 +681,7 @@ MonoBehaviour:
   submitKey1: 330
   cancelKey0: 27
   cancelKey1: 331
-  autoHideCursor: 1
+  autoHideCursor: 0
 --- !u!20 &388503384
 Camera:
   m_ObjectHideFlags: 0
@@ -736,7 +736,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4393050748290598, guid: 97c8f2926e3af5c449bab055330e62b3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 62
+      value: 63
       objectReference: {fileID: 0}
     - target: {fileID: 4393050748290598, guid: 97c8f2926e3af5c449bab055330e62b3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -800,6 +800,10 @@ Prefab:
     - target: {fileID: 1812342434427286, guid: 97c8f2926e3af5c449bab055330e62b3, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745871268557000, guid: 97c8f2926e3af5c449bab055330e62b3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114476660379896834, guid: 97c8f2926e3af5c449bab055330e62b3, type: 2}
@@ -1603,7 +1607,7 @@ Transform:
   m_GameObject: {fileID: 1162114412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.005540166, y: 0.005540166, z: 0.005540166}
+  m_LocalScale: {x: 0.004705882, y: 0.004705882, z: 0.004705882}
   m_Children:
   - {fileID: 388503382}
   - {fileID: 1619333304}
