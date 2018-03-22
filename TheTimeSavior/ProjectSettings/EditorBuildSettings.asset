@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_Past.unity
     guid: d7710e8c46a511d448737be5f6548cea
   - enabled: 0
-    path: Assets/Scenes/Level_Test.unity
+    path: 
     guid: a51ac8628b6081d4294d799d984d1754
   - enabled: 1
     path: Assets/Scenes/Level_Test_Rogue.unity

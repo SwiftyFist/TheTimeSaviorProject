@@ -7,6 +7,6 @@ public class DraggablePanelActivation : MonoBehaviour
 
     public void OnClick()
     {
-        gameObject.SetActive(true);
+        this.gameObject.SetActive(true);
     }
 }

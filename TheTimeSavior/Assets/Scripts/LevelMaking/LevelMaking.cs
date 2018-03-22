@@ -19,6 +19,7 @@ namespace Assets.Scripts.LevelMaking
 		public Vector3 EndOfCurrentLevelPosition = new Vector3(86.69f, 0f, 35f);
         public List<GameObject> CreatedLevelsList;
         public List<Level> AvaiableLevels;
+		public int PassagesCount;
 
         public void Awake()
         {
@@ -33,7 +34,7 @@ namespace Assets.Scripts.LevelMaking
                 }).ToList();
         }
 
-        public GameObject GetLevelePrefab(LevelTypes type, int difficulty)
+		private GameObject GetLevelePrefab(LevelTypes type, int difficulty)
 		{
             var avaiableSelection = AvaiableLevels.Where(x => 
                 x.Type == type && 
@@ -75,6 +76,8 @@ namespace Assets.Scripts.LevelMaking
 					),
 					Quaternion.identity
 				));
+
+				PassagesCount += 1;
 
                 var xSize = levelGameObject
                             .GetComponent<BoxCollider2D>()

@@ -60,7 +60,9 @@ namespace GameManager
 
         public static void LevelReset()
         {
-            var levelMaker = GameObject.Find("LevelMaker").GetComponent<LevelMaking>();
+            var levelMaker = GameObject.Find("LevelMaker") != null ?
+                GameObject.Find("LevelMaker").GetComponent<LevelMaking>() :
+                null;
             if (levelMaker != null)
                 levelMaker.LevelMakerReset();
             

@@ -1,0 +1,34 @@
+{d67ae242-714c-47ba-9a2a-7d7f3f8f1ee5} event:/BKG/LEVEL1_BKG
+{fb8c97da-5d34-413d-bf33-f72179a131c5} event:/FOLEY/ENEMY/Drone/Movement/Footsteps
+{f79180c1-5415-456b-9dac-6b740c92bd13} event:/FOLEY/ENEMY/Enemy/Movement/Float
+{22ea8766-516b-46d8-abba-e00bab7cc290} event:/FOLEY/ENEMY/Enemy_type3/Movement/Float
+{71e6bafb-7aab-4ee3-b052-3b6bc21af4a5} event:/FOLEY/PLAYER/Movement/Footstep
+{86e88110-5ace-4bbf-9cdd-9bd86392d718} event:/FOLEY/PLAYER/Movement/Jump
+{3243d86a-8f1b-4ffa-8cc1-4bccd66bbc4b} event:/MUSIC/Boss/Ford
+{e85a439a-13ca-44c9-90c0-9bfea967e1e4} event:/MUSIC/Boss/Zarai
+{d1d3b198-c271-4049-a47c-355c7c57905a} event:/MUSIC/Level/Init+Level1_type1
+{8238de74-582a-4fb1-892d-e5c8384cbd78} event:/MUSIC/Level/Init+Level1_type2
+{5019290e-7135-4a0e-8c62-38a7d3929ae8} event:/MUSIC/Level/level 2
+{188a8f8e-ae5a-45ae-a730-14e405b0a946} event:/SFX/ENEMY/Drone/Death
+{89effd9d-8060-4e3d-a7c5-72d4d6c7e48f} event:/SFX/ENEMY/Drone/Hit
+{613034f0-67ed-4caa-aac8-931328a6b67a} event:/SFX/ENEMY/Drone/Trigger
+{0b9bcff0-2bf7-4804-8e9a-5e3997177633} event:/SFX/ENEMY/Enemy/Death
+{06939d64-e94c-4827-8c63-f22182849e9c} event:/SFX/ENEMY/Enemy/Hit
+{969e337a-bba1-48d4-82e3-30441882aa38} event:/SFX/ENEMY/Enemy/Trigger
+{59c2a031-9992-40b7-ae21-c10af0ec3b07} event:/SFX/ENEMY/Enemy_type3/Death
+{f11e775b-0b84-4dfe-ae0b-061f5bb62a09} event:/SFX/ENEMY/Enemy_type3/Hit
+{0a2c0b3f-542c-4ac5-826d-974e05f5d77e} event:/SFX/ENEMY/Enemy_type3/Shot
+{17f7c446-5ded-4a82-bc6a-2417d722b0f7} event:/SFX/ENEMY/Enemy_type3/Trigger
+{1778687d-ed9b-446c-936e-981c12d322ed} event:/SFX/ENEMY/IA/IA_Distance
+{47f52819-6e24-4949-b4ab-09004f902650} event:/SFX/MENU/Accept
+{d6c46b39-126e-4680-84b8-ced6237a7338} event:/SFX/MENU/Back
+{fdac2a7e-bafb-451f-a414-5f4d6d0f4c9b} event:/SFX/MENU/Move
+{e2a9f6d7-4b7c-4d39-8190-4d96e231b189} event:/SFX/MENU/Scroll
+{ca058c15-6992-4443-a7f4-15fb204c3361} event:/SFX/PLAYER/Weapon/Minigun
+{27d8fd3f-a0c3-4bec-8337-e175cd493c69} event:/SFX/PLAYER/Weapon/OneShot
+{166b459d-a57a-4d68-8f8a-5c03494e0be8} event:/SFX/PLAYER/Weapon/Shell
+{82480abc-a6fe-476c-afc0-656c84d1ace7} event:/SFX/PLAYER/Death
+{1df0f495-0982-4d07-9f9b-df96d91e856e} event:/SFX/PLAYER/Hit
+{55c158cb-7d2c-42a4-92da-18d308b810fa} bus:/
+{63863b5a-9fd3-47b9-b41c-6a6b8e25503a} bus:/Reverb
+{4dc27029-c9d7-49c0-8d05-645dc1483600} bank:/Master Bank

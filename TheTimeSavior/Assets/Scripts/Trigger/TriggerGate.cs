@@ -9,6 +9,7 @@ namespace Trigger
         public float OffSetActivation = 3f;
         public bool Activating;
         public LevelTypes NextLevelType = LevelTypes.Middle;
+        public bool LoadNextPassage;
         private bool _activated;
         private Transform _playerTransform;
         private LevelMaking _levelMaking;
@@ -30,7 +31,7 @@ namespace Trigger
                 GameObject.Find("Destroyer").GetComponent<DestroyerPlayerStandard>().SetActive(Activating);
                 transform.GetChild(0).gameObject.SetActive(true);
 
-                if (!Activating && _levelMaking != null)
+                if (LoadNextPassage && !Activating && _levelMaking != null)
                     _levelMaking.InstantiateNextLevel(NextLevelType);
             }            
         }
