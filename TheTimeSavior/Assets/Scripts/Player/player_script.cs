@@ -24,7 +24,7 @@ public class player_script : MonoBehaviour
     public float InvincibleTime = 1f;
     public float OffSetBecomInvulnerable = 0.5f;
     public bool isInvincible = false;
-    public bool IsInMenu = false; //Controlla se il player sta guardando un Menù in caso positivo lo blocca
+    public bool IsInMenu; //Controlla se il player sta guardando un Menù in caso positivo lo blocca
     public Coroutine BackVulnerable = null;
     public Coroutine BecomeInvulnerable = null;
     public float JumpForce; //Forza del salto
@@ -56,6 +56,7 @@ public class player_script : MonoBehaviour
 			pl_script = this;
 		}
         isInvincible = false;
+        IsInMenu = false;
         myRigidBody2d = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myTransform = GetComponent<Transform>();
@@ -74,7 +75,12 @@ public class player_script : MonoBehaviour
 
     void Update()
     {
-        if(!IsInMenu)
+        if(IsInMenu)
+        {
+            myRigidBody2d.velocity = new Vector2(0,0);
+            myAnimator.SetFloat("Horizontal_Speed", Mathf.Abs(myRigidBody2d.velocity.x));
+        }
+        else
         {
             myRigidBody2d.velocity = new Vector2(horizontalAxes * maxSpeed, myRigidBody2d.velocity.y);
             myAnimator.SetFloat("Horizontal_Speed", Mathf.Abs(myRigidBody2d.velocity.x));
@@ -127,13 +133,10 @@ public class player_script : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(!IsInMenu)
-        {
             horizontalAxes = Input.GetAxis("Horizontal");
             isGrounded = Physics2D.OverlapCircle(player_ground.position, 0.2f, Layer_Ground);
             myAnimator.SetBool("Ground", isGrounded);
-            myAnimator.SetFloat("Vertical_Speed", myRigidBody2d.velocity.y);
-        }   
+            myAnimator.SetFloat("Vertical_Speed", myRigidBody2d.velocity.y);   
     }
 
     void OnCollisionEnter2D(Collision2D other)

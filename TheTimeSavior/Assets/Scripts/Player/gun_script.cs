@@ -91,7 +91,7 @@ public class gun_script : MonoBehaviour
 
     void Update ()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !player_script.pl_script.IsInMenu)
         {
             isHolding = true;
             if (enumerationStarted == false && isCold)
