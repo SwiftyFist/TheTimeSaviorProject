@@ -36,19 +36,19 @@ public class AudioManagerFmod : MonoBehaviour {
     public string droneBank;
     [FMODUnity.EventRef]
     public string playerShoot;
-    [FMODUnity.EventRef]
-    public string playerMove = "event:/Footstep";
+    //[FMODUnity.EventRef]
+    //public string playerMove = "event:/Footstep";
     [FMODUnity.EventRef]
     public string MusicBank = "event:/Music_Future";
-    [EventRef]
-    public string minigunBank = "event:/Minigun";
+    //[EventRef]
+    //public string minigunBank = "event:/Minigun";
    
 
 
     [HideInInspector]
     public bool isMainMenu;
 
-    private StudioEventEmitter footEmitter;
+    //private StudioEventEmitter footEmitter;
 
     
 
@@ -63,8 +63,8 @@ public class AudioManagerFmod : MonoBehaviour {
 
     FMOD.Studio.EventInstance enemyInstance;
     FMOD.Studio.EventInstance droneInstance;
-    FMOD.Studio.EventInstance playerInstance;
-    FMOD.Studio.EventInstance gunInstance;
+    //FMOD.Studio.EventInstance playerInstance;
+    //FMOD.Studio.EventInstance gunInstance;
     FMOD.Studio.EventInstance musicInstance;
 
 
@@ -95,9 +95,9 @@ public class AudioManagerFmod : MonoBehaviour {
         yield return new WaitForSeconds(0.1f);
         
         currentGun = FindObjectOfType<gun_script>();
-        gunEmitter = GameObject.Find("InitialPoint").GetComponent<StudioEventEmitter>();
+        //gunEmitter = GameObject.Find("InitialPoint").GetComponent<StudioEventEmitter>();
         player = FindObjectOfType<player_script>().transform;
-        footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
+        //footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
     }
 
     private void Start()
@@ -109,8 +109,8 @@ public class AudioManagerFmod : MonoBehaviour {
         enemyInstance = FMODUnity.RuntimeManager.CreateInstance(enemyBank);
         droneInstance = FMODUnity.RuntimeManager.CreateInstance(droneBank);
         musicInstance = RuntimeManager.CreateInstance(MusicBank);
-        playerInstance = RuntimeManager.CreateInstance(playerMove);
-        gunInstance = RuntimeManager.CreateInstance(minigunBank);
+        //playerInstance = RuntimeManager.CreateInstance(playerMove);
+        //gunInstance = RuntimeManager.CreateInstance(minigunBank);
         if(!isMainMenu)
             currentGun = FindObjectOfType<gun_script>();
 
@@ -121,47 +121,48 @@ public class AudioManagerFmod : MonoBehaviour {
         //MinigunActivate();
     }
 
-    public void MinigunActivate()
-    {
-        if(currentGun.GetRotationSpeed() <= 1)
-            gunEmitter.Play();
-    }
+    //public void MinigunActivate()
+    //{
+    //    if(currentGun.GetRotationSpeed() <= 1)
+    //        gunEmitter.Play();
+    //}
 
-    public void MinigunDeactivate()
-    {
-        StartCoroutine(WaitMinigun()); 
+    //public void MinigunDeactivate()
+    //{
+    //    StartCoroutine(WaitMinigun()); 
        
-    }
+    //}
 
-    private IEnumerator WaitMinigun()
-    {
-        while (currentGun.GetRotationSpeed() > 0.2f)
-        {
-            yield return new WaitForFixedUpdate();
-        }
-        gunEmitter.Stop();
-    }
+    //private IEnumerator WaitMinigun()
+    //{
+    //    while (currentGun.GetRotationSpeed() > 0.2f)
+    //    {
+    //        yield return new WaitForFixedUpdate();
+    //    }
+    //    gunEmitter.Stop();
+    //}
 
     private void Update()
     {
         if (!isMainMenu)
         {
-            if(currentGun == null)
-            {
-                currentGun = FindObjectOfType<gun_script>();
-                gunEmitter = GameObject.Find("InitialPoint").GetComponent<StudioEventEmitter>();
-                player = FindObjectOfType<player_script>().transform;
-                footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
-            }
+            //if(currentGun == null)
+            //{
+            //    currentGun = FindObjectOfType<gun_script>();
+            //    //gunEmitter = GameObject.Find("InitialPoint").GetComponent<StudioEventEmitter>();
+            //    player = FindObjectOfType<player_script>().transform;
+            //    //footEmitter = player.gameObject.GetComponent<StudioEventEmitter>();
+            //}
             
-            gunEmitter.SetParameter("rotationSpeed", currentGun.GetRotationSpeed());
-            if (!currentGun.IsCold)
-                gunEmitter.SetParameter("isCold", 1);
-            else
-                gunEmitter.SetParameter("isCold", 0);
+            //gunEmitter.SetParameter("rotationSpeed", currentGun.GetRotationSpeed());
+            //if (!currentGun.IsCold)
+            //    gunEmitter.SetParameter("isCold", 1);
+            //else
+            //    gunEmitter.SetParameter("isCold", 0);
         }
     }
 
+    #region Enemy&DroneSOund
     public void EnemySound(Transform enemy, float value)
     {
         enemyInstance.set3DAttributes(RuntimeUtils.To3DAttributes(enemy));
@@ -175,10 +176,11 @@ public class AudioManagerFmod : MonoBehaviour {
         droneInstance.setParameterValue("value", value);
 
     }
+    #endregion
 
     public void StartFootstep()
     {
-        StartCoroutine(WaitFootstep());
+        //StartCoroutine(WaitFootstep());
     }
 
     private void Stop()
@@ -233,7 +235,7 @@ public class AudioManagerFmod : MonoBehaviour {
 
     public void StopFootstep()
     {
-        footEmitter.Stop();
+        //footEmitter.Stop();
     }
 
     public void OnChangeSceneHub(Scene oldScene, Scene newScene)
@@ -249,9 +251,9 @@ public class AudioManagerFmod : MonoBehaviour {
         }
     }
     
-    public IEnumerator WaitFootstep()
-    {
-        yield return new WaitForSeconds(00.4f);
-        footEmitter.Play();
-    }
+    //public IEnumerator WaitFootstep()
+    //{
+    //    yield return new WaitForSeconds(00.4f);
+    //    footEmitter.Play();
+    //}
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{55978f70-5196-001c-1aed-80e23c97959d}">
+        <property name="name">
+            <value>isCold</value>
+        </property>
+        <relationship name="folder">
+            <destination>{f1bab5f7-a9c1-4b78-b5fa-eaeb67a015d1}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{159349d0-d91c-431b-ad4e-4358ce1c563c}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{159349d0-d91c-431b-ad4e-4358ce1c563c}">
+        <property name="isExposedRecursively">
+            <value>false</value>
+        </property>
+    </object>
+</objects>
