@@ -93,7 +93,7 @@ public class arm_rotation_script : MonoBehaviour {
 		    else if (mousePositionPlayer.x < 0 && isFacingRight) 
 		    {
                 isFacingRight = false;
-				Flip ();
+				Flip();
 		    }
         }
 	}
