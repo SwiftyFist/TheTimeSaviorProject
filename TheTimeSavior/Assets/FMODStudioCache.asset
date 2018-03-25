@@ -25,7 +25,7 @@ MonoBehaviour:
   - {fileID: 114772380910335758}
   MasterBankRef: {fileID: 114589879991147832}
   StringsBankRef: {fileID: 114825553501919112}
-  stringsBankWriteTime: 636564732823335540
+  stringsBankWriteTime: 636573069740032215
   cacheVersion: 2
 --- !u!114 &114032915832372436
 MonoBehaviour:
@@ -80,6 +80,21 @@ MonoBehaviour:
   - {fileID: 114140129304701174}
   MinDistance: 0
   MaxDistance: 0
+--- !u!114 &114093306861022648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Music Status
+  Min: 0
+  Max: 10
+  Default: 0
 --- !u!114 &114140129304701174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,8 +317,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114242706677399742}
-  - {fileID: 114970842857721204}
+  - {fileID: 114481226111003910}
+  - {fileID: 114659769917080524}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114421600599473950
@@ -325,7 +340,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114691486540483868}
+  - {fileID: 114093306861022648}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114432547212719924
@@ -368,8 +383,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114903977975906884}
-  - {fileID: 114070517878935758}
+  - {fileID: 114749043533623118}
+  - {fileID: 114476353184622962}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114457808709284204
@@ -393,6 +408,36 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+--- !u!114 &114476353184622962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 2
+  Default: 0
+--- !u!114 &114481226111003910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isCold
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114572000427889854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,10 +472,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\d.plessi\Documents\TheTimeSaviorProject\TheTimeSavior\Assets\FMOD\ProjectFMOD_updated\Build\Desktop\Master
     Bank.bank
-  lastModified: 636564732823215540
+  lastModified: 636573069739932059
   LoadResult: 0
   FileSizes:
-  - Name: Desktop
+  - Name: 
     Value: 10512640
   Exists: 1
 --- !u!114 &114638181876478108
@@ -475,6 +520,21 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+--- !u!114 &114659769917080524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: rotationSpeed
+  Min: 0
+  Max: 10
+  Default: 0
 --- !u!114 &114679711794770212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +644,21 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+--- !u!114 &114749043533623118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intro_Loop
+  Min: 0
+  Max: 2
+  Default: 0
 --- !u!114 &114762173479219666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,10 +737,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\ProjectFMOD_updated\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636564732823335540
+  lastModified: 636573069740032215
   LoadResult: 0
   FileSizes:
-  - Name: Desktop
+  - Name: 
     Value: 1108
   Exists: 1
 --- !u!114 &114863247155392258
